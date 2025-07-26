@@ -1,89 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://maybefinance.com</loc>
+    <loc>https://sure.am</loc>
     <lastmod><%= Date.today.iso8601 %></lastmod>
   </url>
   <url>
-    <loc>https://maybefinance.com/about</loc>
+    <loc>https://sure.am/about</loc>
     <lastmod><%= Date.today.iso8601 %></lastmod>
   </url>
   <url>
-    <loc>https://maybefinance.com/pricing</loc>
+    <loc>https://sure.am/pricing</loc>
     <lastmod><%= Date.today.iso8601 %></lastmod>
   </url>
   <url>
-    <loc>https://maybefinance.com/features/tracking</loc>
+    <loc>https://sure.am/features/tracking</loc>
     <lastmod><%= Date.today.iso8601 %></lastmod>
   </url>
   <url>
-    <loc>https://maybefinance.com/features/transactions</loc>
+    <loc>https://sure.am/features/transactions</loc>
     <lastmod><%= Date.today.iso8601 %></lastmod>
   </url>
   <url>
-    <loc>https://maybefinance.com/features/budgeting</loc>
+    <loc>https://sure.am/features/budgeting</loc>
     <lastmod><%= Date.today.iso8601 %></lastmod>
   </url>
   <url>
-    <loc>https://maybefinance.com/features/assistant</loc>
+    <loc>https://sure.am/features/assistant</loc>
     <lastmod><%= Date.today.iso8601 %></lastmod>
   </url>
 
   <url>
-    <loc>https://maybefinance.com/privacy</loc>
+    <loc>https://sure.am/privacy</loc>
     <lastmod><%= Date.today.iso8601 %></lastmod>
   </url>
   <url>
-    <loc>https://maybefinance.com/tos</loc>
+    <loc>https://sure.am/tos</loc>
     <lastmod><%= Date.today.iso8601 %></lastmod>
   </url>
   <url>
-    <loc>https://maybefinance.com/financial-terms</loc>
+    <loc>https://sure.am/financial-terms</loc>
     <lastmod><%= Date.today.iso8601 %></lastmod>
   </url>
   <% @terms.each do |term| %>
     <url>
-      <loc>https://maybefinance.com/financial-terms/<%= term.slug %></loc>
+      <loc>https://sure.am/financial-terms/<%= term.slug %></loc>
       <lastmod><%= term.updated_at.iso8601 %></lastmod>
     </url>
   <% end %>
   <url>
-    <loc>https://maybefinance.com/articles</loc>
+    <loc>https://sure.am/articles</loc>
     <lastmod><%= Date.today.iso8601 %></lastmod>
   </url>
   <% @articles.each do |article| %>
     <url>
-      <loc>https://maybefinance.com/articles/<%= article.slug %></loc>
+      <loc>https://sure.am/articles/<%= article.slug %></loc>
       <lastmod><%= article.updated_at.iso8601 %></lastmod>
     </url>
   <% end %>
   <url>
-    <loc>https://maybefinance.com/authors</loc>
+    <loc>https://sure.am/authors</loc>
     <lastmod><%= Date.today.iso8601 %></lastmod>
   </url>
   <% @authors.each do |author| %>
     <url>
-      <loc>https://maybefinance.com/authors/<%= author.slug %></loc>
+      <loc>https://sure.am/authors/<%= author.slug %></loc>
       <lastmod><%= author.updated_at.iso8601 %></lastmod>
     </url>
   <% end %>
   <url>
-    <loc>https://maybefinance.com/financial-faqs</loc>
+    <loc>https://sure.am/financial-faqs</loc>
     <lastmod><%= Date.today.iso8601 %></lastmod>
   </url>
   <% @faqs.each do |faq| %>
     <url>
-      <loc>https://maybefinance.com/financial-faqs/<%= faq.slug %></loc>
+      <loc>https://sure.am/financial-faqs/<%= faq.slug %></loc>
       <lastmod><%= faq.updated_at.iso8601 %></lastmod>
     </url>
   <% end %>
   <url>
-    <loc>https://maybefinance.com/tools</loc>
+    <loc>https://sure.am/tools</loc>
     <lastmod><%= Date.today.iso8601 %></lastmod>
   </url>
   <% @tools.each do |tool| %>
     <url>
-      <loc>https://maybefinance.com/tools/<%= tool.slug %></loc>
+      <loc>https://sure.am/tools/<%= tool.slug %></loc>
       <lastmod><%= tool.updated_at.iso8601 %></lastmod>
     </url>
   <% end %>
@@ -91,7 +91,7 @@
     <% @exchange_rate_currencies.each do |to_currency| %>
       <% next if from_currency.last == to_currency.last # Skip same currency pairs %>
       <url>
-        <loc>https://maybefinance.com/tools/exchange-rate-calculator/<%= from_currency.last %>/<%= to_currency.last %></loc>
+        <loc>https://sure.am/tools/exchange-rate-calculator/<%= from_currency.last %>/<%= to_currency.last %></loc>
         <lastmod><%= Date.today.iso8601 %></lastmod>
       </url>
     <% end %>

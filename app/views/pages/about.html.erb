@@ -1,20 +1,20 @@
 <%
-  title "About Maybe Finance"
-  description "Maybe is the open-source personal finance OS built by a community of thousands who believe managing money should be powerful, transparent, and accessible to everyone."
+  title "About Sure Finance"
+  description "Sure is the open-source personal finance OS built by a community of thousands who believe managing money should be powerful, transparent, and accessible to everyone."
 %>
 
 <article class="bg-contain bg-top bg-no-repeat" style="background-image: url(<%= asset_path('main-bg.svg') %>)">
   <section class="text-center max-w-[720px] mx-auto mb-16 px-4">
-    <%= image_tag "maybe-logo-glow-4x.png", alt: "Maybe Finance", class: "w-[120px] mx-auto mb-8" %>
+    <%= image_tag "maybe-logo-glow-4x.png", alt: "Sure Finance", class: "w-[120px] mx-auto mb-8" %>
     <h1 class="text-[4.5rem] text-gray-700 mx-auto leading-[calc(1em+4px)] tracking-[-0.04em] font-medium mb-4">Building the future of personal finance</h1>
-    <p class="text-xl font-normal leading-[1.4] text-gray-500 tracking-normal">Maybe is the open-source personal finance OS built by a community of thousands who believe managing money should be powerful, transparent, and accessible to everyone.</p>
+    <p class="text-xl font-normal leading-[1.4] text-gray-500 tracking-normal">Sure is the open-source personal finance OS built by a community of thousands who believe managing money should be powerful, transparent, and accessible to everyone.</p>
   </section>
 
   <section class="container max-w-5xl mx-auto px-4 mb-24">
     <div class="grid md:grid-cols-2 gap-12 items-center">
       <div>
         <h2 class="text-[3rem] text-gray-700 leading-[calc(1em+4px)] tracking-[-0.04em] font-medium mb-4">Open-source at our core</h2>
-        <p class="text-lg text-gray-600 mb-6">With over <%= @stars ? number_with_delimiter(@stars) : "2,000" %> GitHub stars and contributions from developers worldwide, Maybe represents a new approach to personal finance software. Our code is transparent, auditable, and community-driven.</p>
+        <p class="text-lg text-gray-600 mb-6">With over <%= @stars ? number_with_delimiter(@stars) : "2,000" %> GitHub stars and contributions from developers worldwide, Sure represents a new approach to personal finance software. Our code is transparent, auditable, and community-driven.</p>
         <div class="flex items-center gap-6">
           <div class="text-center">
             <p class="text-[2.5rem] font-semibold text-gray-800 leading-none mb-1"><%= @stars ? number_with_delimiter(@stars) : "2,000+" %></p>
@@ -43,7 +43,7 @@
           </li>
           <li class="flex items-start gap-3">
             <%= lucide_icon("code-2", class: "w-5 h-5 text-purple-600 mt-0.5 flex-shrink-0") %>
-            <span>Self-hostable - run Maybe on your own infrastructure if you prefer</span>
+            <span>Self-hostable - run Sure on your own infrastructure if you prefer</span>
           </li>
         </ul>
       </div>
@@ -73,7 +73,7 @@
             <%= lucide_icon("brain", class: "w-6 h-6 text-purple-600") %>
           </div>
           <h3 class="text-xl font-semibold text-gray-800 mb-2">AI-powered insights</h3>
-          <p class="text-gray-600">Maybe AI analyzes your financial data to provide personalized recommendations and answers to your money questions.</p>
+          <p class="text-gray-600">Sure AI analyzes your financial data to provide personalized recommendations and answers to your money questions.</p>
         </div>
       </div>
     </div>
@@ -82,13 +82,13 @@
   <section class="container max-w-5xl mx-auto px-4 mb-24">
     <div class="bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-12 text-center text-white">
       <h2 class="text-[3rem] leading-[calc(1em+4px)] tracking-[-0.04em] font-medium mb-4">Join thousands taking control of their finances</h2>
-      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Whether you're budgeting for the first time or managing complex investments, Maybe provides the tools and insights you need to succeed.</p>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">Whether you're budgeting for the first time or managing complex investments, Sure provides the tools and insights you need to succeed.</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <%= link_to "https://app.maybefinance.com/registration/new", class: "inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-colors gap-2" do %>
+        <%= link_to "https://app.sure.am/registration/new", class: "inline-flex items-center justify-center px-6 py-3 text-base font-medium text-gray-900 bg-white rounded-lg hover:bg-gray-100 transition-colors gap-2" do %>
           Get started free
           <%= lucide_icon("arrow-right", class: "w-4 h-4") %>
         <% end %>
-        <%= link_to "https://github.com/maybe-finance/maybe", class: "inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-white/10 rounded-lg hover:bg-white/20 transition-colors gap-2 border border-white/20" do %>
+        <%= link_to "https://github.com/we-promise/website", class: "inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-white/10 rounded-lg hover:bg-white/20 transition-colors gap-2 border border-white/20" do %>
           View on GitHub
           <%= lucide_icon("github", class: "w-4 h-4") %>
         <% end %>

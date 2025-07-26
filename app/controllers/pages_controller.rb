@@ -1,13 +1,13 @@
 # PagesController handles various static and dynamic pages in the application.
 # It includes methods for the home page, terms of service, privacy policy, and sitemap.
-# The controller also fetches and caches the stargazers count from GitHub for the Maybe Finance repository.
+  # The controller also fetches and caches the stargazers count from GitHub for the Sure Finance repository.
 
 require "net/http"
 require "json"
 
 class PagesController < ApplicationController
   # GET /
-  # Renders the home page and displays the number of GitHub stars for the Maybe Finance repository.
+  # Renders the home page and displays the number of GitHub stars for the Sure Finance repository.
   # The star count is cached for 24 hours to reduce API calls.
   #
   # @return [Integer, nil] The number of GitHub stars or nil if fetching fails
@@ -55,14 +55,14 @@ class PagesController < ApplicationController
 
   private
 
-  # Fetches the current number of stars for the Maybe Finance GitHub repository.
+  # Fetches the current number of stars for the Sure Finance GitHub repository.
   # Uses the ungh.cc API to retrieve the star count.
   #
   # @return [Integer, nil] The number of stars or nil if there's an error during the API call
   # @example
   #   fetch_stars_count # => 1234
   def fetch_stars_count
-    url = URI("https://ungh.cc/repos/maybe-finance/maybe")
+    url = URI("https://ungh.cc/repos/we-promise/website")
     response = Net::HTTP.get(url)
     json = JSON.parse(response)
     json["repo"]["stars"]

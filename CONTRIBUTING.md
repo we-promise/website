@@ -1,10 +1,10 @@
-# Contributing to Maybe
+# Contributing to Sure
 
-It means so much that you're interested in contributing to Maybe! Seriously. Thank you. The entire community benefits from these contributions!
+It means so much that you're interested in contributing to Sure! Seriously. Thank you. The entire community benefits from these contributions!
 
 ## House Rules
 
-- Before contributing, please check if it already exists in [issues](https://github.com/maybe-finance/marketing/issues) or [PRs](https://github.com/maybe-finance/marketing/pulls)
+- Before contributing, please check if it already exists in [issues](https://github.com/we-promise/website/issues) or [PRs](https://github.com/we-promise/website/pulls)
 - Given the speed at which we're moving on the codebase, we don't assign issues or "give" issues to anyone.
 - When multiple PRs are submitted for the same issue, we take the one that most succinctly & efficiently solves a given problem and stays within the scope of work.
 - Priority is generally given to previous committers as they've proven familiarity with the codebase and product.

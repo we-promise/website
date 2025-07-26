@@ -48,19 +48,19 @@ module NavigationHelper
       },
       {
         text: "Join Community",
-        path: "https://link.maybe.co/discord"
+        path: "https://link.sure.am/discord"
       },
       {
         text: "Self-Host",
-        path: "https://github.com/maybe-finance/maybe"
+        path: "https://github.com/we-promise/website"
       },
       {
         text: "GitHub",
-        path: "https://github.com/maybe-finance/maybe"
+        path: "https://github.com/we-promise/website"
       },
       {
         text: "Contact".html_safe + " " + lucide_icon("arrow-up-right", class: "text-gray-400 group-hover/contact:text-gray-900 transition-all duration-150 inline w-4 h-4").html_safe,
-        path: "mailto:hello@maybe.co"
+        path: "mailto:hello@sure.am"
       }
     ]
   end
@@ -114,11 +114,11 @@ module NavigationHelper
       },
       {
         text: "Join Community",
-        path: "https://link.maybe.co/discord"
+        path: "https://link.sure.am/discord"
       },
       {
         text: "Self-Host",
-        path: "https://github.com/maybe-finance/maybe"
+        path: "https://github.com/we-promise/website"
       },
       {
         text: "Bank Support",
@@ -173,19 +173,19 @@ module NavigationHelper
     [
       {
         icon: image_tag("footer-x.svg", alt: "X", class: "w-6 h-6"),
-        path: "https://x.com/maybe"
+        path: "https://x.com/sure"
       },
       {
         icon: image_tag("footer-discord.svg", alt: "Discord", class: "w-6 h-6"),
-        path: "https://link.maybe.co/discord"
+        path: "https://link.sure.am/discord"
       },
       {
         icon: image_tag("footer-email.svg", alt: "Email", class: "w-6 h-6"),
-        path: "mailto:hello@maybe.co"
+        path: "mailto:hello@sure.am"
       },
       {
         icon: image_tag("footer-linkedin.svg", alt: "LinkedIn", class: "w-6 h-6"),
-        path: "https://www.linkedin.com/company/maybe"
+        path: "https://www.linkedin.com/company/sure"
       }
     ]
   end

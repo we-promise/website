@@ -24,9 +24,9 @@
         "url": @term.author ? author_url(@term.author) : nil,
         "jobTitle": @term.author&.position
       }.compact,
-              "publisher": {
-          "@type": "Organization",
-          "name": "Sure",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Sure",
         "logo": {
           "@type": "ImageObject",
           "url": image_url("maybe-logo-glow-4x.png") # Consistent with articles

@@ -1,6 +1,6 @@
 # PagesController handles various static and dynamic pages in the application.
 # It includes methods for the home page, terms of service, privacy policy, and sitemap.
-  # The controller also fetches and caches the stargazers count from GitHub for the Sure Finance repository.
+# The controller also fetches and caches the stargazers count from GitHub for the Sure Finance repository.
 
 require "net/http"
 require "json"

@@ -61,7 +61,12 @@ class Tool < ApplicationRecord
   end
 
   def self.random_sample(count, exclude:)
-    where.not(slug: exclude.slug).order(Arel.sql("RANDOM()")).limit(count)
+    # Hide tools that require real market data APIs
+    hidden_tools = %w[exchange-rate-calculator stock-portfolio-backtest bogleheads-growth-calculator]
+    where.not(slug: exclude.slug)
+         .where.not(slug: hidden_tools)
+         .order(Arel.sql("RANDOM()"))
+         .limit(count)
   end
 
 

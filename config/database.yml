@@ -85,6 +85,6 @@ test:
 #
 production:
   <<: *default
-  database: sure_website
-  username: sure_website
-  password: <%= ENV["SURE_WEBSITE_DATABASE_PASSWORD"] %>
+  database: maybe_marketing_production
+  username: maybe_marketing
+  password: <%= ENV["MAYBE_MARKETING_DATABASE_PASSWORD"] %>

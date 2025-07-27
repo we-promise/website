@@ -1,8 +1,8 @@
 <article class="bg-contain bg-top bg-no-repeat" style="background-image: url(<%= asset_path('main-bg.svg') %>)">
   <section class="text-center max-w-[480px] mx-auto mb-10">
-    <%= image_tag "maybe-logo-glow-4x.png", alt: "Maybe Finance", class: "w-[120px] mx-auto" %>
+    <%= image_tag "maybe-logo-glow-4x.png", alt: "Sure Finance", class: "w-[120px] mx-auto" %>
     <h1 class="text-[4.5rem] text-gray-700 mx-auto leading-[calc(1em+4px)] tracking-[-0.04em] font-medium mb-4">Clear and simple pricing</h1>
-    <p class="text-xl font-normal leading-[1.4] text-gray-500 tracking-normal">Whether you're starting your financial journey or looking to preserve your wealth, Maybe is priced to help you reach your goals.</p>
+          <p class="text-xl font-normal leading-[1.4] text-gray-500 tracking-normal">Whether you're starting your financial journey or looking to preserve your wealth, Sure is priced to help you reach your goals.</p>
   </section>
   <section class="">
     <div class="container max-w-5xl mx-auto px-4">
@@ -38,7 +38,7 @@
               <ul class="space-y-2 mb-8 text-gray-700 text-[1.125rem] leading-[1.4 text-[1rem]">
                 <li class="flex items-center gap-2">
                   <%= image_tag "pricing-maybe-ai.svg", alt: "Maybe Plus", class: "w-6 h-6 text-amber-600" %>
-                  <span>Unlimited access to Maybe AI</span>
+                  <span>Unlimited access to Sure AI</span>
                 </li>
                 <li class="flex items-center gap-2">
                   <%= image_tag "pricing-layers.svg", alt: "Maybe Plus", class: "w-6 h-6 text-amber-600" %>
@@ -59,9 +59,8 @@
               </ul>
             </div>
             <div>
-              <%= link_to "Start your 14 day free trial", "https://app.maybefinance.com/registration/new",
-              class: "text-[1.125rem] leading-[1.3] w-full block py-3 px-4 mb-4 border border-gray-300 rounded-2xl text-center text-white hover:bg-gray-50 transition-colors bg-no-repeat bg-cover",
-              style: "background-image: url(#{asset_path('maybe-plus-button-bg.png')});" %>
+              <%= link_to "Join Discord Server", "https://discord.gg/FTzQqpnwSh",
+                  class: "group relative inline-flex h-11 animate-rainbow cursor-pointer items-center justify-center rounded-lg border-0 bg-[length:200%] px-6 py-2 font-medium text-white transition-colors [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))] before:bg-[length:200%] before:[filter:blur(calc(0.8*1rem))] bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))]" %>
               <span  class="text-center text-sm mx-auto text-gray-500 flex justify-center gap-2">
                 <%= lucide_icon "credit-card", class: "w-5 h-5 text-gray-400" %>
                 <p>No credit card required</p>
@@ -77,7 +76,7 @@
     <div class="max-w-[800px] mx-auto">
       <div class="text-center mb-8">
         <h2 class="text-gray-700 font-medium leading-[1.1] text-5xl tracking-[-0.05] mb-2">FAQs</h2>
-        <p class="text-gray-500 mb-4 text-lg leading-[1.4] max-w-[420px] mx-auto">Have a question that is not answered? You can contact us at <span class="text-gray-800">hello@maybe.co</span></p>
+        <p class="text-gray-500 mb-4 text-lg leading-[1.4] max-w-[420px] mx-auto">Have a question that is not answered? You can contact us at <span class="text-gray-800">hello@sure.am</span></p>
       </div>
       <dl class="" data-controller="faq">
         <% faq_questions.each_with_index do |faq, index| %>

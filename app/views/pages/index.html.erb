@@ -1,20 +1,18 @@
 <article class="bg-contain bg-top bg-no-repeat pt-12" style="background-image: url(<%= asset_path('main-bg.svg') %>)">
   <section class="max-w-[1140px] mx-auto text-center pb-[80px] bg-contain bg-[top_300px_center] bg-no-repeat" style="background-image: url(<%= asset_path('home-header-bg.svg') %>)">
     <div class="flex flex-row gap-3 mb-4 items-center w-fit mx-auto">
-      <span  class="mx-auto text-xl text-gray-500">Meet Maybe</span>
-      <%= image_tag 'icon-maybe-color.svg', alt: "Maybe Logo", class: "inline w-8" %>
+      <span  class="mx-auto text-xl text-gray-500">Meet Sure</span>
+      <%= image_tag 'icon-maybe-color.svg', alt: "Sure Logo", class: "inline w-8" %>
     </div>
     <h1 class="text-[3.5rem] md:text-[4.5rem] text-gray-700 max-w-[650px] mx-auto leading-[calc(1em+4px)] tracking-[-0.04em] font-medium mb-4">The personal finance app for everyone</h1>
-    <p class="text-xl font-normal leading-[1.4] text-gray-400 mb-4 w-full max-w-[600px] mx-auto">Maybe is an all-in-one personal finance platform. Track, optimize, grow, and manage your money through every stage of life.</p>
+    <p class="text-xl font-normal leading-[1.4] text-gray-400 mb-4 w-full max-w-[600px] mx-auto">Sure is an all-in-one personal finance platform. Track, optimize, grow, and manage your money through every stage of life.</p>
     <div class="mb-6"><%= render "shared/cta_header" %></div>
     <div class="mb-9 inline-flex items-center backdrop-blur rounded-3xl gap-3">
-      <%= link_to "https://github.com/maybe-finance/maybe", target: "_blank", rel: "noopener noreferrer", class: "flex items-center gap-2 border shadow-xs backdrop-blur border-black/10 rounded-xl bg-white px-2 py-1.5 hover:bg-gray-50 transition-colors" do %>
+      <%= link_to "https://github.com/we-promise/sure", target: "_blank", rel: "noopener noreferrer", class: "flex items-center gap-2 border shadow-xs backdrop-blur border-black/10 rounded-xl bg-white px-2 py-1.5 hover:bg-gray-50 transition-colors" do %>
         <%= image_tag "badge-github.svg", alt: "github", class: "h-5 w-5 inline" %>
-        <span class="font-mono text-sm leading-5"><%= number_to_k(@stars) %></span>
       <% end %>
-      <%= link_to "https://link.maybe.co/discord", target: "_blank", rel: "noopener noreferrer", class: "flex items-center gap-2 border shadow-xs backdrop-blur border-black/10 rounded-xl bg-white px-2 py-1.5 hover:bg-gray-50 transition-colors" do %>
+      <%= link_to "https://discord.gg/FTzQqpnwSh", target: "_blank", rel: "noopener noreferrer", class: "flex items-center gap-2 border shadow-xs backdrop-blur border-black/10 rounded-xl bg-white px-2 py-1.5 hover:bg-gray-50 transition-colors" do %>
         <%= image_tag "badge-discord.svg", alt: "discord", class: "h-5 w-5 inline" %>
-        <span class="font-mono text-sm leading-5">5.4k</span>
       <% end %>
     </div>
     <%= image_tag "maybe-home-hero.png", alt: "Maybe Open Source", class: "max-w-[1140px] mx-auto w-full px-4 header-effects" %>
@@ -148,7 +146,7 @@
         <h2 class="font-medium">Secure by design</h2>
         <p class="text-gray-600 md:mb-6">We treat your financial data like we'd want ours to be treated, by using strong encryption and secure authentication.</p>
       </div>
-      <%= link_to "https://github.com/maybe-finance/maybe", class: "text-gray-800 font-medium flex items-center gap-2" do %>
+      <%= link_to "https://github.com/we-promise/sure", class: "text-gray-800 font-medium flex items-center gap-2" do %>
         Ask about security
         <span class="bg-gray-200 w-6 h-6 grid place-items-center rounded-full">
           <%= lucide_icon 'arrow-up-right', class: "w-4 h-4" %>
@@ -162,9 +160,9 @@
       </div>
       <div>
         <h2 class="font-medium">Open source</h2>
-        <p class="text-gray-600 md:mb-6">We believe financial tools should be transparent. Maybe is open-source - you can review the code, contribute, or self-host for full control.</p>
+        <p class="text-gray-600 md:mb-6">We believe financial tools should be transparent. Sure is open-source - you can review the code, contribute, or self-host for full control.</p>
       </div>
-      <%= link_to "https://github.com/maybe-finance/maybe", class: "text-gray-800 font-medium flex items-center gap-2" do %>
+      <%= link_to "https://github.com/we-promise/sure", class: "text-gray-800 font-medium flex items-center gap-2" do %>
         Start contributing
         <span class="bg-gray-200 w-6 h-6 grid place-items-center rounded-full">
           <%= lucide_icon 'arrow-up-right', class: "w-4 h-4" %>
@@ -180,7 +178,7 @@
         <h2 class="font-medium">Built in public</h2>
         <p class="text-gray-600 md:mb-6">No hidden agendas, no gatekeeping-just a transparent, community-driven approach to creating the best financial tool possible.</p>
       </div>
-      <%= link_to "https://github.com/maybe-finance/maybe", class: "text-gray-800 font-medium flex items-center gap-2" do %>
+      <%= link_to "https://github.com/we-promise/sure", class: "text-gray-800 font-medium flex items-center gap-2" do %>
         Join community
         <span class="bg-gray-200 w-6 h-6 grid place-items-center rounded-full">
           <%= lucide_icon 'arrow-up-right', class: "w-4 h-4" %>

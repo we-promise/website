@@ -20,13 +20,13 @@
       "description": article_description,
       "author": {
         "@type": @term.author ? "Person" : "Organization",
-        "name": @term.author&.name || "Maybe",
+        "name": @term.author&.name || "Sure",
         "url": @term.author ? author_url(@term.author) : nil,
         "jobTitle": @term.author&.position
       }.compact,
       "publisher": {
         "@type": "Organization",
-        "name": "Maybe",
+        "name": "Sure",
         "logo": {
           "@type": "ImageObject",
           "url": image_url("maybe-logo-glow-4x.png") # Consistent with articles
@@ -50,7 +50,7 @@
         "embedUrl": "https://www.youtube.com/embed/#{@term.video_id}",
         "publisher": { # Added publisher to video
           "@type": "Organization",
-          "name": "Maybe",
+          "name": "Sure",
           "logo": {
             "@type": "ImageObject",
             "url": image_url("maybe-logo-glow-4x.png")

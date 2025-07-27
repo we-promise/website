@@ -7,4 +7,4 @@ Disallow: /password_resets
 Disallow: /logout
 Disallow: /signups
 
-Sitemap: https://maybefinance.com/sitemap.xml
+Sitemap: https://sure.am/sitemap.xml

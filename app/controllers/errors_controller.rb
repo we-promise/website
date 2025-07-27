@@ -31,7 +31,7 @@ class ErrorsController < ApplicationController
   def not_found
     request.format = :html if request.format.symbol == :text || request.format.symbol == :all
     respond_to do |format|
-      format.html { render status: :not_found, formats: [:html] }
+      format.html { render status: :not_found, formats: [ :html ] }
       format.json { render json: { error: "Not found" }, status: :not_found }
       format.any { head :not_found }
     end
@@ -40,7 +40,7 @@ class ErrorsController < ApplicationController
   def internal_server_error
     request.format = :html if request.format.symbol == :text || request.format.symbol == :all
     respond_to do |format|
-      format.html { render status: :internal_server_error, formats: [:html] }
+      format.html { render status: :internal_server_error, formats: [ :html ] }
       format.json { render json: { error: "Internal server error" }, status: :internal_server_error }
       format.any { head :internal_server_error }
     end
@@ -49,7 +49,7 @@ class ErrorsController < ApplicationController
   def unprocessable_entity
     request.format = :html if request.format.symbol == :text || request.format.symbol == :all
     respond_to do |format|
-      format.html { render status: :unprocessable_entity, formats: [:html] }
+      format.html { render status: :unprocessable_entity, formats: [ :html ] }
       format.json { render json: { error: "Unprocessable entity" }, status: :unprocessable_entity }
       format.any { head :unprocessable_entity }
     end

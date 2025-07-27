@@ -1,23 +1,23 @@
 <article class="bg-contain bg-top bg-no-repeat pt-12" style="background-image: url(<%= asset_path('main-bg.svg') %>)">
   <section class="max-w-[1140px] mx-auto text-center pb-[80px] bg-contain bg-[top_300px_center] bg-no-repeat" style="background-image: url(<%= asset_path('home-header-bg.svg') %>)">
     <div class="flex flex-row gap-3 mb-4 items-center w-fit mx-auto">
-      <span  class="mx-auto text-xl text-gray-500">Meet Maybe</span>
-      <%= image_tag 'icon-maybe-color.svg', alt: "Maybe Logo", class: "inline w-8" %>
+      <span  class="mx-auto text-xl text-gray-500">Meet Sure</span>
+      <%= image_tag 'icon-maybe-color.svg', alt: "Sure Logo", class: "inline w-8" %>
     </div>
     <h1 class="text-[3.5rem] md:text-[4.5rem] text-gray-700 max-w-[650px] mx-auto leading-[calc(1em+4px)] tracking-[-0.04em] font-medium mb-4">The personal finance app for everyone</h1>
-    <p class="text-xl font-normal leading-[1.4] text-gray-400 mb-4 w-full max-w-[600px] mx-auto">Maybe is an all-in-one personal finance platform. Track, optimize, grow, and manage your money through every stage of life.</p>
+    <p class="text-xl font-normal leading-[1.4] text-gray-400 mb-4 w-full max-w-[600px] mx-auto">Sure is an all-in-one personal finance platform. Track, optimize, grow, and manage your money through every stage of life.</p>
     <div class="mb-6"><%= render "shared/cta_header" %></div>
     <div class="mb-9 inline-flex items-center backdrop-blur rounded-3xl gap-3">
-      <%= link_to "https://github.com/maybe-finance/maybe", target: "_blank", rel: "noopener noreferrer", class: "flex items-center gap-2 border shadow-xs backdrop-blur border-black/10 rounded-xl bg-white px-2 py-1.5 hover:bg-gray-50 transition-colors" do %>
+      <%= link_to "https://github.com/we-promise/website", target: "_blank", rel: "noopener noreferrer", class: "flex items-center gap-2 border shadow-xs backdrop-blur border-black/10 rounded-xl bg-white px-2 py-1.5 hover:bg-gray-50 transition-colors" do %>
         <%= image_tag "badge-github.svg", alt: "github", class: "h-5 w-5 inline" %>
         <span class="font-mono text-sm leading-5"><%= number_to_k(@stars) %></span>
       <% end %>
-      <%= link_to "https://link.maybe.co/discord", target: "_blank", rel: "noopener noreferrer", class: "flex items-center gap-2 border shadow-xs backdrop-blur border-black/10 rounded-xl bg-white px-2 py-1.5 hover:bg-gray-50 transition-colors" do %>
+      <%= link_to "https://link.sure.am/discord", target: "_blank", rel: "noopener noreferrer", class: "flex items-center gap-2 border shadow-xs backdrop-blur border-black/10 rounded-xl bg-white px-2 py-1.5 hover:bg-gray-50 transition-colors" do %>
         <%= image_tag "badge-discord.svg", alt: "discord", class: "h-5 w-5 inline" %>
         <span class="font-mono text-sm leading-5">5.4k</span>
       <% end %>
     </div>
-    <%= image_tag "maybe-home-hero.png", alt: "Maybe Open Source", class: "max-w-[1140px] mx-auto w-full px-4 header-effects" %>
+    <%= image_tag "maybe-home-hero.png", alt: "Sure Open Source", class: "max-w-[1140px] mx-auto w-full px-4 header-effects" %>
   </section>
 </article>
 <article class="bg-gradient-to-b from-white/0 via-white via-[8%] to-white rounded-b-xl mb-20">
@@ -25,7 +25,7 @@
     <div class="mx-auto px-4">
       <h2 class="text-center font-medium text-[3.5rem] leading-[3.75rem] tracking-[-0.05em] -mb-[0.25em]">Add anything,<br/>
         <span class="text-gray-400">yes anything</span></h2>
-      <%= image_tag "home-add-anything.png", alt: "Maybe Add Anything", class: "w-full max-w-[580px] mx-auto mb-[56px] header-effects" %>
+      <%= image_tag "home-add-anything.png", alt: "Sure Add Anything", class: "w-full max-w-[580px] mx-auto mb-[56px] header-effects" %>
       <h3 class="mb-[72px] max-w-[710px] text-[2rem] leading-[calc(2.5rem+4px)] tracking-[-0.03em] text-gray-400 text-center mx-auto">
         Track your <span class="text-gray-900">bank accounts </span>
         <%= image_tag("home-add-anything-bank-accounts.svg", alt: "bank logos", class: "inline") %>
@@ -40,21 +40,21 @@
         all in one place. </h3>
       <div class="max-w-[1140px] mx-auto grid grid-cols-1 md:grid-cols-3 text-base leading-[1.4] gap-6 mb-[120px]">
         <div class="flex flex-col gap-6">
-          <%= image_tag "home-add-anything-link-assets.png", alt: "Maybe: Link Everything", class: "w-full" %>
+          <%= image_tag "home-add-anything-link-assets.png", alt: "Sure: Link Everything", class: "w-full" %>
           <div class="flex flex-col gap-1">
             <h4 class="font-medium text-gray-900">Link everything automagically</h4>
             <p class="text-gray-400">Over 10,000+ institutions to choose from when linking all your accounts.</p>
           </div>
         </div>
         <div class="flex flex-col gap-6">
-          <%= image_tag "home-add-anything-charted.png", alt: "Maybe: All Your Assets & Debts Charted", class: "w-full" %>
+          <%= image_tag "home-add-anything-charted.png", alt: "Sure: All Your Assets & Debts Charted", class: "w-full" %>
           <div class="flex flex-col gap-1">
             <h4 class="font-medium text-gray-900">All your assets & debts charted</h4>
             <p class="text-gray-400">Visualize your accounts with charts, making it easy to understand at a glance.</p>
           </div>
         </div>
         <div class="flex flex-col gap-6">
-          <%= image_tag "home-add-anything-manual-too.png", alt: "Maybe: Manual Import", class: "w-full" %>
+          <%= image_tag "home-add-anything-manual-too.png", alt: "Sure: Manual Import", class: "w-full" %>
           <div class="flex flex-col gap-1">
             <h4 class="font-medium text-gray-900">Prefer manual? No problem</h4>
             <p class="text-gray-400">Add any account manually with custom built flows and import accounts via CSV.</p>
@@ -66,30 +66,30 @@
   <section class="max-w-[1140px] mx-auto px-4">
     <h2 class="text-[3.5rem] text-center font-medium leading-[3.75rem] tracking-[-0.05em] -mb-[0.25em]">Transactions <br/>
       <span class="text-gray-400">handled your way</span></h2>
-    <%= image_tag "home-transactions.png", alt: "Maybe Transactions", class: "w-full max-w-[915px] mx-auto mb-[56px] header-effects" %>
+    <%= image_tag "home-transactions.png", alt: "Sure Transactions", class: "w-full max-w-[915px] mx-auto mb-[56px] header-effects" %>
     <div class="flex flex-col text-center max-w-[762px] mx-auto mb-[4.5rem] text-[2rem] tracking-[-0.03em] leading-[28px] text-gray-400">
-      <h3 class="mb-8 max-w-[672px] mx-auto">Create a new <span class="text-gray-900">income</span> <%= image_tag("filled-add.svg", alt: "Maybe Logo", class: "inline w-8 md:w-auto") %> <span class="text-gray-900">expense</span> <%= image_tag("filled-subtract.svg", alt: "Maybe Logo", class: "inline w-8 md:w-auto") %> <span class="text-gray-900">or transfer</span> <%= image_tag("filled-flow.svg", alt: "Maybe Logo", class: "inline w-8 md:w-auto") %> transaction</h3>
-      <h3 class="mb-8 max-w-[560px] mx-auto"><span class="text-gray-900">Edit</span> it <%= image_tag("filled-pencil.svg", alt: "Maybe Logo", class: "inline w-8 md:w-auto") %> add custom <span class="text-gray-900">categories</span> <%= image_tag("filled-customize.svg", alt: "Maybe Logo", class: "inline w-8 md:w-auto") %> <span class="text-gray-900">merchants</span> <%= image_tag("filled-shop.svg", alt: "Maybe Logo", class: "inline w-8 md:w-auto") %> and <span class="text-gray-900">tags</span> <%= image_tag("filled-tags.svg", alt: "Maybe Logo", class: "inline w-8 md:w-auto") %></h3>
-      <h3 class="max-w-[560px] mx-auto">Create <span class="text-gray-900">filters</span> <%= image_tag("filled-filter.svg", alt: "Maybe Logo", class: "inline w-8 md:w-auto") %> <span class="text-gray-900">Import</span> via CSV <%= image_tag("filled-import.svg", alt: "Maybe Logo", class: "inline w-8 md:w-auto") %></h3>
-      <h3 class="><span class="text-gray-900">Link</span> transactions <%= image_tag("filled-link.svg", alt: "Maybe Logo", class: "inline w-8 md:w-auto") %> Set up <span class="text-gray-900">rules</span> <%= image_tag("filled-board.svg", alt: "Maybe Logo", class: "inline w-8 md:w-auto") %> and more</h3>
+      <h3 class="mb-8 max-w-[672px] mx-auto">Create a new <span class="text-gray-900">income</span> <%= image_tag("filled-add.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %> <span class="text-gray-900">expense</span> <%= image_tag("filled-subtract.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %> <span class="text-gray-900">or transfer</span> <%= image_tag("filled-flow.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %> transaction</h3>
+      <h3 class="mb-8 max-w-[560px] mx-auto"><span class="text-gray-900">Edit</span> it <%= image_tag("filled-pencil.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %> add custom <span class="text-gray-900">categories</span> <%= image_tag("filled-customize.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %> <span class="text-gray-900">merchants</span> <%= image_tag("filled-shop.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %> and <span class="text-gray-900">tags</span> <%= image_tag("filled-tags.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %></h3>
+      <h3 class="max-w-[560px] mx-auto">Create <span class="text-gray-900">filters</span> <%= image_tag("filled-filter.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %> <span class="text-gray-900">Import</span> via CSV <%= image_tag("filled-import.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %></h3>
+      <h3 class="><span class="text-gray-900">Link</span> transactions <%= image_tag("filled-link.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %> Set up <span class="text-gray-900">rules</span> <%= image_tag("filled-board.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %> and more</h3>
     </div>
     <div class="max-w-[1140px] mx-auto grid grid-cols-1 md:grid-cols-3 text-base leading-[1.4] gap-6 mb-[120px]">
       <div class="flex flex-col gap-6">
-        <%= image_tag "home-transactions-stay-on-top.png", alt: "Maybe: Stay on top of every transaction", class: "w-full" %>
+        <%= image_tag "home-transactions-stay-on-top.png", alt: "Sure: Stay on top of every transaction", class: "w-full" %>
         <div class="flex flex-col gap-1">
           <h4 class="font-medium text-gray-900">Stay on top of every transaction</h4>
           <p class="text-gray-400">Easily track and organize your spending &mdash; add details, link transfers, and keep in sync.</p>
         </div>
       </div>
       <div class="flex flex-col gap-6">
-        <%= image_tag "home-transactions-find-exact.png", alt: "Maybe: Find exactly what you need, instantly", class: "w-full" %>
+        <%= image_tag "home-transactions-find-exact.png", alt: "Sure: Find exactly what you need, instantly", class: "w-full" %>
         <div class="flex flex-col gap-1">
           <h4 class="font-medium text-gray-900">Find exactly what you need, instantly</h4>
           <p class="text-gray-400">Filter transactions by date, account, category, merchant and more to get precise results.</p>
         </div>
       </div>
       <div class="flex flex-col gap-6">
-        <%= image_tag "home-transactions-automate.png", alt: "Maybe: Automate your transactions, your way", class: "w-full" %>
+        <%= image_tag "home-transactions-automate.png", alt: "Sure: Automate your transactions, your way", class: "w-full" %>
         <div class="flex flex-col gap-1">
           <h4 class="font-medium text-gray-900">Automate your transactions, your way</h4>
           <p class="text-gray-400">Create rules to categorize transactions—saving time and organizing finances.</p>
@@ -101,7 +101,7 @@
     <div class="mx-auto px-4">
       <h2 class="text-center font-medium text-[3.5rem] leading-[3.75rem] tracking-[-0.05em] -mb-[0.25em]">Budgeting,<br/>
         <span class="text-gray-400">made simple</span></h2>
-      <%= image_tag "home-budgeting-header.png", alt: "Maybe Budgeting", class: "max-w-[572px] w-full mx-auto mb-[56px] header-effects" %>
+      <%= image_tag "home-budgeting-header.png", alt: "Sure Budgeting", class: "max-w-[572px] w-full mx-auto mb-[56px] header-effects" %>
       <h3 class="mb-[72px] max-w-[550px] text-[2rem] leading-[calc(2.5rem+4px)] tracking-[-0.03em] text-gray-400 text-center mx-auto">
         Customize <span class="text-gray-900">category budgets</span>
         <%= image_tag("home-budgeting-customize.svg", alt: "bank logos", class: "inline") %>
@@ -111,21 +111,21 @@
         <%= image_tag("home-budgeting-categories.svg", alt: "credit card logos", class: "inline md:w-auto") %></h3>
       <div class="max-w-[1140px] mx-auto grid grid-cols-1 md:grid-cols-3 text-base leading-[1.4] gap-6 pb-20">
         <div class="flex flex-col gap-6">
-          <%= image_tag "home-budgeting-setup.png", alt: "Maybe: Setup and customize your budget", class: "w-full" %>
+          <%= image_tag "home-budgeting-setup.png", alt: "Sure: Setup and customize your budget", class: "w-full" %>
           <div class="flex flex-col gap-1">
             <h4 class="font-medium text-gray-900">Setup and customize your budget</h4>
             <p class="text-gray-400">Monitor category balances so you always know how much is left to spend.</p>
           </div>
         </div>
         <div class="flex flex-col gap-6">
-          <%= image_tag "home-budgeting-track-spending.png", alt: "Maybe: Track spending and stay in control", class: "w-full" %>
+          <%= image_tag "home-budgeting-track-spending.png", alt: "Sure: Track spending and stay in control", class: "w-full" %>
           <div class="flex flex-col gap-1">
             <h4 class="font-medium text-gray-900">Track spending and stay in control</h4>
             <p class="text-gray-400">See where your money goes &mdash; monitor overages, compare spending trends, and adjust as needed.</p>
           </div>
         </div>
         <div class="flex flex-col gap-6">
-          <%= image_tag "home-budgeting-optimize.png", alt: "Maybe: Optimize your budget", class: "w-full" %>
+          <%= image_tag "home-budgeting-optimize.png", alt: "Sure: Optimize your budget", class: "w-full" %>
           <div class="flex flex-col gap-1">
             <h4 class="font-medium text-gray-900">Optimize your budget</h4>
             <p class="text-gray-400">Setup smart allocations and make smarter financial decisions.</p>
@@ -140,7 +140,7 @@
     <span class="text-gray-400">Radical Transparency</span></h2>
   <div class="max-w-[1140px] mx-auto grid grid-cols-1 md:grid-cols-3 text-base leading-[1.4] gap-10 md:gap-6 mb-[120px]">
     <div class="flex flex-col gap-4">
-      <%= image_tag "home-transparency-secure.png", alt: "Maybe: Secure by design", class: "w-full" %>
+      <%= image_tag "home-transparency-secure.png", alt: "Sure: Secure by design", class: "w-full" %>
       <div class="bg-white border-gray-200 border-2 md:mb-4 w-10 h-10 grid place-items-center rounded-full">
         <%= lucide_icon 'lock', class: "w-5 h-5" %>
       </div>
@@ -148,7 +148,7 @@
         <h2 class="font-medium">Secure by design</h2>
         <p class="text-gray-600 md:mb-6">We treat your financial data like we'd want ours to be treated, by using strong encryption and secure authentication.</p>
       </div>
-      <%= link_to "https://github.com/maybe-finance/maybe", class: "text-gray-800 font-medium flex items-center gap-2" do %>
+      <%= link_to "https://github.com/we-promise/website", class: "text-gray-800 font-medium flex items-center gap-2" do %>
         Ask about security
         <span class="bg-gray-200 w-6 h-6 grid place-items-center rounded-full">
           <%= lucide_icon 'arrow-up-right', class: "w-4 h-4" %>
@@ -156,15 +156,15 @@
       <% end %>
     </div>
     <div class="flex flex-col gap-4">
-      <%= image_tag "home-transparency-open-source.png", alt: "Maybe: Open source", class: "w-full" %>
+      <%= image_tag "home-transparency-open-source.png", alt: "Sure: Open source", class: "w-full" %>
       <div class="bg-white border-gray-200 border-2 md:mb-4 w-10 h-10 grid place-items-center rounded-full">
         <%= lucide_icon 'code-xml', class: "w-5 h-5" %>
       </div>
       <div>
         <h2 class="font-medium">Open source</h2>
-        <p class="text-gray-600 md:mb-6">We believe financial tools should be transparent. Maybe is open-source - you can review the code, contribute, or self-host for full control.</p>
+        <p class="text-gray-600 md:mb-6">We believe financial tools should be transparent. Sure is open-source - you can review the code, contribute, or self-host for full control.</p>
       </div>
-      <%= link_to "https://github.com/maybe-finance/maybe", class: "text-gray-800 font-medium flex items-center gap-2" do %>
+      <%= link_to "https://github.com/we-promise/website", class: "text-gray-800 font-medium flex items-center gap-2" do %>
         Start contributing
         <span class="bg-gray-200 w-6 h-6 grid place-items-center rounded-full">
           <%= lucide_icon 'arrow-up-right', class: "w-4 h-4" %>
@@ -172,7 +172,7 @@
       <% end %>
     </div>
     <div class="flex flex-col gap-4">
-      <%= image_tag "home-transparency-built-in-public.png", alt: "Maybe: Built in public", class: "w-full" %>
+      <%= image_tag "home-transparency-built-in-public.png", alt: "Sure: Built in public", class: "w-full" %>
       <div class="bg-white border-gray-200 border-2 md:mb-4 w-10 h-10 grid place-items-center rounded-full">
         <%= lucide_icon 'heart-handshake', class: "w-5 h-5" %>
       </div>
@@ -180,7 +180,7 @@
         <h2 class="font-medium">Built in public</h2>
         <p class="text-gray-600 md:mb-6">No hidden agendas, no gatekeeping-just a transparent, community-driven approach to creating the best financial tool possible.</p>
       </div>
-      <%= link_to "https://github.com/maybe-finance/maybe", class: "text-gray-800 font-medium flex items-center gap-2" do %>
+      <%= link_to "https://github.com/we-promise/website", class: "text-gray-800 font-medium flex items-center gap-2" do %>
         Join community
         <span class="bg-gray-200 w-6 h-6 grid place-items-center rounded-full">
           <%= lucide_icon 'arrow-up-right', class: "w-4 h-4" %>

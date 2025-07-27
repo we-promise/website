@@ -9,12 +9,12 @@ module FeaturesHelper
       {
         icon: "chart-column-increasing",
         title: "Context-aware",
-        description: "Maybe AI understands behaviour & patterns to give personalized, accurate answers."
+        description: "Sure AI understands behaviour & patterns to give personalized, accurate answers."
       },
       {
         icon: "zap",
         title: "Answered in milliseconds",
-        description: "Maybe AI is blazing fast by default, so you can answer hard money questions at speed."
+        description: "Sure AI is blazing fast by default, so you can answer hard money questions at speed."
       },
       {
         icon: "eye-off",
@@ -24,7 +24,7 @@ module FeaturesHelper
       {
         icon: "link-2",
         title: "Works across all account types",
-        description: "Maybe AI can access insights from everything you link."
+        description: "Sure AI can access insights from everything you link."
       },
       {
         icon: "wifi",

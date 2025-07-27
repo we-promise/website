@@ -1,19 +1,24 @@
 <svg width="433" height="110" viewBox="0 0 433 110" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_f_468_33426)">
-<rect width="345" height="21" rx="10.5" transform="matrix(-1 0 0 1 389 44.5)" fill="url(#paint0_linear_468_33426)"/>
-<rect width="345" height="21" rx="10.5" transform="matrix(-1 0 0 1 389 44.5)" fill="white" fill-opacity="0.3"/>
+<g clip-path="url(#clip0_14_16834)">
+<g filter="url(#filter0_f_14_16834)">
+<path d="M54.5 44.5H378.5C384.299 44.5 389 49.201 389 55C389 60.799 384.299 65.5 378.5 65.5H54.5C48.701 65.5 44 60.799 44 55C44 49.201 48.701 44.5 54.5 44.5Z" fill="url(#paint0_linear_14_16834)"/>
+<path d="M54.5 44.5H378.5C384.299 44.5 389 49.201 389 55C389 60.799 384.299 65.5 378.5 65.5H54.5C48.701 65.5 44 60.799 44 55C44 49.201 48.701 44.5 54.5 44.5Z" fill="white" fill-opacity="0.3"/>
+</g>
 </g>
 <defs>
-<filter id="filter0_f_468_33426" x="0" y="0.5" width="433" height="109" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_f_14_16834" x="0" y="0.5" width="433" height="109" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feGaussianBlur stdDeviation="22" result="effect1_foregroundBlur_468_33426"/>
+<feGaussianBlur stdDeviation="22" result="effect1_foregroundBlur_14_16834"/>
 </filter>
-<linearGradient id="paint0_linear_468_33426" x1="18.9908" y1="18.6667" x2="316.514" y2="18.6667" gradientUnits="userSpaceOnUse">
-<stop stop-color="#22CCEE"/>
-<stop offset="0.33" stop-color="#1570EF"/>
-<stop offset="0.65" stop-color="#6927DA"/>
-<stop offset="1" stop-color="#F23E94"/>
+<linearGradient id="paint0_linear_14_16834" x1="389" y1="55" x2="241.834" y2="-119.126" gradientUnits="userSpaceOnUse">
+<stop stop-color="#FFC552"/>
+<stop offset="0.274" stop-color="#EEAC43"/>
+<stop offset="0.63" stop-color="#DB840B"/>
+<stop offset="1" stop-color="#F15B29"/>
 </linearGradient>
+<clipPath id="clip0_14_16834">
+<rect width="433" height="110" fill="white"/>
+</clipPath>
 </defs>
 </svg>

@@ -31,36 +31,16 @@ module NavigationHelper
   def header_nav_resources_links
     [
       {
-        text: "Personal Finance Articles",
-        path: articles_path
-      },
-      {
-        text: "Financial Terms",
-        path: terms_path
-      },
-      {
-        text: "Financial FAQs",
-        path: faqs_path
-      },
-      {
-        text: "About Us",
-        path: about_path
-      },
-      {
         text: "Join Community",
-        path: "https://link.maybe.co/discord"
+        path: "https://discord.gg/FTzQqpnwSh"
       },
       {
         text: "Self-Host",
-        path: "https://github.com/maybe-finance/maybe"
+        path: "https://github.com/we-promise/sure"
       },
       {
         text: "GitHub",
-        path: "https://github.com/maybe-finance/maybe"
-      },
-      {
-        text: "Contact".html_safe + " " + lucide_icon("arrow-up-right", class: "text-gray-400 group-hover/contact:text-gray-900 transition-all duration-150 inline w-4 h-4").html_safe,
-        path: "mailto:hello@maybe.co"
+        path: "https://github.com/we-promise/sure"
       }
     ]
   end
@@ -82,10 +62,6 @@ module NavigationHelper
       {
         text: "Assistant",
         path: assistant_features_path
-      },
-      {
-        text: "Pricing",
-        path: pricing_path
       }
     ]
   end
@@ -93,40 +69,12 @@ module NavigationHelper
   def footer_resources
     [
       {
-        text: "Personal Finance Articles",
-        path: articles_path
-      },
-      {
-        text: "Personal Finance Authors",
-        path: authors_path
-      },
-      {
-        text: "Personal Finance Tools",
-        path: tools_path
-      },
-      {
-        text: "Financial Terms",
-        path: terms_path
-      },
-      {
-        text: "Financial FAQs",
-        path: faqs_path
-      },
-      {
         text: "Join Community",
-        path: "https://link.maybe.co/discord"
+        path: "https://discord.gg/FTzQqpnwSh"
       },
       {
-        text: "Self-Host",
-        path: "https://github.com/maybe-finance/maybe"
-      },
-      {
-        text: "Bank Support",
-        path: bank_search_path
-      },
-      {
-        text: "About Us",
-        path: about_path
+        text: "Contribute",
+        path: "https://github.com/we-promise/sure"
       }
     ]
   end
@@ -172,20 +120,12 @@ module NavigationHelper
   def footer_socials
     [
       {
-        icon: image_tag("footer-x.svg", alt: "X", class: "w-6 h-6"),
-        path: "https://x.com/maybe"
-      },
-      {
         icon: image_tag("footer-discord.svg", alt: "Discord", class: "w-6 h-6"),
-        path: "https://link.maybe.co/discord"
+        path: "https://discord.gg/FTzQqpnwSh"
       },
       {
-        icon: image_tag("footer-email.svg", alt: "Email", class: "w-6 h-6"),
-        path: "mailto:hello@maybe.co"
-      },
-      {
-        icon: image_tag("footer-linkedin.svg", alt: "LinkedIn", class: "w-6 h-6"),
-        path: "https://www.linkedin.com/company/maybe"
+        icon: image_tag("badge-github.svg", alt: "GitHub", class: "w-6 h-6"),
+        path: "https://github.com/we-promise/sure"
       }
     ]
   end

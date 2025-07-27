@@ -1,20 +1,10 @@
 <div class="absolute left-[-12rem] mt-6 p-2 w-[30rem] bg-white rounded-xl shadow-lg opacity-0 invisible transform -translate-y-2 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:visible">
   <div class="grid grid-cols-[1fr_150px] gap-6">
     <%# Expanded Section %>
-    <div class="grid grid-cols-1 gap-2">
-      <%= link_to tools_path, class: "flex h-[140px] group flex-col justify-center w-full rounded-[10px] gap-4 bg-gray-50 hover:bg-gray-100 transition-all duration-150" do %>
+    <div class="grid grid-cols-1">
+      <%= link_to tools_path, class: "flex h-full group flex-col justify-center w-full rounded-lg gap-4 bg-gray-50 hover:bg-gray-100 transition-all duration-150 p-2" do %>
         <%= image_tag "nav-resources-tools.svg", class: "w-full mx-auto overflow-hidden object-cover" %>
         <span class="text-sm font-medium leading-5 tracking-normal text-center text-gray-800 group-hover:text-gray-900">Try our tools <%= lucide_icon("chevron-right", class: "inline w-4 h-4") %></span>
-      <% end %>
-      <%= link_to terms_path, class: "flex h-[140px] group flex-col justify-center w-full rounded-[10px] gap-4 bg-gray-50 hover:bg-gray-100 transition-all duration-150" do %>
-        <%= image_tag "nav-resources-terms.svg", class: "w-full mx-auto overflow-hidden object-cover" %>
-        <span class="text-sm font-medium leading-5 mb-4 tracking-normal text-center text-gray-800 group-hover:text-gray-900">Learn new terms <%= lucide_icon("chevron-right", class: "inline w-4 h-4") %></span>
-      <% end %>
-      <%= link_to faqs_path, class: "flex h-[140px] group flex-col justify-center w-full rounded-[10px] gap-4 bg-gray-50 hover:bg-gray-100 transition-all duration-150" do %>
-        <div class="w-full mx-auto flex items-center justify-center h-16">
-          <%= lucide_icon "help-circle", class: "w-8 h-8 text-gray-600" %>
-        </div>
-        <span class="text-sm font-medium leading-5 mb-4 tracking-normal text-center text-gray-800 group-hover:text-gray-900">Browse FAQs <%= lucide_icon("chevron-right", class: "inline w-4 h-4") %></span>
       <% end %>
     </div>
     <%# Links Section %>

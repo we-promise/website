@@ -29,8 +29,8 @@ gem "hotwire_combobox", "~> 0.4.0"
 # Other
 gem "faraday"
 gem "jbuilder"
-gem "plaid", "~> 42.0"
-gem "tzinfo-data", platforms: %i[ windows jruby ]
+gem "plaid", "~> 41.0"
+gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
 gem "redcarpet"
 gem "avo", ">= 3.2"
 gem "revise_auth"
@@ -42,11 +42,11 @@ gem "sentry-ruby"
 gem "sentry-rails"
 gem "logtail-rails"
 gem "skylight"
-gem "ffi", ">= 1.17", force_ruby_platform: true
+gem "ffi", ">= 1.17"
 gem "ruby-openai"
 
 group :development, :test do
-  gem "debug", platforms: %i[ mri windows ]
+  gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]
   gem "brakeman", require: false
   gem "rubocop-rails-omakase", require: false
   gem "dotenv-rails"

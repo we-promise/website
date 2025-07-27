@@ -1,6 +1,6 @@
-# Maybe Marketing Site
+# Sure Marketing Site
 
-This is the marketing site for [Maybe](https://maybefinance.com), an OS for your personal finances.
+This is the marketing site for [Sure](https://sure.am), an OS for your personal finances.
 
 ## Local Development Setup
 
@@ -31,4 +31,4 @@ We fully support AI-assisted development. As a team, we typically use [Cursor](h
 
 ## Copyright & license
 
-Maybe is distributed under an [AGPLv3 license](https://github.com/maybe-finance/maybe/blob/main/LICENSE). "Maybe" and the stacked "M" logo are trademarks of Maybe Finance, Inc.
+Sure is distributed under an [AGPLv3 license](https://github.com/we-promise/sure/blob/main/LICENSE). "Sure" and the stacked "S" logo are trademarks of Sure Finance, Inc.

@@ -119,7 +119,7 @@ Avo.configure do |config|
     },
     chart_colors: [ "#0B8AE2", "#34C683", "#2AB1EE", "#34C6A8" ],
     logo: "/avo-assets/logo.svg",
-    logomark: "/avo-assets/logomark.svg",
+    logomark: "/avo-assets/logomark.png",
     placeholder: "/avo-assets/placeholder.svg",
     favicon: "/avo-assets/favicon.ico"
   }

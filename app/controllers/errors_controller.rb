@@ -4,21 +4,21 @@ class ErrorsController < ApplicationController
   def show
     exception = request.env["action_dispatch.exception"]
     status_code = ActionDispatch::ExceptionWrapper.new(request.env, exception).status_code
-    
+
     # Force HTML format for error pages unless explicitly requesting another format
     request.format = :html if request.format.symbol == :text || request.format.symbol == :all
-    
+
     respond_to do |format|
       format.html do
         case status_code
         when 404
-          render "not_found", status: :not_found, formats: [:html]
+          render "not_found", status: :not_found, formats: [ :html ]
         when 422
-          render "unprocessable_entity", status: :unprocessable_entity, formats: [:html]
+          render "unprocessable_entity", status: :unprocessable_entity, formats: [ :html ]
         when 500
-          render "internal_server_error", status: :internal_server_error, formats: [:html]
+          render "internal_server_error", status: :internal_server_error, formats: [ :html ]
         else
-          render "internal_server_error", status: :internal_server_error, formats: [:html]
+          render "internal_server_error", status: :internal_server_error, formats: [ :html ]
         end
       end
       format.json { render json: { error: status_code }, status: status_code }

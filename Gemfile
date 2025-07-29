@@ -4,7 +4,7 @@ source "https://rubygems.org"
 gem "rails", "~> 8.0"
 
 # Drivers
-gem "pg", "~> 1.5"
+gem "pg", "~> 1.6"
 gem "redis", ">= 4.0.1"
 
 # Deployment

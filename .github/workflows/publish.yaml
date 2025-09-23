@@ -198,13 +198,13 @@ jobs:
 
           annotations=(
             "index:org.opencontainers.image.created=$(date -Iseconds)"
-            'index:org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}'
-            'index:org.opencontainers.image.revision=${{ github.sha }}'
-            'index:org.opencontainers.image.ref.name=${{ github.ref_name }}'
-            'index:org.opencontainers.image.vendor=we-promise'
-            'index:org.opencontainers.image.licenses=AGPL-3.0'
-            'index:org.opencontainers.image.title=sure-website'
-            'index:org.opencontainers.image.description=A multi-arch Docker image for the Sure website'
+            "index:org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}"
+            "index:org.opencontainers.image.revision=${{ github.sha }}"
+            "index:org.opencontainers.image.ref.name=${{ github.ref_name }}"
+            "index:org.opencontainers.image.vendor=we-promise"
+            "index:org.opencontainers.image.licenses=AGPL-3.0"
+            "index:org.opencontainers.image.title=sure-website"
+            "index:org.opencontainers.image.description=A multi-arch Docker image for the Sure website"
           )
           annotation_args=()
           for annotation in "${annotations[@]}"; do

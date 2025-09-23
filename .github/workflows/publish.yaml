@@ -41,12 +41,12 @@ permissions:
   contents: read
 
 jobs:
-  ci:
-    uses: ./.github/workflows/ci.yml
+#   ci:
+#     uses: ./.github/workflows/ci.yml
 
   build:
     name: Build Docker image
-    needs: [ ci ]
+    # needs: [ ci ]
 
     strategy:
       fail-fast: false

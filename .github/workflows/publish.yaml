@@ -29,7 +29,6 @@ on:
       - 'v*'
     branches:
       - main
-      - cd
   schedule:
     - cron: '30 1 * * *'
 

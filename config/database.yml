@@ -18,16 +18,26 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  <% if ENV["DATABASE_URL"].present? %>
+  url: <%= ENV["DATABASE_URL"] %>
+  <% end %>
   <% if ENV["DB_HOST"].present? %>
   host: <%= ENV["DB_HOST"] %>
-  username: postgres
-  password: postgres
+  <% end %>
+  <% if ENV["DB_PORT"].present? %>
+  port: <%= ENV["DB_PORT"] %>
+  <% end %>
+  <% if ENV["DB_USERNAME"].present? %>
+  username: <%= ENV["DB_USERNAME"] %>
+  <% end %>
+  <% if ENV["DB_PASSWORD"].present? %>
+  password: <%= ENV["DB_PASSWORD"] %>
   <% end %>
 
 
 development:
   <<: *default
-  database: maybe_marketing_development
+  database: <%= ENV.fetch("DB_NAME", "maybe_marketing_development") %>
 
   # The specified database role being used to connect to PostgreSQL.
   # To create additional roles in PostgreSQL see `$ createuser --help`.
@@ -61,7 +71,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: maybe_marketing_test
+  database: <%= ENV.fetch("DB_TEST_NAME", "maybe_marketing_test") %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -85,6 +95,4 @@ test:
 #
 production:
   <<: *default
-  database: sure_website
-  username: sure_website
-  password: <%= ENV["SURE_WEBSITE_DATABASE_PASSWORD"] %>
+  database: <%= ENV.fetch("DB_PRODUCTION_NAME") { ENV.fetch("DB_NAME", "sure_website") } %>

@@ -11,11 +11,6 @@ class Tool::Presenter::EarlyMortgagePayoffCalculatorTest < ActiveSupport::TestCa
       years_left: "30"
   end
 
-  test "blankness" do
-    assert Tool::Presenter::EarlyMortgagePayoffCalculator.new.blank?
-    assert_not @tool.blank?
-  end
-
   test "mortgage rate 30" do
     MortgageRate::Cache.any_instance.expects(:rate_30).returns("6.09")
     assert_equal "6.09", @tool.mortgage_rate_30

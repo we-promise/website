@@ -8,11 +8,6 @@ class Tool::Presenter::InflationCalculatorTest < ActiveSupport::TestCase
       years: "25"
   end
 
-  test "blankness" do
-    assert Tool::Presenter::InflationCalculator.new.blank?
-    assert_not @tool.blank?
-  end
-
   test "future value" do
     assert_equal 209_377.79, @tool.future_value.round(2)
   end

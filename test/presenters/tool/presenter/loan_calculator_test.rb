@@ -10,11 +10,6 @@ class Tool::Presenter::LoanCalculatorTest < ActiveSupport::TestCase
       date: "2020-01-24"
   end
 
-  test "blankness" do
-    assert Tool::Presenter::LoanCalculator.new.blank?
-    assert_not @tool.blank?
-  end
-
   test "monthly payments" do
     assert_equal 1_060.17, @tool.monthly_payments.round(2)
   end

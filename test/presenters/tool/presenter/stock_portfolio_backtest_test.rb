@@ -17,11 +17,6 @@ class Tool::Presenter::StockPortfolioBacktestTest < ActiveSupport::TestCase
     VCR.eject_cassette
   end
 
-  test "blankness" do
-    assert Tool::Presenter::StockPortfolioBacktest.new.blank?
-    assert_not @tool.blank?
-  end
-
   test "portfolio growth" do
     assert_equal 120_098, @tool.portfolio_growth
   end

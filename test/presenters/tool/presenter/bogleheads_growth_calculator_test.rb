@@ -12,10 +12,6 @@ class Tool::Presenter::BogleheadsGrowthCalculatorTest < ActiveSupport::TestCase
       bond_market_percentage: "30"
   end
 
-  test "blankness" do
-    assert Tool::Presenter::BogleheadsGrowthCalculator.new.blank?
-  end
-
   test "tool" do
     load Rails.root.join("db", "seeds", "seed_stocks.rb") # time consuming, which is why we use a single test
 

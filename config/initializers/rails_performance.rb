@@ -1,7 +1,9 @@
 if defined?(RailsPerformance)
   RailsPerformance.setup do |config|
     # Redis configuration
-    config.redis = Redis.new(url: ENV["REDIS_QUEUE_URL"].presence || "redis://127.0.0.1:6379/0")
+    # Prefer explicit queue/cache URLs, fallback to REDIS_URL, then container host
+    redis_url = ENV["REDIS_QUEUE_URL"].presence || ENV["REDIS_CACHE_URL"].presence || ENV["REDIS_URL"].presence || "redis://redis:6379/0"
+    config.redis = Redis.new(url: redis_url)
 
     # All data we collect
     config.duration = 4.hours

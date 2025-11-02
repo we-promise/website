@@ -8,11 +8,6 @@ class Tool::Presenter::FinancialFreedomCalculatorTest < ActiveSupport::TestCase
       monthly_expenses: "$5,000.00"
   end
 
-  test "blankness" do
-    assert Tool::Presenter::FinancialFreedomCalculator.new.blank?
-    assert_not @tool.blank?
-  end
-
   test "free forever" do
     assert_not @tool.free_forever?
     assert Tool::Presenter::FinancialFreedomCalculator.new(

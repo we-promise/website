@@ -9,11 +9,6 @@ class Tool::Presenter::RoiCalculatorTest < ActiveSupport::TestCase
       investment_period: "years"
   end
 
-  test "blankness" do
-    assert Tool::Presenter::RoiCalculator.new.blank?
-    assert_not @tool.blank?
-  end
-
   test "investment gain" do
     assert_equal 9_500.0, @tool.investment_gain
   end

@@ -27,8 +27,8 @@ Then, run `rails data:load_stocks` to seed the database with stock data.
 
 ### AI-assisted development
 
-We fully support AI-assisted development. As a team, we typically use [Cursor](https://cursor.com) for that. As such, we've included an `.ai` directory with some rules for Cursor, along with prompts for certain tasks.
+We fully support AI-assisted development. As a team, we typically use [Cursor](https://cursor.com) for that. As such, we've included files with some rules for Cursor and Claude Code, along with prompts for certain tasks.
 
 ## Copyright & license
 
-Sure is distributed under an [AGPLv3 license](https://github.com/we-promise/sure/blob/main/LICENSE). "Sure" and the stacked "S" logo are trademarks of Sure Finance, Inc.
+Sure is distributed under an [AGPLv3 license](https://github.com/we-promise/sure/blob/main/LICENSE). "Sure" and the "S" logo are pending trademarks of Sure Finances, LLC

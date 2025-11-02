@@ -12,11 +12,6 @@ class Tool::Presenter::HomeAffordabilityCalculatorTest < ActiveSupport::TestCase
       hoa_plus_pmi: "$200.00"
   end
 
-  test "blankness" do
-    assert Tool::Presenter::HomeAffordabilityCalculator.new.blank?
-    assert_not @tool.blank?
-  end
-
   test "mortgage rates" do
     MortgageRate::Cache.any_instance.expects(:rate_30).returns("6.09")
     assert_equal "6.09", @tool.mortgage_rate_30

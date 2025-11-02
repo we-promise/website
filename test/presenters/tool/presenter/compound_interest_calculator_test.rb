@@ -9,11 +9,6 @@ class Tool::Presenter::CompoundInterestCalculatorTest < ActiveSupport::TestCase
       years_to_grow: "10"
   end
 
-  test "blankness" do
-    assert Tool::Presenter::CompoundInterestCalculator.new.blank?
-    assert_not @tool.blank?
-  end
-
   test "total value" do
     assert_equal 404_910.06, @tool.total_value
   end

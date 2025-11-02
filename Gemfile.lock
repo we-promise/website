@@ -286,7 +286,7 @@ GEM
     pg (1.6.2-arm64-darwin)
     pg (1.6.2-x86_64-darwin)
     pg (1.6.2-x86_64-linux)
-    plaid (41.0.0)
+    plaid (44.1.0)
       faraday (>= 1.0.1, < 3.0)
       faraday-multipart (>= 1.0.1, < 2.0)
     platform_agent (1.0.1)
@@ -532,7 +532,7 @@ DEPENDENCIES
   mocha
   pagy
   pg (~> 1.6)
-  plaid (~> 41.0)
+  plaid (~> 44.1)
   propshaft
   puma (>= 5.0)
   rack-mini-profiler

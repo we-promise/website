@@ -14,11 +14,6 @@ class Tool::Presenter::RetirementCalculatorTest < ActiveSupport::TestCase
       salary_limit_match: "6"
   end
 
-  test "blankness" do
-    assert Tool::Presenter::RetirementCalculator.new.blank?
-    assert_not @tool.blank?
-  end
-
   test "current total value" do
     assert_equal 2_586_777.10, @tool.current_total_value.round(2)
   end

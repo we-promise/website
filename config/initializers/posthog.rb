@@ -9,10 +9,10 @@ if (api_key = Rails.configuration.x.posthog.api_key).present?
     config.api_key = api_key
     config.host = Rails.configuration.x.posthog.host
   end
-end
 
-posthog = PostHog::Client.new({
-  api_key: api_key,
-  host: Rails.configuration.x.posthog.host,
-  on_error: Proc.new { |status, msg| print msg }
-})
+  posthog = PostHog::Client.new({
+    api_key: api_key,
+    host: Rails.configuration.x.posthog.host,
+    on_error: Proc.new { |status, msg| print msg }
+  })
+end

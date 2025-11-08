@@ -49,6 +49,9 @@
     <%= hotwire_livereload_tags if Rails.env.development? %>
     <%= turbo_refreshes_with method: :morph, scroll: :preserve %>
     <%= render "shared/ga" if Rails.env.production? %>
+    <% if Rails.env.production? && (posthog_config = Rails.configuration.x.posthog).try(:key).present? %>
+      <%= render "shared/posthog", posthog_key: posthog_config.key, posthog_host: posthog_config.host %>
+    <% end %>
   </head>
   <body class="min-h-screen bg-cover bg-no-repeat" style="background-image: url(<%= asset_path('site-bg.svg') %>)">
     <%= render "shared/navbar" %>

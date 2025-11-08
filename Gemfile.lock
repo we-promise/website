@@ -121,7 +121,7 @@ GEM
     bindex (0.8.1)
     bootsnap (1.18.6)
       msgpack (~> 1.2)
-    brakeman (7.1.0)
+    brakeman (7.1.1)
       racc
     browser (6.2.0)
     builder (3.3.0)
@@ -175,6 +175,12 @@ GEM
     faraday-net_http (3.4.1)
       net-http (>= 0.5.0)
     ffi (1.17.2)
+    ffi (1.17.2-aarch64-linux-gnu)
+    ffi (1.17.2-arm-linux-gnu)
+    ffi (1.17.2-arm64-darwin)
+    ffi (1.17.2-x86-linux-gnu)
+    ffi (1.17.2-x86_64-darwin)
+    ffi (1.17.2-x86_64-linux-gnu)
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
@@ -292,6 +298,8 @@ GEM
     platform_agent (1.0.1)
       activesupport (>= 5.2.0)
       useragent (~> 0.16.3)
+    posthog-ruby (3.3.3)
+      concurrent-ruby (~> 1)
     pp (0.6.2)
       prettyprint
     prettyprint (0.2.0)
@@ -533,6 +541,7 @@ DEPENDENCIES
   pagy
   pg (~> 1.6)
   plaid (~> 44.1)
+  posthog-ruby
   propshaft
   puma (>= 5.0)
   rack-mini-profiler

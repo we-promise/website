@@ -44,6 +44,7 @@ gem "logtail-rails"
 gem "skylight"
 gem "ffi", ">= 1.17"
 gem "ruby-openai"
+gem "posthog-ruby"
 
 group :development, :test do
   gem "debug", platforms: %i[ mri mswin mswin64 mingw x64_mingw ]

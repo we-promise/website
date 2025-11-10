@@ -14,13 +14,13 @@
       "dateModified": @article.updated_at.iso8601,
       "author": {
         "@type": "Person",
-        "name": @article.author&.name || @article.author_name.presence || "Sure Finance",
+        "name": @article.author&.name || @article.author_name.presence || "Sure Finances",
         "url": @article.author ? author_url(@article.author) : nil,
         "jobTitle": @article.author&.position
       }.compact,
       "publisher": {
         "@type": "Organization",
-        "name": "Sure Finance",
+        "name": "Sure Finances",
         "logo": {
           "@type": "ImageObject",
           "url": image_url("maybe-logo-glow-4x.png")

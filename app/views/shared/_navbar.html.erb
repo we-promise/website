@@ -3,7 +3,7 @@
   <%# Mobile Navbar %>
   <nav class="flex flex-col justify-between w-full py-4 px-4 md:px-6 bg-[hsl(0_0%_97%_/_80%)] bg-blur-xl backdrop-blur-xl md:hidden" data-controller="navbar">
     <menu class="flex gap-x-2 md:flex font-medium items-center justify-between" data-navbar-target="mobileNavMenu">
-      <%= link_to image_tag("maybe-logo-mark.svg", alt: "Sure Logo", class: "h-6"), root_path %>
+      <%= link_to image_tag("maybe-logo.svg", alt: "Sure Logo", class: "h-6"), root_path %>
       <div class="flex items-center">
         <%= lucide_icon("equal", alt: "Menu", class: "w-6 h-6", data: { navbar_target: "menuIcon", action: "click->navbar#toggleMobileMenu" }) %>
         <%= lucide_icon("x", alt: "Close", class: "w-6 h-6 hidden", data: { navbar_target: "closeIcon", action: "click->navbar#toggleMobileMenu" }) %>
@@ -56,7 +56,7 @@
         <!-- Mega Menu Trigger -->
         <div class="relative group">
           <button class="flex items-center text-gray-700 gap-[6px] px-3 py-1.5 focus:outline-none hover:text-gray-900 hover:bg-alpha-black-50 rounded-[10px]">
-            <span>Products</span>
+            <span>Product</span>
             <%= lucide_icon("chevron-down", class: "inline w-4 h-4") %>
           </button>
           <%# <!-- Mega Menu Container --> %>

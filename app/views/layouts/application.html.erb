@@ -4,8 +4,8 @@
     <title><%= content_for?(:title) ? ("#{yield(:title)} - Sure").html_safe : "Sure: The personal finance app for everyone" %></title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="title" content="<%= content_for?(:title) ? ("#{yield(:title)} - Sure").html_safe : "Sure: The personal finance app for everyone" %>">
-    <meta name="description" content="<%= content_for?(:description) ? (yield(:description)) : "Sure: The personal finance app for everyone" %>">
+    <meta name="title" content="<%= content_for?(:title) ? ("#{yield(:title)} - Sure").html_safe : "Sure: The personal finance app for everyone by everyone" %>">
+    <meta name="description" content="<%= content_for?(:description) ? (yield(:description)) : "Sure: The personal finance app for everyone by everyone" %>">
     <meta name="keywords" content="personal finance, budgeting, financial tracking, open source, self-hosted">
     <meta name="author" content="Sure">
     <meta name="robots" content="index, follow">
@@ -26,7 +26,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="<%= request.original_url %>">
     <meta property="og:title" content="<%= content_for?(:title) ? ("#{yield(:title)} - Sure").html_safe : "Sure" %>">
-    <meta property="og:description" content="<%= content_for?(:description) ? (yield(:description)) : "Sure: The personal finance app for everyone" %>">
+    <meta property="og:description" content="<%= content_for?(:description) ? (yield(:description)) : "Sure: The personal finance app for everyone by everyone" %>">
     <meta property="og:image" content="<%= image_url(content_for?(:meta_image) ? yield(:meta_image) : "meta.jpg") %>">
     <meta property="og:site_name" content="Sure">
     <link rel="canonical" href="<%= content_for?(:canonical_url) ? yield(:canonical_url) : request.original_url %>" />
@@ -35,7 +35,7 @@
     <meta name="twitter:title" content="<%= content_for?(:title) ? ("#{yield(:title)} - Sure").html_safe : "Sure" %>">
     <meta name="twitter:site" content="@sure">
     <meta name="twitter:creator" content="@sure">
-    <meta name="twitter:description" content="<%= content_for?(:description) ? (yield(:description)) : "Sure: The personal finance app for everyone" %>">
+    <meta name="twitter:description" content="<%= content_for?(:description) ? (yield(:description)) : "Sure: The personal finance app for everyone by everyone" %>">
     <meta name="twitter:image" content="<%= image_url(content_for?(:meta_image) ? yield(:meta_image) : "meta.jpg") %>">
     <%= yield :head %>
     <%= yield :schema_data %>

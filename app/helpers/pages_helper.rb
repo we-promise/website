@@ -27,4 +27,25 @@ module PagesHelper
       }
     ]
   end
+
+  def faq_questions_free
+    [
+      {
+        question: "How will my payment be processed?",
+        answer: "You should ask the PikaPods and Railways team.  We don't offer a hosted version of Sure yet."
+      },
+      {
+        question: "Can I cancel my subscription at any time?",
+        answer: "We sure hope so!  Again, ask the hosting team taking care of your installation."
+      },
+      {
+        question: "Is  Sure open source?",
+        answer: "Yes, Sure is open source. You can find the source code on <a href='https://github.com/we-promise/sure' class='font-medium text-gray-900'>GitHub</a>."
+      },
+      {
+        question: "Can I self-host Sure?",
+        answer: "Yes, you can self-host Sure. Please refer to the <a href='https://github.com/we-promise/sure/tree/main/docs/hosting' class='font-medium text-gray-900'>GitHub repository</a> for more information."
+      }
+    ]
+  end
 end

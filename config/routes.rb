@@ -25,6 +25,7 @@ Rails.application.routes.draw do
   get "/tools/inside-trading-tracker(/*path)", to: redirect("/", status: 301)
 
   get "pricing", to: "pages#pricing"
+  get "pricing_free", to: "pages#pricing_free"
   get "about", to: "pages#about"
   get "features/assistant/:category", to: "features#assistant", as: "assistant_category"
   get "features/assistant/:category/content", to: "features#assistant_content", as: "assistant_content"

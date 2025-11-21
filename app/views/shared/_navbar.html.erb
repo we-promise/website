@@ -40,6 +40,7 @@
             <%= render "shared/mobile_resources_menu", mobile: true %>
           </div>
         </div>
+        <%= link_to "Pricing", pricing_free_path, class: "text-xl leading-[150%] text-gray-700" %>
         <%= link_to "https://github.com/we-promise/sure", class: "text-xl leading-[150%] flex items-center justify-between text-base text-gray-700" do %>
           Contribute <%= lucide_icon("arrow-up-right", class: "w-6 h-6") %>
         <% end %>
@@ -89,6 +90,7 @@
         </div>
       </div>
 
+      <a href="/pricing_free" class="px-3 py-1.5 <%= current_page?('/pricing_free') ? 'text-gray-900 font-medium' : 'text-gray-800' %> hover:text-gray-9000 hover:bg-alpha-black-50 rounded-xl">Pricing</a>
       <a href="https://github.com/we-promise/sure" class="px-3 py-1.5 text-gray-800 hover:text-gray-9000 hover:bg-alpha-black-50 rounded-xl">Contribute</a>
     </menu>
     <menu class="flex hidden gap-x-2 md:flex font-medium">
@@ -127,8 +129,10 @@
           <%= render "shared/resources_menu", mobile: true %>
         </div>
       </div>
-
-        <%= link_to "Contribute", "https://github.com/we-promise/sure", class: "text-base text-gray-700" %>
+        <%= link_to "Pricing", pricing_free_path, class: "text-xl leading-[150%] text-gray-700" %>
+        <%= link_to "https://github.com/we-promise/sure", class: "text-xl leading-[150%] flex items-center justify-between text-base text-gray-700" do %>
+          Contribute <%= lucide_icon("arrow-up-right", class: "w-6 h-6") %>
+        <% end %>
         <div class="flex flex-col gap-3 mt-4">
           <%= link_to "Demo", "https://demo.sure.am/sessions/new", target: "_blank", rel: "noopener noreferrer",
               class: "w-full py-2 px-3 text-sm text-center text-white bg-gray-900 rounded-lg hover:bg-gray-800" %>

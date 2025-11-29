@@ -19,10 +19,6 @@ bin/rails db:seed
 bin/dev
 ```
 
-### Stock data
-
-We use [Synth](https://synthfinance.com) for financial data. You can sign up for a free account and add your API key to your `.env` file.
-
 Then, run `rails data:load_stocks` to seed the database with stock data.
 
 ### AI-assisted development

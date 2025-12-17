@@ -40,7 +40,7 @@ module PagesHelper
       },
       {
         question: "Is  Sure open source?",
-        answer: "Yes, Sure is open source. You can find the source code on <a href='https://github.com/we-promise/sure' class='font-medium text-gray-900'>GitHub</a>."
+        answer: "Yes, Sure is open source. You can find the source code on <a href='https://github.com/we-promise/sure' class='font-medium text-gray-900'>GitHub</a> and contribute to the project."
       },
       {
         question: "Can I self-host Sure?",

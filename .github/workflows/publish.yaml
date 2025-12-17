@@ -142,7 +142,7 @@ jobs:
 
       - name: Upload the Docker image digest
         if: ${{ github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v') || github.event_name == 'schedule' || github.event.inputs.push }}
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v6
         with:
           name: digest-${{ matrix.platform }}
           path: ${{ runner.temp }}/digests/*

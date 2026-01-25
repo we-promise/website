@@ -79,7 +79,7 @@ class Tool::Presenter::StockPortfolioBacktest < Tool::Presenter
         tickers = stocks + [ benchmark_stock ]
 
         tickers.map do |ticker|
-          response = Provider::Synth.new.stock_prices \
+          response = Provider::YahooFinance.new.stock_prices \
             ticker: ticker,
             start_date: start_date,
             end_date: end_date,

@@ -1,0 +1,23 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://query1.finance.yahoo.com/v8/finance/chart/USDEUR%3DX?interval=1d&period1=1704067200&period2=1706745600
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"chart":{"result":[{"meta":{"currency":"EUR","symbol":"USDEUR=X","exchangeName":"CCY","instrumentType":"CURRENCY","firstTradeDate":1070236800,"regularMarketTime":1706659200,"gmtoffset":0,"timezone":"UTC","exchangeTimezoneName":"UTC","regularMarketPrice":0.9245,"chartPreviousClose":0.9145,"previousClose":0.9234,"scale":4,"priceHint":4},"timestamp":[1704067200,1704153600,1704240000,1704326400,1704412800,1704499200,1704585600,1704672000,1704758400,1704844800,1704931200,1705017600,1705104000,1705190400,1705276800,1705363200,1705449600,1705536000,1705622400,1705708800,1705881600,1705968000,1706054400,1706140800,1706227200,1706313600,1706400000,1706486400,1706572800,1706659200],"indicators":{"quote":[{"close":[0.9123,0.9156,0.9134,0.9145,0.9132,0.9145,0.9156,0.9167,0.9178,0.9189,0.9200,0.9189,0.9178,0.9167,0.9156,0.9167,0.9178,0.9189,0.9200,0.9211,0.9222,0.9211,0.9200,0.9189,0.9200,0.9211,0.9222,0.9234,0.9245,0.9245]}]}}],"error":null}}'
+  recorded_at: Wed, 31 Jan 2024 00:00:00 GMT
+recorded_with: VCR 6.3.1

@@ -9,7 +9,7 @@ module StockPriceProviderInterfaceTest
   end
 
   test "stock_price response contract" do
-    VCR.use_cassette "synth/stock_price" do
+    VCR.use_cassette "yahoo_finance/stock_price" do
       response = @subject.stock_price ticker: "SPY", date: Date.parse("2024-01-01")
 
       assert_respond_to response, :ticker
@@ -20,7 +20,7 @@ module StockPriceProviderInterfaceTest
   end
 
   test "stock_prices response contract" do
-    VCR.use_cassette "synth/stock_prices" do
+    VCR.use_cassette "yahoo_finance/stock_prices" do
       response = @subject.stock_prices ticker: "SPY",
         start_date: Date.parse("2024-01-01"),
         end_date: Date.parse("2024-02-01"),

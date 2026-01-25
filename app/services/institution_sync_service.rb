@@ -325,18 +325,12 @@ class InstitutionSyncService
 
     # Extract logo URL from Plaid institution
     def extract_logo_url(plaid_institution)
-      # First, try to use logo URL if Plaid actually provides it
+      # Try to use logo URL if Plaid actually provides it
       logo_url = plaid_institution.logo if plaid_institution.respond_to?(:logo)
 
       # If Plaid provides base64 image data, format it as a data URL
       if logo_url.present? && logo_url.match?(/^[A-Za-z0-9+\/=]+$/)
         logo_url = format_base64_image(logo_url)
-      elsif logo_url.blank?
-        # If no logo from Plaid, but we have a website URL, use Synth's logo service
-        website_url = plaid_institution.url if plaid_institution.respond_to?(:url)
-        if website_url.present?
-          logo_url = generate_synth_logo_url(website_url)
-        end
       end
 
       logo_url.present? ? logo_url : nil
@@ -367,16 +361,6 @@ class InstitutionSyncService
 
       # Return the color if available, nil otherwise
       primary_color.present? ? primary_color : nil
-    end
-
-    # Generate Synth logo URL from website URL
-    def generate_synth_logo_url(website_url)
-      # Extract domain from URL for Synth's logo service
-      # Remove protocol and www prefix, keep just the domain
-      domain = website_url.gsub(/^https?:\/\//, "").gsub(/^www\./, "").split("/").first
-
-      # Return Synth logo service URL
-      "https://logo.synthfinance.com/#{domain}"
     end
 
     # Format base64 image data as a proper data URL

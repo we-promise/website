@@ -39,8 +39,8 @@ class Tool::Presenter::ExchangeRateCalculator < Tool::Presenter
     Rails.logger.debug "Fetching exchange rates from #{start_date} to #{end_date}."
 
     response = Rails.cache.fetch(cache_key, expires_in: 24.hours) do
-      Rails.logger.debug "Cache miss for #{cache_key}. Fetching from Synth API."
-      api_response = synth_client.exchange_rates(
+      Rails.logger.debug "Cache miss for #{cache_key}. Fetching from Yahoo Finance API."
+      api_response = yahoo_finance_client.exchange_rates(
         from_currency: from_currency,
         to_currency: to_currency,
         start_date: start_date,
@@ -108,8 +108,8 @@ class Tool::Presenter::ExchangeRateCalculator < Tool::Presenter
 
       # Fetch from cache or execute the block if missed
       response = Rails.cache.fetch(cache_key, expires_in: 24.hours) do
-        Rails.logger.debug "Cache miss for #{cache_key}. Fetching from Synth API."
-        api_response = synth_client.exchange_rate(
+        Rails.logger.debug "Cache miss for #{cache_key}. Fetching from Yahoo Finance API."
+        api_response = yahoo_finance_client.exchange_rate(
           from_currency: from_currency,
           to_currency: to_currency
         )
@@ -128,7 +128,7 @@ class Tool::Presenter::ExchangeRateCalculator < Tool::Presenter
       nil
     end
 
-    def synth_client
-      @synth_client ||= Provider::Synth.new
+    def yahoo_finance_client
+      @yahoo_finance_client ||= Provider::YahooFinance.new
     end
 end

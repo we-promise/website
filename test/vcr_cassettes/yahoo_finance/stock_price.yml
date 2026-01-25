@@ -1,0 +1,23 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&period1=1704067200&period2=1704153600
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"chart":{"result":[{"meta":{"currency":"USD","symbol":"SPY","exchangeName":"NYSEArca","instrumentType":"ETF","firstTradeDate":728317800,"regularMarketTime":1704139200,"gmtoffset":-18000,"timezone":"EST","exchangeTimezoneName":"America/New_York","regularMarketPrice":472.65,"chartPreviousClose":473.76,"previousClose":473.76,"scale":3,"priceHint":2},"timestamp":[1704067200],"indicators":{"quote":[{"open":[472.5],"high":[475.78],"low":[470.14],"close":[472.65],"volume":[62793300]}],"adjclose":[{"adjclose":[472.65]}]}}],"error":null}}'
+  recorded_at: Tue, 02 Jan 2024 00:00:00 GMT
+recorded_with: VCR 6.3.1

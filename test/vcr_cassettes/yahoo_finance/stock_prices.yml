@@ -1,0 +1,23 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://query1.finance.yahoo.com/v8/finance/chart/SPY?interval=1d&period1=1704067200&period2=1706832000
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Mozilla/5.0
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json;charset=utf-8
+    body:
+      encoding: UTF-8
+      string: '{"chart":{"result":[{"meta":{"currency":"USD","symbol":"SPY","exchangeName":"NYSEArca","instrumentType":"ETF","firstTradeDate":728317800,"regularMarketTime":1706745600,"gmtoffset":-18000,"timezone":"EST","exchangeTimezoneName":"America/New_York","regularMarketPrice":490.54,"chartPreviousClose":473.76,"previousClose":489.42,"scale":3,"priceHint":2},"timestamp":[1704153600,1704240000,1704326400,1704412800,1704672000,1704758400,1704844800,1704931200,1705017600,1705276800],"indicators":{"quote":[{"open":[472.5,469.45,468.38,472.24,470.5,473.38,477.02,479.56,480.5,480.73],"high":[475.78,470.92,474.45,474.19,474.26,476.09,478.99,481.18,483.35,481.64],"low":[470.14,466.45,467.78,470.59,468.83,472.99,475.85,478.84,479.12,478.2],"close":[472.65,467.55,473.54,471.25,472.4,476.01,477.79,480.76,482.88,479.58],"volume":[62793300,70433600,68170500,55410300,54330200,49330300,47568500,40899800,52052100,52476900]}],"adjclose":[{"adjclose":[472.65,467.55,473.54,471.25,472.4,476.01,477.79,480.76,482.88,479.58]}]}}],"error":null}}'
+  recorded_at: Thu, 01 Feb 2024 00:00:00 GMT
+recorded_with: VCR 6.3.1

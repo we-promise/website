@@ -21,16 +21,16 @@ Sure emphasizes "radical transparency" and is built in public as an open-source 
 
 ## Product Features
 
-- [Asset Tracking](https://maybefinance.com/features/tracking): Link and monitor bank accounts, investments, crypto, and other assets across 10,000+ institutions
-- [Transaction Management](https://maybefinance.com/features/transactions): Organize, categorize, and automate transaction handling with custom rules and CSV imports
-- [Budgeting Tools](https://maybefinance.com/features/budgeting): Set spending limits, track category budgets, and optimize financial allocations
-- [AI Assistant](https://maybefinance.com/features/assistant): Ask financial questions and get instant answers about your money and investments
+- [Asset Tracking](https://sure.am/features/tracking): Link and monitor bank accounts, investments, crypto, and other assets across 10,000+ institutions
+- [Transaction Management](https://sure.am/features/transactions): Organize, categorize, and automate transaction handling with custom rules and CSV imports
+- [Budgeting Tools](https://sure.am/features/budgeting): Set spending limits, track category budgets, and optimize financial allocations
+- [AI Assistant](https://sure.am/features/assistant): Ask financial questions and get instant answers about your money and investments
 
 ## Resources & Education
 
-- [Personal Finance Articles](https://maybefinance.com/articles): Educational content on money management, investment strategies, and financial planning
-- [Financial Terms Glossary](https://maybefinance.com/terms): Definitions and explanations of key financial concepts
-- [Financial Tools](https://maybefinance.com/tools): Free calculators including compound interest, ROI, financial freedom, and exchange rate tools
+- [Personal Finance Articles](https://sure.am/articles): Educational content on money management, investment strategies, and financial planning
+- [Financial Terms Glossary](https://sure.am/terms): Definitions and explanations of key financial concepts
+- [Financial Tools](https://sure.am/tools): Free calculators including compound interest, ROI, financial freedom, and exchange rate tools
 
 ## Content Guidelines
 

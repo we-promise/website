@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   get "/roadmap", to: redirect("/", status: 301)
   get "/podcast", to: redirect("/", status: 301)
   get "/now-subscribe", to: redirect("/", status: 301)
-  get "/community", to: redirect("https://discord.com/9ZNzc6yt", status: 301)
+  get "/community", to: redirect("https://discord.com/invite/9ZNzc6yt", status: 301)
 
   # Redirect for removed inside trading tracker
   get "/tools/inside-trading-tracker(/*path)", to: redirect("/", status: 301)

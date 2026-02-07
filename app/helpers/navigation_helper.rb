@@ -32,7 +32,7 @@ module NavigationHelper
     [
       {
         text: "Join Community",
-        path: "https://discord.com/invite/9ZNzc6yt"
+        path: discord_url
       },
       {
         text: "Self-Host",
@@ -70,7 +70,7 @@ module NavigationHelper
     [
       {
         text: "Join Community",
-        path: "https://discord.com/invite/9ZNzc6yt"
+        path: discord_url
       },
       {
         text: "Contribute",
@@ -121,7 +121,7 @@ module NavigationHelper
     [
       {
         icon: image_tag("footer-discord.svg", alt: "Discord", class: "w-6 h-6"),
-        path: "https://discord.com/invite/9ZNzc6yt"
+        path: discord_url
       },
       {
         icon: image_tag("badge-github.svg", alt: "GitHub", class: "w-6 h-6"),

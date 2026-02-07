@@ -1,6 +1,10 @@
 module ApplicationHelper
   include Pagy::Frontend
 
+  def discord_url
+    Rails.application.config.x.discord_url
+  end
+
   def title(page_title)
     content_for(:title) { page_title }
   end

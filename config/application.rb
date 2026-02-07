@@ -26,5 +26,6 @@ module MaybeMarketing
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
     config.active_support.to_time_preserves_timezone = :zone
+    config.x.discord_url = ENV["DISCORD_URL"].presence || "https://discord.gg/36ZGBsxYEK"
   end
 end

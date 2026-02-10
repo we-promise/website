@@ -12,7 +12,7 @@ This is the marketing site for [Sure](https://sure.am), an OS for your personal 
 After cloning the repo, the basic setup commands are:
 
 ```sh
-cd marketing
+cd website
 cp .env.example .env
 bin/setup
 bin/rails db:seed

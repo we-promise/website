@@ -12,18 +12,12 @@ This is the marketing site for [Sure](https://sure.am), an OS for your personal 
 After cloning the repo, the basic setup commands are:
 
 ```sh
-cd marketing
+cd website
 cp .env.example .env
 bin/setup
 bin/rails db:seed
 bin/dev
 ```
-
-### Stock data
-
-We use [Synth](https://synthfinance.com) for financial data. You can sign up for a free account and add your API key to your `.env` file.
-
-Then, run `rails data:load_stocks` to seed the database with stock data.
 
 ### AI-assisted development
 

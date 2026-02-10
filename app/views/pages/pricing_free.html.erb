@@ -1,0 +1,71 @@
+<article class="bg-contain bg-top bg-no-repeat" style="background-image: url(<%= asset_path('main-bg.svg') %>)">
+  <section class="text-center max-w-[480px] mx-auto mb-10">
+    <div class="flex flex-row gap-3 mb-4 items-center w-fit mx-auto mb-4">
+      <%= image_tag 'icon-maybe-color.svg', alt: "Sure Logo", class: "inline w-32" %>
+    </div>
+    <h1 class="text-[4.5rem] text-gray-700 mx-auto leading-[calc(1em+4px)] tracking-[-0.04em] font-medium mb-4">
+      Pay (us) nothing</h1>
+        <p class="text-xl font-normal leading-[1.4] text-gray-500 tracking-normal">
+          Maybe^H^H^H^H^HSure, one day we'll get our act together and offer a proper hosted version,
+          but for now pay these lovely folks that share revenue with us so we can keep the project going.
+          <br />
+          <br />
+          You can also use our demo environment and contribute 💸 to the project from there! 🙌
+        </p>
+  </section>
+  <section class="">
+    <div class="mb-6"><%= render "shared/cta_header" %></div>
+    <div class="container max-w-5xl mx-auto px-4">
+      <section class="w-full" data-controller="pricing">
+        <div class="flex flex-col items-center justify-center gap-4 mb-12 transition-all duration-300">
+
+        <p dir="auto">
+          <a href="https://railway.com/deploy/T_draF?referralCode=CW_fPQ" rel="nofollow">
+            <img src="https://camo.githubusercontent.com/88cb27bf937b98276737ba7888269a1bc9495d8670f63e1acc908b3442841114/68747470733a2f2f7261696c7761792e636f6d2f627574746f6e2e737667" alt="Deploy on Railway" data-canonical-src="https://railway.com/button.svg" style="max-width: 100%;">
+          </a>
+        </p>
+
+        <p dir="auto">
+          <a href="https://www.pikapods.com/pods?run=sure" rel="nofollow">
+            <img src="https://camo.githubusercontent.com/3e14cd463013c1053725574b288fe5eb3e988e0e0c1388abf114798a77f2b8b1/68747470733a2f2f7777772e70696b61706f64732e636f6d2f7374617469632f72756e2d627574746f6e2e737667" alt="Run on PikaPods" data-canonical-src="https://www.pikapods.com/static/run-button.svg" style="max-width: 100%;">
+          </a>
+        </p>
+
+        </div>
+      </section>
+    </div>
+  </section>
+  <%# FAQ Section %>
+  <section class="py-16 pb-0 px-4">
+    <div class="max-w-[800px] mx-auto">
+      <div class="text-center mb-8">
+        <h2 class="text-gray-700 font-medium leading-[1.1] text-5xl tracking-[-0.05] mb-2">FAQs</h2>
+        <p class="text-gray-500 mb-4 text-lg leading-[1.4] max-w-[420px] mx-auto">Have a question that is not answered?<br />
+          <a href="https://discord.com/invite/9ZNzc6yt" class="text-gray-800">Swing by Discord</a> and ask the community!</p>
+      </div>
+      <dl class="" data-controller="faq">
+        <% faq_questions_free.each_with_index do |faq, index| %>
+          <div class="first:rounded-t-2xl p-4 text-lg last:rounded-b-2xl border border-gray-100 bg-white">
+            <dt class="py-[2px]">
+              <button
+                class="flex w-full items-center justify-between"
+                data-action="faq#toggle"
+                data-faq-target="question"
+                aria-expanded="false"
+              >
+                <span class="font-medium text-gray-800"><%= faq[:question] %></span>
+                <%= lucide_icon "x", class: "w-4 h-4 text-gray-500 rotate-45 transition-transform duration-200",
+                    data: { faq_target: "icon" } %>
+              </button>
+            </dt>
+            <dd class="hidden overflow-hidden transition-[height] duration-200 ease-out" data-faq-target="answer">
+              <div class="text-gray-500">
+                <%= faq[:answer].html_safe %>
+              </div>
+            </dd>
+          </div>
+        <% end %>
+      </dl>
+    </div>
+  </section>
+</article>

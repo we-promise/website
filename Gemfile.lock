@@ -91,15 +91,14 @@ GEM
       activerecord (>= 2.3.0)
       rake (>= 0.8.7)
     ast (2.4.3)
-    avo (3.21.1)
+    avo (3.26.0)
       actionview (>= 6.1)
       active_link_to
       activerecord (>= 6.1)
       activesupport (>= 6.1)
       addressable
-      avo-heroicons (>= 0.1.1)
+      avo-icons (>= 0.1.1)
       docile
-      inline_svg
       meta-tags
       pagy (>= 7.0.0)
       prop_initializer (>= 0.2.0)
@@ -107,7 +106,8 @@ GEM
       turbo_power (>= 0.6.0)
       view_component (>= 3.7.0)
       zeitwerk (>= 2.6.12)
-    avo-heroicons (0.1.1)
+    avo-icons (0.1.1)
+      inline_svg
     bannerbear (0.1.4)
       httparty
     base64 (0.3.0)
@@ -492,7 +492,8 @@ GEM
     useragent (0.16.11)
     vcr (6.3.1)
       base64
-    view_component (4.1.0)
+    view_component (4.1.1)
+      actionview (>= 7.1.0, < 8.2)
       activesupport (>= 7.1.0, < 8.2)
       concurrent-ruby (~> 1)
     web-console (4.2.1)

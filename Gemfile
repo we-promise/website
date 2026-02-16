@@ -24,7 +24,7 @@ gem "sidekiq-cron"
 # Hotwire
 gem "stimulus-rails"
 gem "turbo-rails"
-gem "hotwire_combobox", "~> 0.4.0"
+gem "hotwire_combobox", "~> 0.4.1"
 
 # Other
 gem "faraday"

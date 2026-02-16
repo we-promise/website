@@ -116,7 +116,7 @@ jobs:
             org.opencontainers.image.description=A multi-arch Docker image for the Sure website
 
       - name: Publish 'linux/${{ matrix.platform }}' image by digest
-        uses: docker/build-push-action@v6.18.0
+        uses: docker/build-push-action@v6.19.2
         id: build
         with:
           context: .

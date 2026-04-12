@@ -168,14 +168,14 @@ GEM
     et-orbi (1.2.11)
       tzinfo
     event_stream_parser (1.0.0)
-    faraday (2.14.0)
+    faraday (2.14.1)
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
     faraday-multipart (1.1.1)
       multipart-post (~> 2.0)
-    faraday-net_http (3.4.1)
-      net-http (>= 0.5.0)
+    faraday-net_http (3.4.2)
+      net-http (~> 0.5)
     ffi (1.17.2)
     ffi (1.17.2-aarch64-linux-gnu)
     ffi (1.17.2-arm-linux-gnu)
@@ -219,7 +219,7 @@ GEM
     jbuilder (2.13.0)
       actionview (>= 5.0.0)
       activesupport (>= 5.0.0)
-    json (2.15.2)
+    json (2.18.1)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     listen (3.9.0)
@@ -259,8 +259,8 @@ GEM
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
     multipart-post (2.4.1)
-    net-http (0.6.0)
-      uri
+    net-http (0.9.1)
+      uri (>= 0.11.1)
     net-imap (0.5.12)
       date
       net-protocol

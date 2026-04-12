@@ -7,6 +7,13 @@ gem "rails", "~> 8.1"
 gem "pg", "~> 1.6"
 gem "redis", ">= 4.0.1"
 
+# Pin connection_pool to 2.x - connection_pool 3.x has a breaking change
+# (keyword-only arguments) that is incompatible with Rails 8.1.1's
+# ActiveSupport::Cache::RedisCacheStore, causing assets:precompile to fail with
+# `ArgumentError: wrong number of arguments (given 1, expected 0)`.
+# See https://github.com/rails/rails/issues/56461
+gem "connection_pool", "~> 2.5"
+
 # Deployment
 gem "puma", ">= 5.0"
 gem "bootsnap", require: false

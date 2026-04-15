@@ -1,9 +1,82 @@
+<style>
+  #openclaw-crab {
+    position: fixed;
+    left: -200px;
+    top: 0;
+    z-index: 9999;
+    width: 80px;
+    pointer-events: none;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.18));
+    transform-origin: bottom center;
+    will-change: left, top, transform;
+  }
+  @media (min-width: 768px) {
+    #openclaw-crab { width: 112px; }
+  }
+  @keyframes crab-scratch {
+    0%   { transform: translateX(0px); }
+    16%  { transform: translateX(20px); }
+    32%  { transform: translateX(1px); }
+    50%  { transform: translateX(22px); }
+    66%  { transform: translateX(1px); }
+    82%  { transform: translateX(15px); }
+    100% { transform: translateX(0px); }
+  }
+  #openclaw-crab.is-scratching {
+    animation: crab-scratch 0.68s ease-in-out;
+  }
+  #personal-word.is-scratched {
+    text-decoration: line-through #E84B2F;
+    text-decoration-thickness: 3px;
+  }
+</style>
+
+<div id="openclaw-crab" aria-hidden="true">
+  <svg viewBox="0 0 130 100" xmlns="http://www.w3.org/2000/svg">
+    <!-- Body -->
+    <ellipse cx="62" cy="58" rx="27" ry="21" fill="#E84B2F"/>
+    <ellipse cx="60" cy="55" rx="19" ry="13" fill="#F06040" opacity="0.55"/>
+    <circle cx="57" cy="54" r="3" fill="#C03820" opacity="0.35"/>
+    <circle cx="65" cy="51" r="2.2" fill="#C03820" opacity="0.35"/>
+    <circle cx="62" cy="60" r="2.5" fill="#C03820" opacity="0.35"/>
+    <!-- Left closed claw -->
+    <line x1="37" y1="52" x2="18" y2="41" stroke="#E84B2F" stroke-width="7" stroke-linecap="round"/>
+    <path d="M18,41 C11,34 5,38 8,46 C11,54 18,46 18,41 Z" fill="#E84B2F"/>
+    <!-- Right OpenClaw arm – pivot at (87,52) -->
+    <g id="crab-right-arm">
+      <line x1="87" y1="52" x2="105" y2="40" stroke="#E84B2F" stroke-width="7" stroke-linecap="round"/>
+      <line x1="105" y1="40" x2="121" y2="30" stroke="#E84B2F" stroke-width="5" stroke-linecap="round"/>
+      <line x1="105" y1="40" x2="119" y2="51" stroke="#E84B2F" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <!-- Right legs -->
+    <line x1="80" y1="66" x2="97" y2="78" stroke="#E84B2F" stroke-width="4" stroke-linecap="round"/>
+    <line x1="75" y1="72" x2="90" y2="85" stroke="#E84B2F" stroke-width="4" stroke-linecap="round"/>
+    <line x1="68" y1="76" x2="81" y2="91" stroke="#E84B2F" stroke-width="4" stroke-linecap="round"/>
+    <!-- Left legs -->
+    <line x1="44" y1="66" x2="27" y2="78" stroke="#E84B2F" stroke-width="4" stroke-linecap="round"/>
+    <line x1="49" y1="72" x2="34" y2="85" stroke="#E84B2F" stroke-width="4" stroke-linecap="round"/>
+    <line x1="56" y1="76" x2="43" y2="91" stroke="#E84B2F" stroke-width="4" stroke-linecap="round"/>
+    <!-- Eye stalks -->
+    <line x1="53" y1="38" x2="47" y2="25" stroke="#E84B2F" stroke-width="3" stroke-linecap="round"/>
+    <line x1="71" y1="38" x2="77" y2="25" stroke="#E84B2F" stroke-width="3" stroke-linecap="round"/>
+    <!-- Eyes -->
+    <circle cx="47" cy="22" r="8" fill="white"/>
+    <circle cx="49" cy="21" r="4.5" fill="#111111"/>
+    <circle cx="51" cy="19" r="1.8" fill="white"/>
+    <circle cx="77" cy="22" r="8" fill="white"/>
+    <circle cx="79" cy="21" r="4.5" fill="#111111"/>
+    <circle cx="81" cy="19" r="1.8" fill="white"/>
+    <!-- Smile -->
+    <path d="M54,65 Q62,73 70,65" stroke="#B83018" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  </svg>
+</div>
+
 <article class="bg-contain bg-top bg-no-repeat" style="background-image: url(<%= asset_path('main-bg.svg') %>)">
   <section class="max-w-[1140px] mx-auto text-center pb-[80px] bg-contain bg-[top_300px_center] bg-no-repeat" style="background-image: url(<%= asset_path('home-header-bg.svg') %>)">
     <div class="flex flex-row gap-3 mb-4 items-center w-fit mx-auto">
       <%= image_tag 'icon-maybe-color.svg', alt: "Sure Logo", class: "inline w-32" %>
     </div>
-    <h1 class="text-[3.5rem] md:text-[4.5rem] text-gray-700 max-w-[650px] mx-auto leading-[calc(1em+4px)] tracking-[-0.04em] font-medium mb-4">The personal finance app for everyone <br/> <span class="text-gray-400">(by everyone)</span></h1>
+    <h1 class="text-[3.5rem] md:text-[4.5rem] text-gray-700 max-w-[650px] mx-auto leading-[calc(1em+4px)] tracking-[-0.04em] font-medium mb-4">The <span id="personal-word">personal</span> finance app for everyone <br/> <span class="text-gray-400">(by everyone)</span></h1>
     <p class="text-xl font-normal leading-[1.4] text-gray-400 mb-4 w-full max-w-[600px] mx-auto">Sure is an all-in-one personal finance platform. Track, optimize, grow, and manage your money through every stage of life.</p>
     <div class="mb-6"><%= render "shared/cta_header" %></div>
     <div class="mb-9 inline-flex items-center backdrop-blur rounded-3xl gap-3">
@@ -189,3 +262,111 @@
 <section class="max-w-[1408px] mx-auto mb-5">
   <%= render "home_ai_section" %>
 </section>
+
+<script>
+(function () {
+  var _timer = null;
+
+  function resetState() {
+    if (_timer) { clearTimeout(_timer); _timer = null; }
+    var crab = document.getElementById('openclaw-crab');
+    var word = document.getElementById('personal-word');
+    if (crab) {
+      crab.style.cssText = '';
+      crab.className = '';
+      var arm = document.getElementById('crab-right-arm');
+      if (arm) arm.removeAttribute('transform');
+    }
+    if (word) word.className = '';
+  }
+
+  function startCrab() {
+    resetState();
+    var crab = document.getElementById('openclaw-crab');
+    var word = document.getElementById('personal-word');
+    if (!crab || !word) return;
+
+    _timer = setTimeout(function () {
+      _timer = null;
+      var wr  = word.getBoundingClientRect();
+      var cw  = crab.offsetWidth;
+      var ch  = crab.offsetHeight;
+      var topPos    = wr.top + window.scrollY + wr.height / 2 - ch / 2;
+      var slideDest = Math.max(wr.left - cw - 6, 4);
+
+      // Place crab off-screen left at the right vertical position
+      crab.style.top  = topPos + 'px';
+      crab.style.left = '-200px';
+
+      // Two rAFs ensure the browser paints the starting position before we add transition
+      requestAnimationFrame(function () {
+        requestAnimationFrame(function () {
+
+          // ── Phase 1: slide in ──────────────────────────────────
+          crab.style.transition = 'left 1.3s cubic-bezier(0.22,1,0.36,1)';
+          crab.style.left = slideDest + 'px';
+
+          setTimeout(function () {
+            crab.style.transition = '';
+
+            // ── Phase 2: scratch ───────────────────────────────────
+            crab.classList.add('is-scratching');
+
+            // Apply strikethrough mid-scratch
+            setTimeout(function () {
+              word.classList.add('is-scratched');
+            }, 300);
+
+            // ── Phase 3: step back & observe ───────────────────────
+            setTimeout(function () {
+              crab.classList.remove('is-scratching');
+
+              // Step back slightly
+              var observeLeft = Math.max(slideDest - 48, 4);
+              crab.style.transition = 'left 0.8s cubic-bezier(0.22,1,0.36,1)';
+              crab.style.left = observeLeft + 'px';
+
+              // Lean body back like a painter appraising their work
+              setTimeout(function () {
+                crab.style.transition = 'transform 0.65s ease-out';
+                crab.style.transformOrigin = 'bottom center';
+                crab.style.transform = 'rotate(-14deg)';
+
+                // Raise the OpenClaw arm in a triumphant appraisal gesture
+                setTimeout(function () {
+                  var arm = document.getElementById('crab-right-arm');
+                  if (!arm) return;
+                  var t0 = performance.now();
+                  var dur = 750;
+                  var target = -62; // degrees – raises claw upward
+                  var px = 87, py = 52; // shoulder pivot in SVG user-units
+
+                  requestAnimationFrame(function tick(ts) {
+                    var p = Math.min((ts - t0) / dur, 1);
+                    var e = 1 - Math.pow(1 - p, 3); // ease-out cubic
+                    arm.setAttribute('transform',
+                      'rotate(' + (target * e).toFixed(2) + ' ' + px + ' ' + py + ')');
+                    if (p < 1) requestAnimationFrame(tick);
+                  });
+                }, 250);
+
+              }, 300);
+            }, 730); // end scratch
+          }, 1350); // end slide-in
+        });
+      });
+    }, 3000); // initial delay
+  }
+
+  // Turbo-aware initialisation
+  document.addEventListener('turbo:load', startCrab);
+  document.addEventListener('turbo:before-cache', resetState);
+
+  // Fallback for non-Turbo initial load
+  if (document.readyState !== 'loading') {
+    startCrab();
+  } else {
+    document.addEventListener('DOMContentLoaded', startCrab);
+  }
+}());
+</script>

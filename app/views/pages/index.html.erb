@@ -331,7 +331,7 @@
       var wr  = word.getBoundingClientRect();
       var cw  = crab.offsetWidth;
       var ch  = crab.offsetHeight;
-      var topPos    = wr.top + window.scrollY + wr.height / 2 - ch / 2;
+      var topPos    = wr.top + window.scrollY + wr.height / 2 - ch * 0.34; // align nozzle (34% down SVG) with strikethrough line
       // Position so nozzle tip (at ~95% of div width) aligns with word's left edge
       var slideDest = Math.max(wr.left - cw * 0.95, 4);
 

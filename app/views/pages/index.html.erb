@@ -29,10 +29,28 @@
     text-decoration: line-through #E84B2F;
     text-decoration-thickness: 6px;
   }
+  /* Spray mist particles */
+  #spray-mist circle { opacity: 0; }
+  @keyframes spray-pulse {
+    0%, 100% { opacity: 0; }
+    25%, 75%  { opacity: 0.9; }
+  }
+  #openclaw-crab.is-scratching #spray-mist circle:nth-child(1) {
+    animation: spray-pulse 0.2s ease-in-out 0s infinite;
+  }
+  #openclaw-crab.is-scratching #spray-mist circle:nth-child(2) {
+    animation: spray-pulse 0.2s ease-in-out 0.05s infinite;
+  }
+  #openclaw-crab.is-scratching #spray-mist circle:nth-child(3) {
+    animation: spray-pulse 0.2s ease-in-out 0.1s infinite;
+  }
+  #openclaw-crab.is-scratching #spray-mist circle:nth-child(4) {
+    animation: spray-pulse 0.2s ease-in-out 0.15s infinite;
+  }
 </style>
 
 <div id="openclaw-crab" aria-hidden="true">
-  <svg viewBox="0 0 130 100" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 138 100" xmlns="http://www.w3.org/2000/svg">
     <!-- Body -->
     <ellipse cx="62" cy="58" rx="27" ry="21" fill="#E84B2F"/>
     <ellipse cx="60" cy="55" rx="19" ry="13" fill="#F06040" opacity="0.55"/>
@@ -42,11 +60,33 @@
     <!-- Left closed claw -->
     <line x1="37" y1="52" x2="18" y2="41" stroke="#E84B2F" stroke-width="7" stroke-linecap="round"/>
     <path d="M18,41 C11,34 5,38 8,46 C11,54 18,46 18,41 Z" fill="#E84B2F"/>
-    <!-- Right OpenClaw arm – pivot at (87,52) -->
+    <!-- Right arm holding spray bottle – pivot at (87,52) -->
     <g id="crab-right-arm">
-      <line x1="87" y1="52" x2="105" y2="40" stroke="#E84B2F" stroke-width="7" stroke-linecap="round"/>
-      <line x1="105" y1="40" x2="121" y2="30" stroke="#E84B2F" stroke-width="5" stroke-linecap="round"/>
-      <line x1="105" y1="40" x2="119" y2="51" stroke="#E84B2F" stroke-width="5" stroke-linecap="round"/>
+      <!-- Arm -->
+      <line x1="87" y1="52" x2="103" y2="42" stroke="#E84B2F" stroke-width="7" stroke-linecap="round"/>
+      <!-- Bottle body -->
+      <rect x="101" y="27" width="15" height="22" rx="4" fill="#5B9DD9"/>
+      <!-- Label backing -->
+      <rect x="103" y="31" width="9" height="11" rx="2" fill="#9ECAE1" opacity="0.55"/>
+      <!-- × label -->
+      <text x="107.5" y="40" font-size="7.5" fill="#1C5FA8" text-anchor="middle" font-family="sans-serif" font-weight="bold">×</text>
+      <!-- Pump neck -->
+      <rect x="114" y="30" width="11" height="8" rx="2.5" fill="#3A82C4"/>
+      <!-- Nozzle -->
+      <line x1="124" y1="34" x2="131" y2="34" stroke="#1C5FA8" stroke-width="4" stroke-linecap="round"/>
+      <!-- Trigger -->
+      <path d="M109,47 L107,54 L114,54 L114,47" fill="#3A82C4"/>
+      <!-- Top claw finger -->
+      <path d="M103,42 C100,39 100,31 104,27" stroke="#E84B2F" stroke-width="5" fill="none" stroke-linecap="round"/>
+      <!-- Bottom claw finger -->
+      <path d="M103,42 C106,46 107,52 104,56" stroke="#E84B2F" stroke-width="5" fill="none" stroke-linecap="round"/>
+    </g>
+    <!-- Spray mist – animated during scratching -->
+    <g id="spray-mist">
+      <circle cx="133" cy="31" r="2"   fill="#9ECAE1"/>
+      <circle cx="136" cy="34" r="1.5" fill="#C6DBEF"/>
+      <circle cx="134" cy="37" r="1.8" fill="#6BAED6"/>
+      <circle cx="137" cy="30" r="1.2" fill="#9ECAE1"/>
     </g>
     <!-- Right legs -->
     <line x1="80" y1="66" x2="97" y2="78" stroke="#E84B2F" stroke-width="4" stroke-linecap="round"/>
@@ -292,7 +332,8 @@
       var cw  = crab.offsetWidth;
       var ch  = crab.offsetHeight;
       var topPos    = wr.top + window.scrollY + wr.height / 2 - ch / 2;
-      var slideDest = Math.max(wr.left - cw - 6, 4);
+      // Position so nozzle tip (at ~95% of div width) aligns with word's left edge
+      var slideDest = Math.max(wr.left - cw * 0.95, 4);
 
       // Place crab off-screen left at the right vertical position
       crab.style.top  = topPos + 'px';

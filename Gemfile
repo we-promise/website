@@ -36,7 +36,7 @@ gem "hotwire_combobox", "~> 0.4.1"
 # Other
 gem "faraday"
 gem "jbuilder"
-gem "plaid", "~> 44.1"
+gem "plaid", "~> 47.0"
 gem "tzinfo-data", platforms: %i[ mswin mswin64 mingw x64_mingw jruby ]
 gem "redcarpet"
 gem "avo", ">= 3.2"

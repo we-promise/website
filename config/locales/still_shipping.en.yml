@@ -1,0 +1,112 @@
+en:
+  pages:
+    still_shipping:
+      meta:
+        title: "Still shipping — one year of Sure"
+        description: "One year after Maybe Finance published its final image, the community fork lives on under the Sure banner."
+      brand_alt: "Sure"
+      nav_label: "One year forward"
+      nav_cta: "Star Sure on GitHub"
+      eyebrow: "July 24, 2025 → July 24, 2026"
+      title_lead: "The last image"
+      title_tail: "wasn’t the last chapter."
+      intro: "On July 24, 2025, Maybe Finance published its final image. The company’s chapter closed, but the code was open—and a community was ready to carry it forward."
+      present: "Almost one year later, Sure is still shipping."
+      orb:
+        label: "%{days} of 365 days carried forward"
+        day: "day"
+        days: "days"
+        carried: "carried forward"
+        complete: "one year forward"
+        remaining: "%{count} days to the anniversary"
+        today: "One year today"
+      image_transition:
+        label: "The image kept moving"
+        from: "maybe-finance/maybe:v0.6.0"
+        to: "we-promise/sure:v0.7.3-alpha.3"
+      scroll_prompt: "Scroll to follow the handoff"
+      thesis:
+        kicker: "What open source makes possible"
+        title: "An ending can be a handoff."
+        body: "Maybe’s team made a generous choice: they opened the source. Sure exists because that foundation was worth carrying forward—and because maintainers, self-hosters, translators, bug reporters, and contributors chose to keep showing up."
+      stats:
+        eyebrow: "The graph did not go flat"
+        title: "A year measured in forward motion."
+        context: "Repository snapshot, July 18, 2026."
+        commits:
+          value: "1,496"
+          label: "commits since the handoff"
+        releases:
+          value: "55"
+          label: "web releases tagged"
+        languages:
+          value: "15"
+          label: "supported languages"
+        providers:
+          value: "16"
+          label: "connection providers"
+      timeline:
+        eyebrow: "Five chapters, one living codebase"
+        title: "From final image to fresh momentum."
+        aria_label: "Sure project milestone timeline"
+        final_image:
+          tab: "Jul ’25"
+          date: "July 24, 2025"
+          title: "The final Maybe image"
+          body: "Maybe v0.6.0 arrived as the project’s final release. The code was capable, open, and suddenly without the company that had built it."
+          note: "A finish line for one team. A starting line for a community."
+        new_name:
+          tab: "Aug ’25"
+          date: "August 5, 2025"
+          title: "A new name, the same history"
+          body: "The first Sure rebrand landed with v0.6.1. The community fork took on its own identity while preserving the project history, attribution, and AGPL spirit."
+          note: "Not a rewrite—a promise to steward what already worked."
+        new_surfaces:
+          tab: "Feb ’26"
+          date: "Winter 2026"
+          title: "Sure moved beyond the browser"
+          body: "A Flutter companion, AI-assisted statement imports, richer APIs, and an MCP server for external assistants turned the codebase into a broader personal-finance platform."
+          note: "More ways to use your data, without giving up ownership of it."
+        wider_world:
+          tab: "May ’26"
+          date: "Spring 2026"
+          title: "More ways in, more people included"
+          body: "New bank, brokerage, crypto, and open-banking connections joined a maturing design system, an interoperable Sure import format, and translations spanning 15 supported languages."
+          note: "The project grew wider while the foundations grew stronger."
+        still_shipping:
+          tab: "Jul ’26"
+          date: "July 2026"
+          title: "Still shipping"
+          body: "The v0.7.3 line brings new integrations, proactive financial insights, sturdier sync recovery, and a steady stream of fixes from people around the world."
+          note: "The most important milestone is the next useful release."
+      progress:
+        eyebrow: "What changed under the Sure banner"
+        title: "Alive means more than maintained."
+        intro: "The community did more than keep the lights on. It widened what the product can do and who can make it their own."
+        mobile:
+          title: "A real mobile companion"
+          body: "Android, iOS, and web builds bring accounts, transactions, budgets, and AI chat beyond the desktop."
+        connections:
+          title: "A broader financial world"
+          body: "Banks, brokerages, crypto exchanges, open banking, and flexible price providers make self-hosting useful in more places."
+        intelligence:
+          title: "Practical, user-controlled AI"
+          body: "Document retrieval, statement imports, multiple model providers, and secure assistant connections meet people where they work."
+        foundations:
+          title: "Stronger foundations"
+          body: "Rails upgrades, accessible design-system primitives, observability, test coverage, and safer syncs make every new feature easier to trust."
+      gratitude:
+        eyebrow: "A note of gratitude"
+        title: "Built on a gift. Carried by a community."
+        body_one: "To the Maybe team: thank you for building something worth preserving, and for choosing to release it under an open-source license when the business moved on."
+        body_two: "To everyone building Sure—maintainers, contributors, translators, self-hosters, issue reporters, and patient early users—thank you for proving that software can have a life beyond the company that began it."
+        signature: "Here’s to the next commit."
+      cta:
+        title: "The codebase is alive. Come shape what it becomes."
+        body: "Run Sure on your own server, open an issue, improve a translation, or land the change you’ve been waiting for."
+        github: "Explore the repository"
+        final_release: "Read Maybe’s final release"
+        discord: "Join the community"
+      footer:
+        note: "Sure is a community fork of Maybe Finance, distributed under the AGPLv3 license."
+        made: "Made in the open, one commit at a time."

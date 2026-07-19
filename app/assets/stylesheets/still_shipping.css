@@ -1,0 +1,217 @@
+.milestone-page {
+  --milestone-surface: #f7f7f5;
+  --milestone-container: #ffffff;
+  --milestone-container-hover: #f2f2ef;
+  --milestone-inset: #efefeb;
+  --milestone-primary: #171717;
+  --milestone-secondary: #666662;
+  --milestone-tertiary: #deded8;
+  --milestone-success: #62a446;
+  --milestone-inverse: #171717;
+  color: var(--milestone-primary);
+  background:
+    radial-gradient(circle at 80% 8%, color-mix(in oklab, var(--milestone-success) 14%, transparent), transparent 28rem),
+    var(--milestone-surface);
+}
+
+.milestone-scroll-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 60;
+  height: 0.25rem;
+  background: var(--milestone-success);
+  transform: scaleX(0);
+  transform-origin: left;
+  will-change: transform;
+}
+
+.milestone-grid {
+  background-image:
+    linear-gradient(var(--milestone-tertiary) 1px, transparent 1px),
+    linear-gradient(90deg, var(--milestone-tertiary) 1px, transparent 1px);
+  background-size: 2rem 2rem;
+  mask-image: radial-gradient(circle at center, black, transparent 72%);
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.milestone-accent-text,
+.milestone-kicker {
+  color: var(--milestone-success);
+}
+
+.milestone-signal {
+  background: var(--milestone-success);
+  box-shadow: 0 0 0 0 color-mix(in oklab, var(--milestone-success) 35%, transparent);
+  animation: milestone-signal 2.4s ease-out infinite;
+}
+
+.milestone-code-cursor::after,
+.milestone-inline-cursor::after {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 1em;
+  margin-left: 0.25rem;
+  vertical-align: -0.12em;
+  background: var(--milestone-success);
+  animation: milestone-cursor 1s steps(1) infinite;
+}
+
+.milestone-orb {
+  --orb-rotate-x: 0deg;
+  --orb-rotate-y: 0deg;
+  position: relative;
+  display: grid;
+  width: clamp(17rem, 36vw, 28rem);
+  aspect-ratio: 1;
+  place-items: center;
+  border-radius: 9999px;
+  background: conic-gradient(
+    from 180deg,
+    var(--milestone-success) 0 var(--anniversary-progress),
+    var(--milestone-tertiary) var(--anniversary-progress) 100%
+  );
+  box-shadow:
+    0 0 0 0.5rem color-mix(in oklab, var(--milestone-success) 9%, transparent),
+    0 20px 24px -4px rgb(11 11 11 / 10%);
+  transform: perspective(60rem) rotateX(var(--orb-rotate-x)) rotateY(var(--orb-rotate-y));
+  transition: transform 180ms ease-out;
+  isolation: isolate;
+}
+
+.milestone-orb::before {
+  content: "";
+  position: absolute;
+  inset: 0.75rem;
+  z-index: -1;
+  border: 1px solid var(--milestone-tertiary);
+  border-radius: inherit;
+  background:
+    radial-gradient(circle at 50% 40%, color-mix(in oklab, var(--milestone-success) 9%, transparent), transparent 50%),
+    var(--milestone-container);
+}
+
+.milestone-orb-core {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.milestone-orbit-dot {
+  position: absolute;
+  inset: 0.25rem;
+  border-radius: inherit;
+  animation: milestone-orbit 12s linear infinite;
+}
+
+.milestone-orbit-dot::before {
+  content: "";
+  position: absolute;
+  top: -0.125rem;
+  left: 50%;
+  width: 1rem;
+  height: 1rem;
+  border: 0.25rem solid var(--milestone-container);
+  border-radius: 9999px;
+  background: var(--milestone-success);
+  box-shadow: 0 1px 3px rgb(11 11 11 / 10%);
+  transform: translateX(-50%);
+}
+
+.milestone-bob {
+  animation: milestone-bob 1.8s ease-in-out infinite;
+}
+
+.milestone-stat-card,
+.milestone-progress-card {
+  transition:
+    transform 200ms ease,
+    background-color 200ms ease;
+}
+
+.milestone-stat-card:hover,
+.milestone-progress-card:hover {
+  background: var(--milestone-container-hover);
+  transform: translateY(-0.25rem);
+}
+
+.milestone-feature-icon {
+  color: var(--milestone-success);
+  background: color-mix(in oklab, var(--milestone-success) 11%, transparent);
+}
+
+.milestone-tab[aria-selected="true"] {
+  color: white;
+  background: var(--milestone-inverse);
+  box-shadow: 0 1px 2px rgb(11 11 11 / 8%);
+}
+
+.milestone-tab[aria-selected="false"] {
+  color: var(--milestone-secondary);
+}
+
+.milestone-tab[aria-selected="false"]:hover {
+  color: var(--milestone-primary);
+  background: var(--milestone-container);
+}
+
+.milestone-page [role="tabpanel"][hidden] {
+  display: none;
+}
+
+.milestone-gratitude-pattern {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+  place-items: center;
+  background:
+    linear-gradient(135deg, transparent 48%, rgb(255 255 255 / 15%) 48% 52%, transparent 52%),
+    color-mix(in oklab, var(--milestone-success) 44%, var(--milestone-inverse));
+  background-size: 3rem 3rem;
+}
+
+.milestone-gratitude-mark {
+  display: grid;
+  width: 9rem;
+  aspect-ratio: 1;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 24%);
+  border-radius: 9999px;
+  background: var(--milestone-container);
+  box-shadow: 0 20px 24px -4px rgb(11 11 11 / 16%);
+  transform: rotate(-6deg);
+}
+
+@keyframes milestone-signal {
+  100% { box-shadow: 0 0 0 0.75rem transparent; }
+}
+
+@keyframes milestone-cursor {
+  50% { opacity: 0; }
+}
+
+@keyframes milestone-orbit {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes milestone-bob {
+  50% { transform: translateY(0.25rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .milestone-signal,
+  .milestone-code-cursor::after,
+  .milestone-inline-cursor::after,
+  .milestone-orbit-dot,
+  .milestone-bob {
+    animation: none;
+  }
+
+  .milestone-stat-card,
+  .milestone-progress-card,
+  .milestone-orb {
+    transition: none;
+  }
+}

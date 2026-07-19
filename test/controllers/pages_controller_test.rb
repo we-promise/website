@@ -14,4 +14,25 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
       assert_select "a[href='https://github.com/maybe-finance/maybe/releases/tag/v0.6.0']"
     end
   end
+
+  test "still shipping page pluralizes a single remaining day" do
+    travel_to Time.find_zone("America/Los_Angeles").local(2026, 7, 23, 12) do
+      get still_shipping_url
+
+      assert_response :success
+      assert_select "span", text: "1 day to the anniversary"
+    end
+  end
+
+  test "star count request uses short network timeouts" do
+    response = Struct.new(:body).new('{"repo":{"stars":321}}')
+    http = mock
+    http.expects(:get).with("/repos/we-promise/sure").returns(response)
+    Net::HTTP.expects(:start)
+      .with("ungh.cc", 443, use_ssl: true, open_timeout: 2, read_timeout: 2)
+      .yields(http)
+      .returns(response)
+
+    assert_equal 321, PagesController.new.send(:fetch_stars_count)
+  end
 end

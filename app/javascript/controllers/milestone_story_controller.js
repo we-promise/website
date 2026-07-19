@@ -4,6 +4,7 @@ export default class extends Controller {
   static targets = ["counter", "orb", "panel", "scrollProgress", "tab"]
 
   connect() {
+    this.controllerConnected = true
     this.prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches
@@ -17,6 +18,7 @@ export default class extends Controller {
   }
 
   disconnect() {
+    this.controllerConnected = false
     window.removeEventListener("scroll", this.updateScrollProgress)
     this.counterObserver?.disconnect()
 
@@ -122,12 +124,16 @@ export default class extends Controller {
   }
 
   animateCounter(element) {
-    const targetValue = Number(element.dataset.counterValue)
-    const formatter = new Intl.NumberFormat(document.documentElement.lang)
+    const targetValue = Number(element.dataset.counterValue) || 0
+    const formatter = new Intl.NumberFormat(
+      document.documentElement.lang || undefined,
+    )
     const duration = 900
     const startedAt = window.performance.now()
 
     const step = (now) => {
+      if (!this.controllerConnected) return
+
       const elapsed = Math.min((now - startedAt) / duration, 1)
       const eased = 1 - (1 - elapsed) ** 3
 

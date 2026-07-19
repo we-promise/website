@@ -79,9 +79,11 @@ class PagesController < ApplicationController
   #   fetch_stars_count # => 1234
   def fetch_stars_count
     url = URI("https://ungh.cc/repos/we-promise/sure")
-    response = Net::HTTP.get(url)
-    json = JSON.parse(response)
-    json["repo"]["stars"]
+    response = Net::HTTP.start(url.host, url.port, use_ssl: true, open_timeout: 2, read_timeout: 2) do |http|
+      http.get(url.request_uri)
+    end
+    json = JSON.parse(response.body)
+    json.dig("repo", "stars")
   rescue StandardError => e
     Rails.logger.error "Failed to fetch stars count: #{e.message}"
     nil

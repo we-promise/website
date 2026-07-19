@@ -18,7 +18,9 @@ en:
         days: "days"
         carried: "carried forward"
         complete: "one year forward"
-        remaining: "%{count} days to the anniversary"
+        remaining:
+          one: "1 day to the anniversary"
+          other: "%{count} days to the anniversary"
         today: "One year today"
       image_transition:
         label: "The image kept moving"
@@ -110,3 +112,13 @@ en:
       footer:
         note: "Sure is a community fork of Maybe Finance, distributed under the AGPLv3 license."
         made: "Made in the open, one commit at a time."
+  articles:
+    index:
+      banner:
+        project_story: "Project story"
+        days_value: "365"
+        days_label: "days carried forward"
+        date_range: "July 24, 2025 → July 24, 2026"
+        title: "The last image wasn’t the last chapter."
+        description: "One year after Maybe Finance’s final image, see how the community kept the codebase moving under the Sure banner."
+        cta: "Follow the handoff"

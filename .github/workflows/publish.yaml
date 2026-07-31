@@ -116,7 +116,7 @@ jobs:
             org.opencontainers.image.description=A multi-arch Docker image for the Sure website
 
       - name: Publish 'linux/${{ matrix.platform }}' image by digest
-        uses: docker/build-push-action@v6.18.0
+        uses: docker/build-push-action@v7.1.0
         id: build
         with:
           context: .
@@ -142,7 +142,7 @@ jobs:
 
       - name: Upload the Docker image digest
         if: ${{ github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v') || github.event_name == 'schedule' || github.event.inputs.push }}
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: digest-${{ matrix.platform }}
           path: ${{ runner.temp }}/digests/*
@@ -165,7 +165,7 @@ jobs:
         uses: docker/setup-buildx-action@v3.12.0
 
       - name: Download Docker image digests
-        uses: actions/download-artifact@v7.0.0
+        uses: actions/download-artifact@v8.0.1
         with:
           path: ${{ runner.temp }}/digests
           pattern: digest-*

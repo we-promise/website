@@ -31,6 +31,10 @@ module NavigationHelper
   def header_nav_resources_links
     [
       {
+        text: "Documentation",
+        path: "https://docs.sure.am"
+      },
+      {
         text: "Join Community",
         path: discord_url
       },
@@ -68,6 +72,10 @@ module NavigationHelper
 
   def footer_resources
     [
+      {
+        text: "Documentation",
+        path: "https://docs.sure.am"
+      },
       {
         text: "Join Community",
         path: discord_url

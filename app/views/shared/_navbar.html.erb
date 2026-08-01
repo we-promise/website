@@ -95,11 +95,10 @@
       <a href="https://github.com/we-promise/sure" class="px-3 py-1.5 text-gray-800 hover:text-gray-9000 hover:bg-alpha-black-50 rounded-xl">Contribute</a>
     </menu>
     <menu class="flex hidden gap-x-2 md:flex font-medium">
-      <%= link_to "Sign in", "https://app.sure.am", class: "py-2 px-3 text-sm leading-[18px] text-black group rounded-lg hover:bg-alpha-black-50 bg-transparent border-[1px] border-gray-300 hover:border-gray-300 flex items-center gap-1 shadow-btn-plain-inset-1 shadow-btn-plain-inset-2" %>
-      <%= link_to "https://app.sure.am/sessions/new", class: "p-2 pl-3 text-sm leading-[18px] text-white bg-gray-900 rounded-lg group hover:bg-gray-800 border-[1px] border-gray-900 flex items-center gap-1 shadow-btn-dark-inset-1 shadow-btn-dark-inset-2 shadow-btn-dark-inset-3 rainbow-button" do %>
+      <%= link_to "Docs", "https://docs.sure.am", class: "py-2 px-3 text-sm leading-[18px] text-black group rounded-lg hover:bg-alpha-black-50 bg-transparent border-[1px] border-gray-300 hover:border-gray-300 flex items-center gap-1 shadow-btn-plain-inset-1 shadow-btn-plain-inset-2" %>
+      <%= link_to "https://app.sure.am/", class: "p-2 pl-3 text-sm leading-[18px] text-white bg-gray-900 rounded-lg group hover:bg-gray-800 border-[1px] border-gray-900 flex items-center gap-1 shadow-btn-dark-inset-1 shadow-btn-dark-inset-2 shadow-btn-dark-inset-3 rainbow-button" do %>
         🚀 Try it <%= lucide_icon("chevron-right", alt: "Menu", class: "text-gray-500 group-hover:text-white transition-all duration-150 ease-in-out w-4 h-4") %>
       <% end %>
-      <%= link_to "Docs", "https://docs.sure.am", class: "py-2 px-3 text-sm leading-[18px] text-black group rounded-lg hover:bg-alpha-black-50 bg-transparent border-[1px] border-gray-300 hover:border-gray-300 flex items-center gap-1 shadow-btn-plain-inset-1 shadow-btn-plain-inset-2" %>
     </menu>
     <%= lucide_icon("menu", alt: "Menu", class: "w-6 h-6 md:hidden", 'data-action': 'click->navbar#toggleMobileMenu') %>
     <div class="flex flex-col hidden w-full mt-4 font-medium md:hidden" data-navbar-target="mobileMenu">
@@ -137,7 +136,7 @@
         <div class="flex flex-col gap-3 mt-4">
           <%= link_to "Sign in", "https://app.sure.am",
               class: "w-full py-2 px-3 text-sm text-center text-gray-900 rounded-lg border border-gray-300 hover:bg-gray-50" %>
-          <%= link_to "🚀 Try it ", "https://app.sure.am/registration/new",
+          <%= link_to "🚀 Try it ", "https://app.sure.am/",
               class: "w-full py-2 px-3 text-sm text-center text-white bg-gray-900 rounded-lg hover:bg-gray-800" %>
         </div>
       </div>

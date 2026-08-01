@@ -82,6 +82,9 @@ class PagesController < ApplicationController
     response = Net::HTTP.start(url.host, url.port, use_ssl: true, open_timeout: 2, read_timeout: 2) do |http|
       http.get(url.request_uri)
     end
+
+    return unless response.is_a?(Net::HTTPSuccess)
+
     json = JSON.parse(response.body)
     json.dig("repo", "stars")
   rescue StandardError => e

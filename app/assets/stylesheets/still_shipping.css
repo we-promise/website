@@ -8,6 +8,7 @@
   --milestone-tertiary: #deded8;
   --milestone-success: #62a446;
   --milestone-inverse: #171717;
+
   color: var(--milestone-primary);
   background:
     radial-gradient(circle at 80% 8%, color-mix(in oklab, var(--milestone-success) 14%, transparent), transparent 28rem),
@@ -61,6 +62,7 @@
 .milestone-orb {
   --orb-rotate-x: 0deg;
   --orb-rotate-y: 0deg;
+
   position: relative;
   display: grid;
   width: clamp(17rem, 36vw, 28rem);

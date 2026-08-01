@@ -3,12 +3,15 @@ import { Controller } from "@hotwired/stimulus"
 export default class extends Controller {
   static targets = ["counter", "orb", "panel", "scrollProgress", "tab"]
 
+  initialize() {
+    this.updateScrollProgress = this.updateScrollProgress.bind(this)
+  }
+
   connect() {
     this.controllerConnected = true
     this.prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)",
     ).matches
-    this.updateScrollProgress = this.updateScrollProgress.bind(this)
 
     window.addEventListener("scroll", this.updateScrollProgress, {
       passive: true,
@@ -104,11 +107,16 @@ export default class extends Controller {
     if (this.prefersReducedMotion || !("IntersectionObserver" in window)) return
 
     this.counterTargets.forEach((counter) => {
-      counter.textContent = "0"
+      counter.textContent =
+        counter.dataset.counted === "true"
+          ? this.counterFormatter().format(this.counterTargetValue(counter))
+          : "0"
     })
 
     this.counterObserver = new IntersectionObserver(
       (entries) => {
+        if (!this.controllerConnected) return
+
         entries.forEach((entry) => {
           if (!entry.isIntersecting || entry.target.dataset.counted === "true") return
 
@@ -124,10 +132,8 @@ export default class extends Controller {
   }
 
   animateCounter(element) {
-    const targetValue = Number(element.dataset.counterValue) || 0
-    const formatter = new Intl.NumberFormat(
-      document.documentElement.lang || undefined,
-    )
+    const targetValue = this.counterTargetValue(element)
+    const formatter = this.counterFormatter()
     const duration = 900
     const startedAt = window.performance.now()
 
@@ -143,5 +149,13 @@ export default class extends Controller {
     }
 
     requestAnimationFrame(step)
+  }
+
+  counterTargetValue(element) {
+    return Number(element.dataset.counterValue) || 0
+  }
+
+  counterFormatter() {
+    return new Intl.NumberFormat(document.documentElement.lang || undefined)
   }
 }

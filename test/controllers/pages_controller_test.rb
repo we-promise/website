@@ -25,7 +25,9 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "star count request uses short network timeouts" do
-    response = Struct.new(:body).new('{"repo":{"stars":321}}')
+    response = mock
+    response.expects(:is_a?).with(Net::HTTPSuccess).returns(true)
+    response.expects(:body).returns('{"repo":{"stars":321}}')
     http = mock
     http.expects(:get).with("/repos/we-promise/sure").returns(response)
     Net::HTTP.expects(:start)
@@ -34,5 +36,18 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
       .returns(response)
 
     assert_equal 321, PagesController.new.send(:fetch_stars_count)
+  end
+
+  test "star count request ignores unsuccessful responses" do
+    response = mock
+    response.expects(:is_a?).with(Net::HTTPSuccess).returns(false)
+    http = mock
+    http.expects(:get).with("/repos/we-promise/sure").returns(response)
+    Net::HTTP.expects(:start)
+      .with("ungh.cc", 443, use_ssl: true, open_timeout: 2, read_timeout: 2)
+      .yields(http)
+      .returns(response)
+
+    assert_nil PagesController.new.send(:fetch_stars_count)
   end
 end

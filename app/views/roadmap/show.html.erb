@@ -1,0 +1,65 @@
+<%
+  title t(".title")
+  description t(".meta_description")
+%>
+
+<article class="max-w-6xl mx-auto pb-16">
+  <header class="max-w-3xl mx-auto px-4 pt-8 pb-16 text-center md:pt-16 md:pb-20">
+    <%= image_tag "maybe-logo.svg", alt: "Sure", class: "h-8 w-auto mx-auto mb-8" %>
+    <p class="font-mono text-xs font-medium uppercase tracking-[0.2em] text-gray-400 mb-5"><%= t(".eyebrow") %></p>
+    <h1 class="text-5xl md:text-6xl text-gray-800 leading-[1.05] tracking-[-0.04em] font-medium mb-5"><%= t(".heading") %></h1>
+    <p class="text-lg md:text-xl leading-[1.45] text-gray-500 max-w-2xl mx-auto"><%= t(".intro") %></p>
+  </header>
+
+  <div class="grid gap-10 px-4 md:grid-cols-[220px_minmax(0,1fr)] md:gap-16 md:px-8">
+    <aside class="self-start md:sticky md:top-8">
+      <div class="border-y border-gray-200 py-5 md:border-y-0 md:border-l md:pl-6">
+        <p class="font-mono text-xs uppercase tracking-[0.16em] text-gray-400 mb-3"><%= t(".summary_label") %></p>
+        <p class="text-3xl font-medium tracking-[-0.03em] text-gray-800"><%= @items.size %> <span class="text-base font-normal text-gray-500"><%= t(".priority", count: @items.size) %></span></p>
+        <p class="mt-2 text-sm leading-6 text-gray-500"><%= t(".summary_note") %></p>
+        <div class="mt-6 space-y-3 text-sm">
+          <% @status_counts.each do |status, count| %>
+            <div class="flex items-center justify-between gap-3 text-gray-500">
+              <span class="flex items-center gap-2"><span class="h-2 w-2 rounded-full <%= status == "In progress" ? "bg-emerald-500" : status == "Exploring" ? "bg-amber-400" : "bg-gray-300" %>"></span><%= status %></span>
+              <span class="font-mono text-xs text-gray-400"><%= count %></span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </aside>
+
+    <div class="relative md:pl-12">
+      <div class="absolute bottom-5 left-[11px] top-6 hidden w-px bg-gray-200 md:block" aria-hidden="true"></div>
+      <div class="space-y-5">
+        <% @phases.each do |phase| %>
+          <details class="group relative rounded-2xl border border-gray-200 bg-white/70 shadow-xs open:bg-white">
+            <summary class="relative flex cursor-pointer list-none items-start gap-4 p-5 marker:hidden md:gap-6 md:p-7">
+              <span class="relative z-10 mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border-4 border-[#f9f9f9] bg-gray-400 text-[0px] group-open:bg-gray-800 md:absolute md:-left-[61px]" aria-hidden="true"></span>
+              <span class="min-w-0 flex-1">
+                <span class="block font-mono text-xs uppercase tracking-[0.16em] text-gray-400"><%= phase[:title] %></span>
+                <span class="mt-2 block text-2xl font-medium tracking-[-0.03em] text-gray-800"><%= phase[:description] %></span>
+                <span class="mt-3 block text-sm text-gray-400"><%= phase[:items].size %> <%= "priority".pluralize(phase[:items].size) %></span>
+              </span>
+              <%= lucide_icon "chevron-down", class: "mt-1 h-5 w-5 shrink-0 text-gray-400 transition-transform group-open:rotate-180" %>
+            </summary>
+            <div class="border-t border-gray-100 px-5 pb-6 pt-2 md:px-7 md:pb-7">
+              <ul class="divide-y divide-gray-100">
+                <% phase[:items].each do |item| %>
+                  <li class="py-5 first:pt-4 last:pb-0">
+                    <div class="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between sm:gap-6">
+                      <h2 class="text-base font-medium text-gray-800"><%= item[:title] %></h2>
+                      <span class="inline-flex w-fit shrink-0 items-center gap-2 rounded-full bg-gray-50 px-2.5 py-1 font-mono text-[11px] text-gray-500"><span class="h-1.5 w-1.5 rounded-full <%= item[:status] == "In progress" ? "bg-emerald-500" : item[:status] == "Exploring" ? "bg-amber-400" : "bg-gray-300" %>"></span><%= item[:status] %></span>
+                    </div>
+                    <% if item[:description].present? %>
+                      <p class="mt-2 max-w-2xl text-sm leading-6 text-gray-500"><%= item[:description] %></p>
+                    <% end %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </details>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</article>

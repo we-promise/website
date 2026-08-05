@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get "/tools/vote", to: redirect("/tools", status: 301)
   get "/ai", to: redirect("/features/assistant", status: 301)
   get "/ask", to: redirect("/", status: 301)
-  get "/roadmap", to: redirect("/", status: 301)
+  get "/roadmap", to: "roadmap#show"
   get "/podcast", to: redirect("/", status: 301)
   get "/now-subscribe", to: redirect("/", status: 301)
   get "/community", to: redirect(Rails.application.config.x.discord_url, status: 301)

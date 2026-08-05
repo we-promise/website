@@ -29,3 +29,15 @@
 
 en:
   hello: "Hello world"
+  roadmap:
+    show:
+      title: "Roadmap"
+      meta_description: "See what the Sure community is working toward: a more reliable, capable, and open personal-finance experience."
+      eyebrow: "A shared direction"
+      heading: "The Sure roadmap"
+      intro: "A living view of where we're headed. We’ll keep the foundation solid, expand what personal finance can do, and open the platform with care."
+      summary_label: "At a glance"
+      priority:
+        one: "priority"
+        other: "priorities"
+      summary_note: "The order is intentional, but the timing is flexible. Progress depends on learning with the community."

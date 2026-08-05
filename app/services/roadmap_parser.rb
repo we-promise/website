@@ -1,16 +1,24 @@
+require "net/http"
+require "uri"
+
 class RoadmapParser
+  DEFAULT_SOURCE_URL = "https://raw.githubusercontent.com/we-promise/sure/main/docs/roadmap.md"
   HEADER = "<!-- roadmap:v1 -->"
   PHASE_PATTERN = /^## Phase:\s*(.+?)\s*$/
   ITEM_PATTERN = /^### Item:\s*(.+?)\s*$/
+  DEFAULT_OPEN_TIMEOUT = 2
+  DEFAULT_READ_TIMEOUT = 2
 
   class ParseError < StandardError; end
 
-  def initialize(path)
-    @path = Pathname.new(path)
+  def initialize(source = nil, open_timeout: DEFAULT_OPEN_TIMEOUT, read_timeout: DEFAULT_READ_TIMEOUT)
+    @source = source || ENV.fetch("SURE_ROADMAP_URL", DEFAULT_SOURCE_URL)
+    @open_timeout = open_timeout
+    @read_timeout = read_timeout
   end
 
   def parse
-    lines = @path.read.lines.map(&:chomp)
+    lines = markdown.lines.map(&:chomp)
     raise ParseError, "Roadmap must begin with #{HEADER}" unless lines.shift&.strip == HEADER
 
     phases = []
@@ -60,6 +68,42 @@ class RoadmapParser
   end
 
   private
+
+  def markdown
+    return @source.read if @source.respond_to?(:read)
+    return @source if @source.lstrip.start_with?(HEADER)
+
+    if File.file?(@source)
+      File.read(@source)
+    elsif @source.match?(%r{\Ahttps?://})
+      fetch_markdown
+    else
+      raise ParseError, "Roadmap source does not exist: #{@source}"
+    end
+  rescue Errno::ENOENT => e
+    raise ParseError, "Unable to read roadmap source #{@source}: #{e.message}"
+  end
+
+  def fetch_markdown
+    uri = URI.parse(@source)
+    response = Net::HTTP.start(
+      uri.host,
+      uri.port,
+      use_ssl: uri.scheme == "https",
+      open_timeout: @open_timeout,
+      read_timeout: @read_timeout
+    ) { |http| http.get(uri.request_uri) }
+
+    unless response.is_a?(Net::HTTPSuccess)
+      raise ParseError, "Unable to fetch roadmap from #{@source}: HTTP #{response.code}"
+    end
+
+    response.body
+  rescue ParseError
+    raise
+  rescue StandardError => e
+    raise ParseError, "Unable to fetch roadmap from #{@source}: #{e.message}"
+  end
 
   def finish_phase(phase)
     raise ParseError, "Phase is missing a description" if phase[:description].blank?

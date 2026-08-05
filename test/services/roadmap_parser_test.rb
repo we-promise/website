@@ -32,6 +32,54 @@ class RoadmapParserTest < ActiveSupport::TestCase
     File.delete(path) if path&.exist?
   end
 
+  test "parses an injected markdown string" do
+    roadmap = "<!-- roadmap:v1 -->\n\n## Phase: Now\nDescription: Keep going\n\n### Item: Ship it\nStatus: Planned\n"
+
+    result = RoadmapParser.new(roadmap).parse
+
+    assert_equal "Ship it", result.first[:items].first[:title]
+  end
+
+  test "fetches the canonical roadmap with short timeouts" do
+    response = mock
+    response.expects(:is_a?).with(Net::HTTPSuccess).returns(true)
+    response.expects(:body).returns("<!-- roadmap:v1 -->\n\n## Phase: Now\nDescription: Keep going\n\n### Item: Ship it\nStatus: Planned\n")
+    http = mock
+    http.expects(:get).with("/we-promise/sure/main/docs/roadmap.md").returns(response)
+    Net::HTTP.expects(:start).with(
+      "raw.githubusercontent.com",
+      443,
+      use_ssl: true,
+      open_timeout: 1,
+      read_timeout: 1
+    ).yields(http).returns(response)
+
+    result = RoadmapParser.new(RoadmapParser::DEFAULT_SOURCE_URL, open_timeout: 1, read_timeout: 1).parse
+
+    assert_equal "Ship it", result.first[:items].first[:title]
+  end
+
+  test "raises a clear parse error when fetching fails" do
+    response = mock
+    response.expects(:is_a?).with(Net::HTTPSuccess).returns(false)
+    response.expects(:code).returns("503")
+    http = mock
+    http.expects(:get).with("/roadmap.md").returns(response)
+    Net::HTTP.expects(:start).with(
+      "example.test",
+      443,
+      use_ssl: true,
+      open_timeout: 2,
+      read_timeout: 2
+    ).yields(http).returns(response)
+
+    error = assert_raises(RoadmapParser::ParseError) do
+      RoadmapParser.new("https://example.test/roadmap.md").parse
+    end
+
+    assert_includes error.message, "HTTP 503"
+  end
+
   test "rejects a roadmap without the version marker" do
     path = Rails.root.join("tmp", "invalid-roadmap.md")
     File.write(path, "## Phase: Now\nDescription: Something\n### Item: Work\nStatus: Planned\n")

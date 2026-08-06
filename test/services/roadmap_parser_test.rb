@@ -80,6 +80,25 @@ class RoadmapParserTest < ActiveSupport::TestCase
     assert_includes error.message, "HTTP 503"
   end
 
+  test "uses the checked-in fallback when the canonical source fails" do
+    response = mock
+    response.expects(:is_a?).with(Net::HTTPSuccess).returns(false)
+    response.expects(:code).returns("503")
+    http = mock
+    http.expects(:get).with("/we-promise/sure/main/docs/roadmap.md").returns(response)
+    Net::HTTP.expects(:start).with(
+      "raw.githubusercontent.com",
+      443,
+      use_ssl: true,
+      open_timeout: 2,
+      read_timeout: 2
+    ).yields(http).returns(response)
+
+    result = RoadmapParser.new.parse
+
+    assert_equal "Roadmap unavailable", result.first[:title]
+  end
+
   test "rejects a roadmap without the version marker" do
     path = Rails.root.join("tmp", "invalid-roadmap.md")
     File.write(path, "## Phase: Now\nDescription: Something\n### Item: Work\nStatus: Planned\n")

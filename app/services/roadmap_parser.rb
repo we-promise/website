@@ -3,6 +3,7 @@ require "uri"
 
 class RoadmapParser
   DEFAULT_SOURCE_URL = "https://raw.githubusercontent.com/we-promise/sure/main/docs/roadmap.md"
+  FALLBACK_SOURCE_PATH = Rails.root.join("docs/roadmap-fallback.md")
   HEADER = "<!-- roadmap:v1 -->"
   PHASE_PATTERN = /^## Phase:\s*(.+?)\s*$/
   ITEM_PATTERN = /^### Item:\s*(.+?)\s*$/
@@ -18,7 +19,19 @@ class RoadmapParser
   end
 
   def parse
-    lines = markdown.lines.map(&:chomp)
+    parse_markdown(markdown)
+  rescue ParseError
+    raise unless @source == DEFAULT_SOURCE_URL
+
+    parse_markdown(File.read(FALLBACK_SOURCE_PATH))
+  rescue SystemCallError => e
+    raise ParseError, "Unable to read roadmap fallback: #{e.message}"
+  end
+
+  private
+
+  def parse_markdown(content)
+    lines = content.lines.map(&:chomp)
     raise ParseError, "Roadmap must begin with #{HEADER}" unless lines.shift&.strip == HEADER
 
     phases = []
@@ -66,8 +79,6 @@ class RoadmapParser
 
     phases
   end
-
-  private
 
   def markdown
     return @source.read if @source.respond_to?(:read)

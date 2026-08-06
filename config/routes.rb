@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get "/tools/crypto-index-fund", to: redirect("/tools", status: 301)
   get "/tools/low-hanging-fruit-checklist", to: redirect("/tools", status: 301)
   get "/tools/vote", to: redirect("/tools", status: 301)
-  get "/ai", to: redirect("/features/assistant", status: 301)
+  get "/ai", to: redirect("/features/ai", status: 301)
   get "/ask", to: redirect("/", status: 301)
   get "/roadmap", to: redirect("/", status: 301)
   get "/podcast", to: redirect("/", status: 301)
@@ -28,8 +28,10 @@ Rails.application.routes.draw do
   get "pricing_free", to: "pages#pricing_free"
   get "about", to: "pages#about"
   get "still-shipping", to: "pages#still_shipping", as: :still_shipping
-  get "features/assistant/:category", to: "features#assistant", as: "assistant_category"
-  get "features/assistant/:category/content", to: "features#assistant_content", as: "assistant_content"
+  # The assistant page moved to /features/ai. Keep the old named routes for
+  # links that may still exist in older content while redirecting visitors.
+  get "features/assistant/:category/content", to: redirect("/features/ai", status: 301), as: "assistant_content"
+  get "features/assistant/:category", to: redirect("/features/ai", status: 301), as: "assistant_category"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
   resources :signups, only: [ :new, :create ]
@@ -58,7 +60,8 @@ Rails.application.routes.draw do
       get "tracking"
       get "transactions"
       get "budgeting"
-      get "assistant"
+      get "ai"
+      get "assistant", to: redirect("/features/ai", status: 301)
     end
   end
 

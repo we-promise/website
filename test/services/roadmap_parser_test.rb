@@ -96,7 +96,7 @@ class RoadmapParserTest < ActiveSupport::TestCase
 
     result = RoadmapParser.new.parse
 
-    assert_equal "Roadmap unavailable", result.first[:title]
+    assert_empty result
   end
 
   test "rejects a roadmap without the version marker" do

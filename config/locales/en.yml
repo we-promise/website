@@ -41,3 +41,4 @@ en:
         one: "priority"
         other: "priorities"
       summary_note: "The order is intentional, but the timing is flexible. Progress depends on learning with the community."
+      empty_state: "The roadmap is temporarily unavailable. Please check back soon."

@@ -23,14 +23,14 @@ class RoadmapParser
   rescue ParseError
     raise unless @source == DEFAULT_SOURCE_URL
 
-    parse_markdown(File.read(FALLBACK_SOURCE_PATH))
+    parse_markdown(File.read(FALLBACK_SOURCE_PATH), allow_empty: true)
   rescue SystemCallError => e
     raise ParseError, "Unable to read roadmap fallback: #{e.message}"
   end
 
   private
 
-  def parse_markdown(content)
+  def parse_markdown(content, allow_empty: false)
     lines = content.lines.map(&:chomp)
     raise ParseError, "Roadmap must begin with #{HEADER}" unless lines.shift&.strip == HEADER
 
@@ -75,7 +75,7 @@ class RoadmapParser
       current_phase[:items] << finish_item(current_item) if current_item
       phases << finish_phase(current_phase)
     end
-    raise ParseError, "Roadmap does not contain any phases" if phases.empty?
+    raise ParseError, "Roadmap does not contain any phases" if phases.empty? && !allow_empty
 
     phases
   end

@@ -21,4 +21,15 @@ class RoadmapControllerTest < ActionDispatch::IntegrationTest
     assert_select "h2", text: "Reliability, performance, and technical debt"
     assert_select "a[href='/'] img[alt='Sure']"
   end
+
+  test "roadmap page renders an empty state without phases or items" do
+    RoadmapParser.any_instance.stubs(:parse).returns([])
+
+    get roadmap_url
+
+    assert_response :success
+    assert_select "details", count: 0
+    assert_select "h2", count: 0
+    assert_select "p", text: /temporarily unavailable/
+  end
 end

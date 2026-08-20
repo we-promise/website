@@ -6,7 +6,7 @@ This is the marketing site for [Sure](https://sure.am), an OS for your personal 
 
 ### Requirements
 
-- Ruby >3 (see `Gemfile`)
+- Ruby 3.4.9 (see `.ruby-version`)
 - PostgreSQL >9.3 (ideally, latest stable version)
 
 After cloning the repo, the basic setup commands are:

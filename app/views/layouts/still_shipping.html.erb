@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" class="min-h-full bg-gray-50 font-sans text-gray-900">
+  <head>
+    <title><%= content_for?(:title) ? yield(:title) : "Still shipping — one year of Sure" %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "One year after Maybe Finance published its final image, the community fork lives on under the Sure banner." %>">
+    <meta name="keywords" content="Sure, Maybe Finance, open source, self-hosted personal finance, community fork">
+    <meta name="author" content="Sure">
+    <meta name="robots" content="index, follow">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#f7f7f5">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="<%= request.original_url %>">
+    <meta property="og:title" content="<%= content_for?(:title) ? yield(:title) : "Still shipping — one year of Sure" %>">
+    <meta property="og:description" content="<%= content_for?(:description) ? yield(:description) : "One year after Maybe Finance published its final image, the community fork lives on under the Sure banner." %>">
+    <meta property="og:image" content="<%= image_url("meta.jpg") %>">
+    <meta property="og:site_name" content="Sure">
+    <meta property="article:published_time" content="2026-07-18T12:00:00-07:00">
+    <link rel="canonical" href="<%= still_shipping_url %>">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<%= content_for?(:title) ? yield(:title) : "Still shipping — one year of Sure" %>">
+    <meta name="twitter:description" content="<%= content_for?(:description) ? yield(:description) : "One year after Maybe Finance published its final image, the community fork lives on under the Sure banner." %>">
+    <meta name="twitter:image" content="<%= image_url("meta.jpg") %>">
+    <%= yield :schema_data if content_for?(:schema_data) %>
+
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag "application", "still_shipping", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+    <%= hotwire_livereload_tags if Rails.env.development? %>
+    <%= turbo_refreshes_with method: :morph, scroll: :preserve %>
+    <%= render "shared/ga" if Rails.env.production? %>
+    <% if Rails.env.production? && (posthog_config = Rails.configuration.x.posthog).try(:api_key).present? %>
+      <%= render "shared/posthog", posthog_api_key: posthog_config.api_key, posthog_host: posthog_config.host %>
+    <% end %>
+  </head>
+
+  <body class="min-h-full bg-gray-50 antialiased">
+    <%= yield %>
+  </body>
+</html>

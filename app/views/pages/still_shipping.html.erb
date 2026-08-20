@@ -1,0 +1,317 @@
+<%
+  title t(".meta.title")
+  description t(".meta.description")
+
+  content_for :schema_data do
+    story_schema = {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": t(".meta.title"),
+      "description": t(".meta.description"),
+      "datePublished": "2026-07-18",
+      "dateModified": "2026-07-18",
+      "author": {
+        "@type": "Organization",
+        "name": "Sure"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "Sure",
+        "logo": {
+          "@type": "ImageObject",
+          "url": image_url("logo-mark.svg")
+        }
+      },
+      "mainEntityOfPage": still_shipping_url
+    }.to_json.html_safe
+
+    concat(tag.script(story_schema, type: "application/ld+json"))
+  end
+%>
+
+<article class="milestone-page overflow-x-hidden" data-controller="milestone-story">
+  <div class="milestone-scroll-progress" data-milestone-story-target="scrollProgress" aria-hidden="true"></div>
+
+  <header class="relative z-20 px-5 py-5 sm:px-8">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4" aria-label="<%= t(".nav_label") %>">
+      <%= link_to still_shipping_path, class: "flex items-center gap-3 rounded-lg focus:outline-none focus:ring-4 focus:ring-gray-200", aria: { label: t(".meta.title") } do %>
+        <%= image_tag "logo-mark.svg", class: "h-9 w-9 object-contain", alt: "" %>
+        <span class="hidden text-sm font-semibold text-gray-900 sm:inline"><%= t(".nav_label") %></span>
+      <% end %>
+
+      <%= link_to "https://github.com/we-promise/sure",
+                  class: "inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-900 shadow-xs transition hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-200",
+                  target: "_blank",
+                  rel: "noopener noreferrer" do %>
+        <%= lucide_icon("star", class: "h-4 w-4") %>
+        <%= t(".nav_cta") %>
+      <% end %>
+    </nav>
+  </header>
+
+  <main>
+    <section class="relative flex min-h-screen items-center px-5 pb-24 pt-12 sm:px-8 lg:pb-32 lg:pt-16">
+      <div class="milestone-grid absolute inset-0" aria-hidden="true"></div>
+
+      <div class="relative mx-auto grid w-full max-w-7xl items-center gap-16 lg:grid-cols-12 lg:gap-10">
+        <div class="lg:col-span-7">
+          <span class="inline-flex items-center gap-2 rounded-full border border-green-200 bg-green-50 px-3 py-1.5 text-sm font-medium text-green-800">
+            <span class="milestone-signal h-2 w-2 rounded-full" aria-hidden="true"></span>
+            <%= t(".eyebrow") %>
+          </span>
+
+          <h1 class="mt-7 max-w-5xl text-6xl font-medium leading-none tracking-[-0.055em] text-gray-900 sm:text-7xl lg:text-8xl xl:text-9xl">
+            <span class="block"><%= t(".title_lead") %></span>
+            <span class="milestone-accent-text block"><%= t(".title_tail") %></span>
+          </h1>
+
+          <div class="mt-8 max-w-2xl space-y-4 text-lg leading-relaxed text-gray-600 sm:text-xl">
+            <p><%= t(".intro") %></p>
+            <p class="font-semibold text-gray-900"><%= t(".present") %></p>
+          </div>
+
+          <div class="mt-10 inline-flex max-w-full flex-col gap-2 rounded-xl border border-gray-200 bg-white p-4 font-mono text-sm shadow-sm sm:min-w-96">
+            <div class="flex items-center gap-2 text-gray-500">
+              <span class="milestone-signal h-2 w-2 rounded-full" aria-hidden="true"></span>
+              <span><%= t(".image_transition.label") %></span>
+            </div>
+            <div class="truncate text-gray-500"><%= t(".image_transition.from") %></div>
+            <div class="flex min-w-0 items-center gap-2 font-semibold text-gray-900">
+              <span aria-hidden="true">→</span>
+              <span class="milestone-code-cursor truncate"><%= t(".image_transition.to") %></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex justify-center lg:col-span-5 lg:justify-end">
+          <div class="milestone-orb"
+               role="img"
+               aria-label="<%= t(".orb.label", days: @days_carried) %>"
+               style="--anniversary-progress: <%= @anniversary_progress %>%"
+               data-milestone-story-target="orb"
+               data-action="pointermove->milestone-story#tilt pointerleave->milestone-story#resetTilt">
+            <span class="milestone-orbit-dot" aria-hidden="true"></span>
+            <div class="milestone-orb-core">
+              <span class="text-7xl font-medium tracking-[-0.055em] text-gray-900 sm:text-8xl"><%= @days_carried %></span>
+              <span class="mt-1 text-sm font-semibold uppercase tracking-widest text-gray-500">
+                <%= t(".orb.#{@days_carried == 1 ? 'day' : 'days'}") %>
+              </span>
+              <span class="mt-4 max-w-32 text-center text-sm leading-snug text-gray-500">
+                <%= @anniversary_reached ? t(".orb.complete") : t(".orb.carried") %>
+              </span>
+              <span class="mt-6 rounded-full border border-gray-200 bg-gray-50 px-3 py-1 text-xs font-medium text-gray-900">
+                <% if @days_until_anniversary.positive? %>
+                  <%= t(".orb.remaining", count: @days_until_anniversary) %>
+                <% elsif @anniversary_today %>
+                  <%= t(".orb.today") %>
+                <% else %>
+                  <%= t(".orb.complete") %>
+                <% end %>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="absolute bottom-8 left-1/2 hidden -translate-x-1/2 items-center gap-2 text-sm text-gray-500 md:flex">
+        <%= lucide_icon("arrow-down", class: "milestone-bob h-4 w-4") %>
+        <span><%= t(".scroll_prompt") %></span>
+      </div>
+    </section>
+
+    <section class="border-y border-gray-200 bg-white px-5 py-24 sm:px-8 lg:py-32">
+      <div class="mx-auto grid max-w-7xl gap-10 lg:grid-cols-12 lg:gap-16">
+        <div class="lg:col-span-4">
+          <p class="milestone-kicker text-sm font-semibold uppercase tracking-widest"><%= t(".thesis.kicker") %></p>
+        </div>
+        <div class="lg:col-span-8">
+          <h2 class="max-w-4xl text-4xl font-medium leading-tight tracking-[-0.035em] text-gray-900 sm:text-5xl lg:text-6xl"><%= t(".thesis.title") %></h2>
+          <p class="mt-8 max-w-3xl text-xl leading-relaxed text-gray-600 sm:text-2xl"><%= t(".thesis.body") %></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-5 py-24 sm:px-8 lg:py-32">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-3xl">
+          <p class="milestone-kicker text-sm font-semibold uppercase tracking-widest"><%= t(".stats.eyebrow") %></p>
+          <h2 class="mt-4 text-4xl font-medium tracking-[-0.035em] text-gray-900 sm:text-5xl"><%= t(".stats.title") %></h2>
+          <p class="mt-4 text-sm text-gray-500"><%= t(".stats.context") %></p>
+        </div>
+
+        <div class="mt-12 grid gap-px overflow-hidden rounded-2xl border border-gray-200 bg-gray-200 sm:grid-cols-2 lg:grid-cols-4">
+          <% [
+            ["commits", 1496, "git-commit-horizontal", "01"],
+            ["releases", 55, "package-check", "02"],
+            ["languages", 15, "languages", "03"],
+            ["providers", 16, "landmark", "04"]
+          ].each do |key, value, icon_name, chapter| %>
+            <div class="milestone-stat-card bg-white p-7 sm:p-8" role="group" aria-label="<%= "#{t(".stats.#{key}.value")} #{t(".stats.#{key}.label")}" %>">
+              <div class="flex items-center justify-between gap-4 text-gray-500">
+                <%= lucide_icon(icon_name, class: "h-5 w-5") %>
+                <span class="font-mono text-xs"><%= chapter %></span>
+              </div>
+              <p class="mt-12 text-5xl font-medium tracking-[-0.055em] text-gray-900 sm:text-6xl"
+                 data-milestone-story-target="counter"
+                 data-counter-value="<%= value %>"><%= t(".stats.#{key}.value") %></p>
+              <p class="mt-3 text-sm leading-relaxed text-gray-500"><%= t(".stats.#{key}.label") %></p>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-y border-gray-200 bg-white px-5 py-24 sm:px-8 lg:py-32">
+      <div class="mx-auto max-w-7xl">
+        <div class="max-w-3xl">
+          <p class="milestone-kicker text-sm font-semibold uppercase tracking-widest"><%= t(".timeline.eyebrow") %></p>
+          <h2 class="mt-4 text-4xl font-medium tracking-[-0.035em] text-gray-900 sm:text-5xl"><%= t(".timeline.title") %></h2>
+        </div>
+
+        <div class="mt-12" role="region" aria-label="<%= t(".timeline.aria_label") %>">
+          <div class="overflow-x-auto pb-2">
+            <div class="flex min-w-max gap-1 rounded-xl border border-gray-200 bg-gray-100 p-1 lg:min-w-0" role="tablist">
+              <% %w[final_image new_name new_surfaces wider_world still_shipping].each_with_index do |key, index| %>
+                <button type="button"
+                        id="milestone-tab-<%= key %>"
+                        class="milestone-tab min-w-24 flex-1 rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+                        role="tab"
+                        aria-controls="milestone-panel-<%= key %>"
+                        aria-selected="<%= index.zero? %>"
+                        tabindex="<%= index.zero? ? 0 : -1 %>"
+                        data-milestone-story-target="tab"
+                        data-milestone-key="<%= key %>"
+                        data-action="click->milestone-story#selectMilestone keydown->milestone-story#navigateTabs">
+                  <%= t(".timeline.#{key}.tab") %>
+                </button>
+              <% end %>
+            </div>
+          </div>
+
+          <% [
+            ["final_image", "archive", "01"],
+            ["new_name", "flag", "02"],
+            ["new_surfaces", "smartphone", "03"],
+            ["wider_world", "network", "04"],
+            ["still_shipping", "rocket", "05"]
+          ].each_with_index do |(key, icon_name, chapter), index| %>
+            <section id="milestone-panel-<%= key %>"
+                     class="mt-8 grid overflow-hidden rounded-2xl border border-gray-200 bg-gray-50 lg:grid-cols-12"
+                     role="tabpanel"
+                     aria-labelledby="milestone-tab-<%= key %>"
+                     data-milestone-story-target="panel"
+                     data-milestone-key="<%= key %>"
+                     <%= "hidden" unless index.zero? %>>
+              <div class="flex min-h-64 flex-col justify-between bg-gray-900 p-8 text-white lg:col-span-5 lg:p-10">
+                <div class="flex items-center justify-between gap-4">
+                  <%= lucide_icon(icon_name, class: "h-8 w-8") %>
+                  <span class="font-mono text-sm opacity-70"><%= chapter %> / 05</span>
+                </div>
+                <div class="mt-16">
+                  <p class="text-sm font-semibold uppercase tracking-widest opacity-70"><%= t(".timeline.#{key}.date") %></p>
+                  <h3 class="mt-3 text-3xl font-medium leading-tight tracking-[-0.025em] sm:text-4xl"><%= t(".timeline.#{key}.title") %></h3>
+                </div>
+              </div>
+              <div class="flex flex-col justify-center bg-white p-8 lg:col-span-7 lg:p-12">
+                <p class="text-xl leading-relaxed text-gray-600 sm:text-2xl"><%= t(".timeline.#{key}.body") %></p>
+                <p class="mt-8 border-l-2 border-gray-900 pl-5 text-base font-semibold leading-relaxed text-gray-900"><%= t(".timeline.#{key}.note") %></p>
+              </div>
+            </section>
+          <% end %>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-5 py-24 sm:px-8 lg:py-32">
+      <div class="mx-auto max-w-7xl">
+        <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+          <div class="lg:col-span-5">
+            <p class="milestone-kicker text-sm font-semibold uppercase tracking-widest"><%= t(".progress.eyebrow") %></p>
+            <h2 class="mt-4 text-4xl font-medium tracking-[-0.035em] text-gray-900 sm:text-5xl"><%= t(".progress.title") %></h2>
+            <p class="mt-6 max-w-xl text-lg leading-relaxed text-gray-600"><%= t(".progress.intro") %></p>
+          </div>
+
+          <div class="grid gap-4 sm:grid-cols-2 lg:col-span-7">
+            <% [
+              ["mobile", "smartphone"],
+              ["connections", "waypoints"],
+              ["intelligence", "sparkles"],
+              ["foundations", "shield-check"]
+            ].each_with_index do |(key, icon_name), index| %>
+              <div class="milestone-progress-card rounded-2xl border border-gray-200 bg-white p-6 shadow-xs">
+                <div class="flex items-center justify-between gap-4">
+                  <span class="milestone-feature-icon flex h-11 w-11 items-center justify-center rounded-xl">
+                    <%= lucide_icon(icon_name, class: "h-5 w-5") %>
+                  </span>
+                  <span class="font-mono text-xs text-gray-500">0<%= index + 1 %></span>
+                </div>
+                <h3 class="mt-10 text-xl font-semibold text-gray-900"><%= t(".progress.#{key}.title") %></h3>
+                <p class="mt-3 text-sm leading-relaxed text-gray-600"><%= t(".progress.#{key}.body") %></p>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="px-5 pb-24 sm:px-8 lg:pb-32">
+      <div class="mx-auto grid max-w-7xl overflow-hidden rounded-3xl bg-gray-900 text-white lg:grid-cols-12">
+        <div class="milestone-gratitude-pattern min-h-64 lg:col-span-4" aria-hidden="true">
+          <div class="milestone-gratitude-mark">
+            <%= image_tag "logo-mark.svg", class: "h-20 w-20 object-contain", alt: "" %>
+          </div>
+        </div>
+        <div class="p-8 sm:p-12 lg:col-span-8 lg:p-16">
+          <p class="text-sm font-semibold uppercase tracking-widest opacity-70"><%= t(".gratitude.eyebrow") %></p>
+          <h2 class="mt-5 max-w-4xl text-4xl font-medium tracking-[-0.035em] sm:text-5xl"><%= t(".gratitude.title") %></h2>
+          <div class="mt-8 max-w-3xl space-y-5 text-lg leading-relaxed opacity-80">
+            <p><%= t(".gratitude.body_one") %></p>
+            <p><%= t(".gratitude.body_two") %></p>
+          </div>
+          <p class="mt-10 font-mono text-sm font-semibold"><%= t(".gratitude.signature") %><span class="milestone-inline-cursor" aria-hidden="true"></span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="border-t border-gray-200 bg-white px-5 py-24 text-center sm:px-8 lg:py-32">
+      <div class="mx-auto max-w-4xl">
+        <p class="milestone-kicker font-mono text-sm">we-promise/sure</p>
+        <h2 class="mt-5 text-4xl font-medium tracking-[-0.035em] text-gray-900 sm:text-5xl lg:text-6xl"><%= t(".cta.title") %></h2>
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600"><%= t(".cta.body") %></p>
+        <div class="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
+          <%= link_to "https://github.com/we-promise/sure",
+                      class: "inline-flex items-center justify-center gap-2 rounded-lg border border-gray-900 bg-gray-900 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-200",
+                      target: "_blank",
+                      rel: "noopener noreferrer" do %>
+            <%= t(".cta.github") %>
+            <%= lucide_icon("arrow-up-right", class: "h-4 w-4") %>
+          <% end %>
+          <%= link_to "https://github.com/maybe-finance/maybe/releases/tag/v0.6.0",
+                      class: "inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm font-semibold text-gray-900 shadow-xs transition hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-200",
+                      target: "_blank",
+                      rel: "noopener noreferrer" do %>
+            <%= lucide_icon("archive", class: "h-4 w-4") %>
+            <%= t(".cta.final_release") %>
+          <% end %>
+          <%= link_to discord_url,
+                      class: "inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold text-gray-700 transition hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200",
+                      target: "_blank",
+                      rel: "noopener noreferrer" do %>
+            <%= lucide_icon("message-circle", class: "h-4 w-4") %>
+            <%= t(".cta.discord") %>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-200 px-5 py-8 sm:px-8">
+    <div class="mx-auto flex max-w-7xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+      <div class="flex items-center gap-3">
+        <%= image_tag "logo-mark.svg", class: "h-8 w-8 object-contain", alt: t(".brand_alt") %>
+        <p class="text-sm text-gray-500"><%= t(".footer.note") %></p>
+      </div>
+      <p class="text-sm text-gray-500"><%= t(".footer.made") %></p>
+    </div>
+  </footer>
+</article>

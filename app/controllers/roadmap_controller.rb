@@ -1,4 +1,6 @@
 class RoadmapController < ApplicationController
+  layout "application"
+
   def show
     @phases = Rails.cache.fetch("roadmap/phases", expires_in: 24.hours) do
       RoadmapParser.new.parse

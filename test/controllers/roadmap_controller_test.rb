@@ -22,6 +22,30 @@ class RoadmapControllerTest < ActionDispatch::IntegrationTest
     assert_select "h2", text: "Reliability, performance, and technical debt"
   end
 
+  test "roadmap page uses the application layout and its production analytics" do
+    original_google_analytics_id = ENV["GOOGLE_ANALYTICS_ID"]
+    original_posthog_api_key = Rails.configuration.x.posthog.api_key
+    original_posthog_host = Rails.configuration.x.posthog.host
+    Rails.env.stubs(:production?).returns(true)
+    Rails.configuration.x.posthog.api_key = "phc_roadmap_test"
+    Rails.configuration.x.posthog.host = "https://analytics.example.test"
+    ENV["GOOGLE_ANALYTICS_ID"] = "G-ROADMAP"
+
+    assert_equal "application", RoadmapController._layout
+
+    get roadmap_url
+
+    assert_response :success
+    assert_select "script[src='https://www.googletagmanager.com/gtag/js?id=G-ROADMAP']", count: 1
+    assert_select "script", text: /gtag\('config', 'G-ROADMAP'\)/
+    assert_select "script", text: /posthog\.init\('phc_roadmap_test'/
+    assert_select "script", text: %r{api_host: 'https://analytics\.example\.test'}
+  ensure
+    ENV["GOOGLE_ANALYTICS_ID"] = original_google_analytics_id
+    Rails.configuration.x.posthog.api_key = original_posthog_api_key
+    Rails.configuration.x.posthog.host = original_posthog_host
+  end
+
   test "caches parsed roadmap phases between requests" do
     original_cache = Rails.cache
     Rails.cache = ActiveSupport::Cache::MemoryStore.new

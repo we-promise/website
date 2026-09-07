@@ -79,7 +79,7 @@ projects:
           - name: sure-db
             plan: basic-256mb
             region: oregon
-            postgresMajorVersion: "17"
+            postgresMajorVersion: "18"
             ipAllowList: []
 
 # The sure-website-secrets environment group is intentionally not defined here.

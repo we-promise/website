@@ -15,6 +15,9 @@ class FeaturesController < ApplicationController
   def budgeting
   end
 
+  def ai
+  end
+
   def assistant
     # @categories is still needed for the tabs
     @categories = tab_categories # Assuming this helper provides the categories for tabs

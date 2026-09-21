@@ -2,7 +2,7 @@ require "test_helper"
 
 class FeaturesControllerTest < ActionDispatch::IntegrationTest
   test "AI feature page renders its user-choice principle" do
-    get features_ai_url
+    get "/features/ai"
 
     assert_response :success
     assert_select "title", text: /Your money\. Your data\. Your choice\./

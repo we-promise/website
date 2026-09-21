@@ -25,9 +25,9 @@ class FeaturesControllerTest < ActionDispatch::IntegrationTest
     assert_select "p", text: /custom OpenAI-compatible endpoint/
     assert_select "p", text: /Ollama and Open WebUI/
     assert_select "p", text: /local weights by default/
-    assert_select "a[href='https://github.com/we-promise/sure']", count: 2
-    assert_select "a[href='https://github.com/we-promise/sure']", text: "Explore the code"
-    assert_select "a[href='https://github.com/we-promise/sure']", text: "View the source"
+    assert_select "article a[href='https://github.com/we-promise/sure']", count: 2
+    assert_select "article a[href='https://github.com/we-promise/sure']", text: "Explore the code"
+    assert_select "article a[href='https://github.com/we-promise/sure']", text: "View the source"
     assert_select "a[href='#{new_signup_path}']", count: 0
   end
 

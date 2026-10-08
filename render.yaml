@@ -1,5 +1,5 @@
 projects:
-  - name: website
+  - name: sure-website
     environments:
       - name: production
 

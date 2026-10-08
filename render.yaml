@@ -1,5 +1,5 @@
 projects:
-  - name: sure
+  - name: website
     environments:
       - name: production
 
@@ -20,16 +20,16 @@ projects:
                 value: "2"
               - key: DATABASE_URL
                 fromDatabase:
-                  name: sure-db
+                  name: website-postgres
                   property: connectionString
               - key: REDIS_CACHE_URL
                 fromService:
-                  name: sure-cache
+                  name: website-cache
                   type: keyvalue
                   property: connectionString
               - key: REDIS_QUEUE_URL
                 fromService:
-                  name: sure-queue
+                  name: website-queue
                   type: keyvalue
                   property: connectionString
               - fromGroup: sure-website-secrets
@@ -47,16 +47,16 @@ projects:
                 value: "3"
               - key: DATABASE_URL
                 fromDatabase:
-                  name: sure-db
+                  name: website-postgres
                   property: connectionString
               - key: REDIS_CACHE_URL
                 fromService:
-                  name: sure-cache
+                  name: website-cache
                   type: keyvalue
                   property: connectionString
               - key: REDIS_QUEUE_URL
                 fromService:
-                  name: sure-queue
+                  name: website-queue
                   type: keyvalue
                   property: connectionString
               - fromGroup: sure-website-secrets

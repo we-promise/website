@@ -9,7 +9,7 @@
   <div class="relative w-16">
     <%= tag.input type: :number, min: 0, max: 100, step: 1,
           name: "stock_allocations[]",
-          class: "form-field w-[68px] text-left rounded-[10px] h-9 shadow-xs text-sm !appearance-none",
+          class: "form-field w-[68px] text-left rounded-lg h-9 shadow-xs text-sm appearance-none!",
           required: local_assigns[:required], disabled: !local_assigns[:required],
           placeholder: 0,
           data: { action: "input->stocks-allocator#updateAllocation" } %>

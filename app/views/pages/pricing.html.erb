@@ -10,7 +10,7 @@
     <div class="container max-w-5xl mx-auto px-4">
       <section class="w-full" data-controller="pricing">
         <div class="flex items-center justify-center gap-4 mb-12 transition-all duration-300">
-          <span data-pricing-target="monthlyBilling" class="transition-all duration-300 w-[11.25rem] text-gray-400 text-right">Pay Monthly</span>
+          <span data-pricing-target="monthlyBilling" class="transition-all duration-300 w-45 text-gray-400 text-right">Pay Monthly</span>
           <label class="relative inline-flex items-center cursor-pointer transition-all duration-300">
             <input type="checkbox"
              class="sr-only peer"
@@ -18,14 +18,14 @@
              data-action="pricing#toggle">
             <div class="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-500"></div>
           </label>
-          <div class="flex items-center gap-2 w-[11.25rem] transition-all duration-300">
+          <div class="flex items-center gap-2 w-45 transition-all duration-300">
             <span data-pricing-target="yearlyBilling" class="font-medium text-gray-400">Pay Annually</span>
             <span data-pricing-target="yearlyBillingBadge" class="text-xs text-gray-400 leading-5 font-mono font-medium bg-gray-200 px-[6px] py-[2px] rounded-full">17% OFF</span>
           </div>
         </div>
         <div class="flex flex-col lg:flex-row gap-6 max-w-6xl mx-auto items-stretch">
           <%# Sure Free Plan %>
-          <div class="bg-white flex flex-col justify-between p-6 rounded-[1.5rem] min-h-[28rem] border border-gray-200 shadow-soft transition-all duration-300 flex-1">
+          <div class="bg-white flex flex-col justify-between p-6 rounded-[1.5rem] min-h-112 border border-gray-200 shadow-soft transition-all duration-300 flex-1">
             <div>
               <h3 class="text-2xl font-semibold text-gray-800 mb-4">Good</h3>
               <div>
@@ -57,12 +57,12 @@
             </div>
             <div>
               <%= link_to "Get Started", "#",
-                  class: "group relative inline-flex h-11 w-full justify-center items-center rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-gray-700 transition-colors hover:bg-gray-50 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" %>
+                  class: "group relative inline-flex h-11 w-full justify-center items-center rounded-lg border border-gray-300 bg-white px-6 py-2 font-medium text-gray-700 transition-colors hover:bg-gray-50 focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" %>
             </div>
           </div>
 
           <%# Sure+ Plan %>
-          <div class="bg-white flex flex-col justify-between p-6 rounded-[1.5rem] min-h-[28rem] border border-gray-200 shadow-soft transition-all duration-300 bg-cover bg-top bg-no-repeat flex-1" style="background-image: url(<%= asset_path('maybe-plus-bg.svg') %>)">
+          <div class="bg-white flex flex-col justify-between p-6 rounded-[1.5rem] min-h-112 border border-gray-200 shadow-soft transition-all duration-300 bg-cover bg-top bg-no-repeat flex-1" style="background-image: url(<%= asset_path('maybe-plus-bg.svg') %>)">
             <div>
               <h3 class="text-2xl font-semibold mb-4 text-transparent bg-clip-text bg-no-repeat bg-cover" style="background-image: url(<%= asset_path('maybe-plus-text-bg.png') %>);">Better</h3>
               <%# Monthly Price %>
@@ -100,7 +100,7 @@
             </div>
             <div>
               <%= link_to "Join Discord Server", discord_url,
-                  class: "group relative inline-flex h-11 animate-rainbow cursor-pointer items-center justify-center rounded-lg border-0 bg-[length:200%] px-6 py-2 font-medium text-white transition-colors [background-clip:padding-box,border-box,border-box] [background-origin:border-box] [border:calc(0.08*1rem)_solid_transparent] focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))] before:bg-[length:200%] before:[filter:blur(calc(0.8*1rem))] bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))]" %>
+                  class: "group relative inline-flex h-11 animate-rainbow cursor-pointer items-center justify-center rounded-lg border-0 bg-size-[200%] px-6 py-2 font-medium text-white transition-colors [background-clip:padding-box,border-box,border-box] bg-origin-border [border:calc(0.08*1rem)_solid_transparent] focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 before:absolute before:bottom-[-20%] before:left-1/2 before:z-0 before:h-1/5 before:w-3/5 before:-translate-x-1/2 before:animate-rainbow before:bg-[linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))] before:bg-size-[200%] before:filter-[blur(calc(0.8*1rem))] bg-[linear-gradient(#121213,#121213),linear-gradient(#121213_50%,rgba(18,18,19,0.6)_80%,rgba(18,18,19,0)),linear-gradient(90deg,hsl(var(--color-1)),hsl(var(--color-5)),hsl(var(--color-3)),hsl(var(--color-4)),hsl(var(--color-2)))]" %>
               <span  class="text-center text-sm mx-auto text-gray-500 flex justify-center gap-2">
                 <%= lucide_icon "credit-card", class: "w-5 h-5 text-gray-400" %>
                 <p>No credit card required</p>
@@ -109,7 +109,7 @@
           </div>
 
           <%# Sure++ Plan %>
-          <div class="bg-white flex flex-col justify-between p-6 rounded-[1.5rem] min-h-[28rem] border border-gray-200 shadow-soft transition-all duration-300 flex-1">
+          <div class="bg-white flex flex-col justify-between p-6 rounded-[1.5rem] min-h-112 border border-gray-200 shadow-soft transition-all duration-300 flex-1">
             <div>
               <h3 class="text-2xl font-semibold text-gray-800 mb-4">Best</h3>
 
@@ -151,7 +151,7 @@
             </div>
             <div>
               <%= link_to "Contact Sales", "#",
-                  class: "group relative inline-flex h-11 w-full justify-center items-center rounded-lg border border-gray-300 bg-gray-800 px-6 py-2 font-medium text-white transition-colors hover:bg-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" %>
+                  class: "group relative inline-flex h-11 w-full justify-center items-center rounded-lg border border-gray-300 bg-gray-800 px-6 py-2 font-medium text-white transition-colors hover:bg-gray-900 focus-visible:outline-hidden focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50" %>
             </div>
           </div>
         </div>

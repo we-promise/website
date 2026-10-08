@@ -33,13 +33,13 @@
     </div>
     <%# Featured (most recent) article %>
     <div class="mb-12">
-      <%= link_to @featured_article, class: "flex flex-row gap-10 mb-[3.75rem]" do %>
-        <%= tag.div class: "min-h-[220px] md:min-h-[320px] lg:min-h-[420px] w-1/2 rounded-lg p-1 shadow-xs bg-gradient-to-b #{article_gradient(@featured_article)}" %>
+      <%= link_to @featured_article, class: "flex flex-row gap-10 mb-15" do %>
+        <%= tag.div class: "min-h-[220px] md:min-h-[320px] lg:min-h-[420px] w-1/2 rounded-lg p-1 shadow-xs bg-linear-to-b #{article_gradient(@featured_article)}" %>
         <div class="flex flex-col justify-end px-4 py-5 text-left w-1/2">
           <span class="font-mono text-xs leading[1.5rem] mb-2 text-gray-500 uppercase">
             <%= @featured_article.publish_at.to_date.strftime("%B %-d, %Y") %> — <%= article_reading_time(@featured_article) %>
           </span>
-          <h2 class="text-[2rem] leading-[2.25rem] font-medium mb-6 text-gray-900"><%= @featured_article.title %></h2>
+          <h2 class="text-[2rem] leading-9 font-medium mb-6 text-gray-900"><%= @featured_article.title %></h2>
           <% if @featured_article.author %>
             <%= link_to author_path(@featured_article.author), class: "flex flex-row items-center gap-3 hover:opacity-80" do %>
               <% if @featured_article.author.avatar_url.present? %>
@@ -63,7 +63,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
         <% @articles.each do |article| %>
           <%= link_to article, class: "block" do %>
-            <%= tag.div class: "min-h-[236px] mb-4 border shadow-sm rounded-lg bg-gradient-to-b #{article_gradient(article)}" %>
+            <%= tag.div class: "min-h-[236px] mb-4 border shadow-sm rounded-lg bg-linear-to-b #{article_gradient(article)}" %>
             <div class="flex flex-col justify-between">
               <h2 class="text-xl font-medium text-gray-900"><%= article.title %></h2>
               <div class="flex flex-row items-center ">

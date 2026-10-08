@@ -156,8 +156,8 @@ export default class extends Controller {
         <div class="flex items-start justify-between">
           <div class="flex items-center flex-1">
             ${institution.logo_url ?
-        `<img src="${institution.logo_url}" alt="${institution.name}" class="w-8 h-8 rounded mr-3 object-contain flex-shrink-0">` :
-        `<div class="w-8 h-8 rounded mr-3 bg-gray-200 flex items-center justify-center flex-shrink-0">
+        `<img src="${institution.logo_url}" alt="${institution.name}" class="w-8 h-8 rounded mr-3 object-contain shrink-0">` :
+        `<div class="w-8 h-8 rounded mr-3 bg-gray-200 flex items-center justify-center shrink-0">
                    <span class="text-xs font-medium text-gray-600">${institution.name.charAt(0)}</span>
                  </div>`
       }
@@ -174,7 +174,7 @@ export default class extends Controller {
             </div>
           </div>
           
-          <div class="ml-4 flex-shrink-0 flex items-center gap-1">
+          <div class="ml-4 shrink-0 flex items-center gap-1">
             ${institution.country_codes.map(code =>
         `<div class="inline-flex items-center" title="${code}">
            <img src="https://hatscripts.github.io/circle-flags/flags/${code.toLowerCase()}.svg" 

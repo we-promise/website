@@ -34,13 +34,13 @@
 
   <header class="relative z-20 px-5 py-5 sm:px-8">
     <nav class="mx-auto flex max-w-7xl items-center justify-between gap-4" aria-label="<%= t(".nav_label") %>">
-      <%= link_to still_shipping_path, class: "flex items-center gap-3 rounded-lg focus:outline-none focus:ring-4 focus:ring-gray-200", aria: { label: t(".meta.title") } do %>
+      <%= link_to still_shipping_path, class: "flex items-center gap-3 rounded-lg focus:outline-hidden focus:ring-4 focus:ring-gray-200", aria: { label: t(".meta.title") } do %>
         <%= image_tag "logo-mark.svg", class: "h-9 w-9 object-contain", alt: "" %>
         <span class="hidden text-sm font-semibold text-gray-900 sm:inline"><%= t(".nav_label") %></span>
       <% end %>
 
       <%= link_to "https://github.com/we-promise/sure",
-                  class: "inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-900 shadow-xs transition hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-200",
+                  class: "inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-white px-3 py-2 text-sm font-medium text-gray-900 shadow-xs transition hover:bg-gray-50 focus:outline-hidden focus:ring-4 focus:ring-gray-200",
                   target: "_blank",
                   rel: "noopener noreferrer" do %>
         <%= lucide_icon("star", class: "h-4 w-4") %>
@@ -65,7 +65,7 @@
             <span class="milestone-accent-text block"><%= t(".title_tail") %></span>
           </h1>
 
-          <div class="mt-8 max-w-2xl space-y-4 text-lg leading-relaxed text-gray-600 sm:text-xl">
+          <div class="mt-8 max-w-2xl space-y-4 text-lg leading-relaxed text-gray-600 sm:text-xl sm:leading-7">
             <p><%= t(".intro") %></p>
             <p class="font-semibold text-gray-900"><%= t(".present") %></p>
           </div>
@@ -174,7 +174,7 @@
               <% %w[final_image new_name new_surfaces wider_world still_shipping].each_with_index do |key, index| %>
                 <button type="button"
                         id="milestone-tab-<%= key %>"
-                        class="milestone-tab min-w-24 flex-1 rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+                        class="milestone-tab min-w-24 flex-1 rounded-lg px-4 py-2.5 text-sm font-semibold transition-colors focus:outline-hidden focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
                         role="tab"
                         aria-controls="milestone-panel-<%= key %>"
                         aria-selected="<%= index.zero? %>"
@@ -209,7 +209,7 @@
                 </div>
                 <div class="mt-16">
                   <p class="text-sm font-semibold uppercase tracking-widest opacity-70"><%= t(".timeline.#{key}.date") %></p>
-                  <h3 class="mt-3 text-3xl font-medium leading-tight tracking-[-0.025em] sm:text-4xl"><%= t(".timeline.#{key}.title") %></h3>
+                  <h3 class="mt-3 text-3xl font-medium leading-tight tracking-tight sm:text-4xl"><%= t(".timeline.#{key}.title") %></h3>
                 </div>
               </div>
               <div class="flex flex-col justify-center bg-white p-8 lg:col-span-7 lg:p-12">
@@ -280,21 +280,21 @@
         <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600"><%= t(".cta.body") %></p>
         <div class="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
           <%= link_to "https://github.com/we-promise/sure",
-                      class: "inline-flex items-center justify-center gap-2 rounded-lg border border-gray-900 bg-gray-900 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-200",
+                      class: "inline-flex items-center justify-center gap-2 rounded-lg border border-gray-900 bg-gray-900 px-4 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-gray-800 focus:outline-hidden focus:ring-4 focus:ring-gray-200",
                       target: "_blank",
                       rel: "noopener noreferrer" do %>
             <%= t(".cta.github") %>
             <%= lucide_icon("arrow-up-right", class: "h-4 w-4") %>
           <% end %>
           <%= link_to "https://github.com/maybe-finance/maybe/releases/tag/v0.6.0",
-                      class: "inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm font-semibold text-gray-900 shadow-xs transition hover:bg-gray-50 focus:outline-none focus:ring-4 focus:ring-gray-200",
+                      class: "inline-flex items-center justify-center gap-2 rounded-lg border border-gray-300 bg-white px-4 py-3 text-sm font-semibold text-gray-900 shadow-xs transition hover:bg-gray-50 focus:outline-hidden focus:ring-4 focus:ring-gray-200",
                       target: "_blank",
                       rel: "noopener noreferrer" do %>
             <%= lucide_icon("archive", class: "h-4 w-4") %>
             <%= t(".cta.final_release") %>
           <% end %>
           <%= link_to discord_url,
-                      class: "inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold text-gray-700 transition hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-gray-200",
+                      class: "inline-flex items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-semibold text-gray-700 transition hover:bg-gray-100 focus:outline-hidden focus:ring-4 focus:ring-gray-200",
                       target: "_blank",
                       rel: "noopener noreferrer" do %>
             <%= lucide_icon("message-circle", class: "h-4 w-4") %>

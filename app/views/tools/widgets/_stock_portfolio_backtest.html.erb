@@ -5,7 +5,7 @@
 
   <div class="col-span-2">
     <%= turbo_frame_tag :backtest_results, class: "group" do %>
-      <div class="hidden group-aria-[busy=true]:flex animate-pulse flex-col gap-4 p-6 rounded-lg">
+      <div class="hidden group-aria-busy:flex animate-pulse flex-col gap-4 p-6 rounded-lg">
         <div class="flex justify-around">
           <div class="text-left">
             <div class="text-3xl font-medium text-gray-900 h-8 bg-gray-300 rounded"></div>
@@ -23,7 +23,7 @@
         <div class="h-96 bg-gray-300 rounded"></div>
       </div>
 
-      <div class="flex-1 h-full group-aria-[busy=true]:hidden">
+      <div class="flex-1 h-full group-aria-busy:hidden">
         <% if tool.blank? %>
           <%= render "tools/widgets/shared/blank_slate", text: "Add stocks on the left to start benchmarking and backtesting your portfolio!" %>
         <% elsif tool.same_month? %>

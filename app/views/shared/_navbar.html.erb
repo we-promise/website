@@ -1,7 +1,7 @@
 <header class="flex sticky top-0 z-50 flex-wrap">
   <%= image_tag "border-strip.svg", alt: "Sure Stripe", class: "object-cover w-full h-[6px]" %>
   <%# Mobile Navbar %>
-  <nav class="flex flex-col justify-between w-full py-4 px-4 md:px-6 bg-[hsl(0_0%_97%_/_80%)] bg-blur-xl backdrop-blur-xl md:hidden" data-controller="navbar">
+  <nav class="flex flex-col justify-between w-full py-4 px-4 md:px-6 bg-[hsl(0_0%_97%/80%)] bg-blur-xl backdrop-blur-xl md:hidden" data-controller="navbar">
     <menu class="flex gap-x-2 md:flex font-medium items-center justify-between" data-navbar-target="mobileNavMenu">
       <%= link_to image_tag("maybe-logo.svg", alt: "Sure Logo", class: "h-6"), root_path %>
       <div class="flex items-center">
@@ -20,7 +20,7 @@
           <div class="hidden mt-4 space-y-6" data-dropdown-target="content">
             <% header_nav_products.each do |item| %>
               <%= link_to item[:path], class: "flex items-center gap-x-3 transition ease-in-out duration-150" do %>
-                <div class="flex-shrink-0 flex items-center justify-center h-9 w-9 rounded-md text-gray-800 bg-white border border-gray-300">
+                <div class="shrink-0 flex items-center justify-center h-9 w-9 rounded-md text-gray-800 bg-white border border-gray-300">
                   <%= lucide_icon(item[:icon], class: "w-6 h-6") %>
                 </div>
                 <div class="flex flex-col text-sm gap-0">
@@ -49,7 +49,7 @@
     </div>
   </nav>
   <%# Desktop Navbar %>
-  <nav class="items-center justify-between w-full py-4 px-6 bg-[hsl(0_0%_97%_/_80%)] bg-blur-xl backdrop-blur-xl hidden md:flex" data-controller="navbar" data-navbar-hidden-class="hidden">
+  <nav class="items-center justify-between w-full py-4 px-6 bg-[hsl(0_0%_97%/80%)] bg-blur-xl backdrop-blur-xl hidden md:flex" data-controller="navbar" data-navbar-hidden-class="hidden">
     <div class="flex items-center gap-x-3">
       <%= link_to image_tag("maybe-logo.svg", alt: "Sure Logo", class: "h-6"), root_path %>
     </div>
@@ -57,16 +57,16 @@
       <div class="flex items-center space-x-8">
         <!-- Mega Menu Trigger -->
         <div class="relative group">
-          <button class="flex items-center text-gray-700 gap-[6px] px-3 py-1.5 focus:outline-none hover:text-gray-900 hover:bg-alpha-black-50 rounded-[10px]">
+          <button class="flex items-center text-gray-700 gap-[6px] px-3 py-1.5 focus:outline-hidden hover:text-gray-900 hover:bg-alpha-black-50 rounded-lg">
             <span>Product</span>
             <%= lucide_icon("chevron-down", class: "inline w-4 h-4") %>
           </button>
           <%# <!-- Mega Menu Container --> %>
-          <div class="absolute left-[-10rem] mt-6 p-2 w-[25rem] max-w-md bg-white rounded-xl shadow-lg opacity-0 invisible transform -translate-y-2 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:visible">
+          <div class="absolute -left-40 mt-6 p-2 w-100 max-w-md bg-white rounded-xl shadow-lg opacity-0 invisible transform -translate-y-2 transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:visible">
             <div class="grid grid-cols-1">
               <% header_nav_products.each do |item| %>
                 <%= link_to item[:path], class: "flex items-center p-2 gap-x-3 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150 group/item" do %>
-                  <div class="flex-shrink-0 flex items-center justify-center h-9 w-9 rounded-md bg-gray-50 text-gray-400 group-hover/item:text-gray-800 group-hover/item:bg-white group-hover/item:border group-hover/item:border-gray-300">
+                  <div class="shrink-0 flex items-center justify-center h-9 w-9 rounded-md bg-gray-50 text-gray-400 group-hover/item:text-gray-800 group-hover/item:bg-white group-hover/item:border group-hover/item:border-gray-300">
                     <%= lucide_icon(item[:icon], class: "w-5 h-5") %>
                   </div>
                   <div class="flex flex-col text-sm gap-0">
@@ -82,7 +82,7 @@
       <div class="flex items-center space-x-8">
         <!-- Mega Menu Trigger -->
         <div class="relative group">
-          <button class="flex items-center text-gray-700 gap-[6px] px-3 py-1.5 focus:outline-none hover:text-gray-900 hover:bg-alpha-black-50 rounded-[10px]">
+          <button class="flex items-center text-gray-700 gap-[6px] px-3 py-1.5 focus:outline-hidden hover:text-gray-900 hover:bg-alpha-black-50 rounded-lg">
             <span>Resources</span>
             <%= lucide_icon("chevron-down", class: "inline w-4 h-4") %>
           </button>
@@ -95,8 +95,8 @@
       <a href="https://github.com/we-promise/sure" class="px-3 py-1.5 text-gray-800 hover:text-gray-9000 hover:bg-alpha-black-50 rounded-xl">Contribute</a>
     </menu>
     <menu class="flex hidden gap-x-2 md:flex font-medium">
-      <%= link_to "Docs", "https://docs.sure.am", class: "py-2 px-3 text-sm leading-[18px] text-black group rounded-lg hover:bg-alpha-black-50 bg-transparent border-[1px] border-gray-300 hover:border-gray-300 flex items-center gap-1 shadow-btn-plain-inset-1 shadow-btn-plain-inset-2" %>
-      <%= link_to "https://app.sure.am/", class: "p-2 pl-3 text-sm leading-[18px] text-white bg-gray-900 rounded-lg group hover:bg-gray-800 border-[1px] border-gray-900 flex items-center gap-1 shadow-btn-dark-inset-1 shadow-btn-dark-inset-2 shadow-btn-dark-inset-3 rainbow-button" do %>
+      <%= link_to "Docs", "https://docs.sure.am", class: "py-2 px-3 text-sm leading-[18px] text-black group rounded-lg hover:bg-alpha-black-50 bg-transparent border border-gray-300 hover:border-gray-300 flex items-center gap-1 shadow-btn-plain-inset-1 shadow-btn-plain-inset-2" %>
+      <%= link_to "https://app.sure.am/", class: "p-2 pl-3 text-sm leading-[18px] text-white bg-gray-900 rounded-lg group hover:bg-gray-800 border border-gray-900 flex items-center gap-1 shadow-btn-dark-inset-1 shadow-btn-dark-inset-2 shadow-btn-dark-inset-3 rainbow-button" do %>
         🚀 Try it <%= lucide_icon("chevron-right", alt: "Menu", class: "text-gray-500 group-hover:text-white transition-all duration-150 ease-in-out w-4 h-4") %>
       <% end %>
     </menu>
@@ -111,7 +111,7 @@
           <div class="hidden mt-4 space-y-2" data-dropdown-target="content">
             <% header_nav_products.each do |item| %>
               <%= link_to item[:path], class: "flex items-center p-2 gap-x-3 rounded-lg hover:bg-gray-50 transition ease-in-out duration-150 group/item" do %>
-                <div class="flex-shrink-0 flex items-center justify-center h-9 w-9 rounded-md bg-gray-50 text-gray-400 group-hover/item:text-gray-800 group-hover/item:bg-white group-hover/item:border group-hover/item:border-gray-300">
+                <div class="shrink-0 flex items-center justify-center h-9 w-9 rounded-md bg-gray-50 text-gray-400 group-hover/item:text-gray-800 group-hover/item:bg-white group-hover/item:border group-hover/item:border-gray-300">
                   <%= lucide_icon(item[:icon], class: "w-5 h-5") %>
                 </div>
                 <div class="flex flex-col text-sm gap-0">

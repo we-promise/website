@@ -23,7 +23,7 @@ gem "bootsnap", require: false
 # Assets
 gem "importmap-rails"
 gem "propshaft"
-gem "tailwindcss-rails"
+gem "tailwindcss-rails", "~> 4.6"
 gem "lucide-rails", github: "maybe-finance/lucide-rails"
 
 # Background Jobs

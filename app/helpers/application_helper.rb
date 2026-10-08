@@ -32,7 +32,7 @@ module ApplicationHelper
       if item.is_a? Integer
         html << %(<a href="#{pagy_url_for(pagy, item)}" class="text-base leading-5 flex items-center hover:bg-gray-300 rounded-md transition-all duration-150 ease-in-out justify-center w-8 h-8">#{item}</a>)
       elsif item.is_a? String
-        html << %(<button class="text-base leading-5 flex items-center justify-center w-8 h-8 hover:bg-gray-100 transition-all duration-150 ease-in-out text-black font-[450] bg-white border border-gray-200 rounded-md shadow-xs pointer-events-none" aria-disabled="true" aria-current="page">#{item}</button>)
+        html << %(<button class="text-base leading-5 flex items-center justify-center w-8 h-8 hover:bg-gray-100 transition-all duration-150 ease-in-out text-black font-medium bg-white border border-gray-200 rounded-md shadow-xs pointer-events-none" aria-disabled="true" aria-current="page">#{item}</button>)
       elsif item == :gap
         html << %(<button class="text-base leading-5 flex items-center justify-center w-8 h-8 hover:bg-gray-100 transition-all duration-150 ease-in-out rounded-md disabled" aria-disabled="true">...</button>)
       end

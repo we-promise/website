@@ -1,26 +1,26 @@
 <article class="bg-contain bg-top bg-no-repeat" style="background-image: url(<%= asset_path('main-bg.svg') %>)">
-  <section class="max-w-[1140px] mx-auto text-center pb-[80px] bg-contain bg-[top_300px_center] bg-no-repeat" style="background-image: url(<%= asset_path('home-header-bg.svg') %>)">
+  <section class="max-w-[1140px] mx-auto text-center pb-[80px] bg-contain bg-position-[top_300px_center] bg-no-repeat" style="background-image: url(<%= asset_path('home-header-bg.svg') %>)">
     <div class="flex flex-row gap-3 mb-4 items-center w-fit mx-auto">
       <%= image_tag 'icon-maybe-color.svg', alt: "Sure Logo", class: "inline w-32" %>
     </div>
     <h1 class="text-[3.5rem] md:text-[4.5rem] text-gray-700 max-w-[650px] mx-auto leading-[calc(1em+4px)] tracking-[-0.04em] font-medium mb-4">The personal finance app for everyone <br/> <span class="text-gray-400">(by everyone)</span></h1>
     <p class="text-xl font-normal leading-[1.4] text-gray-400 mb-4 w-full max-w-[600px] mx-auto">Sure is an all-in-one personal finance platform. Track, optimize, grow, and manage your money through every stage of life.</p>
     <div class="mb-6"><%= render "shared/cta_header" %></div>
-    <div class="mb-9 inline-flex items-center backdrop-blur rounded-3xl gap-3">
-      <%= link_to "https://github.com/we-promise/sure", target: "_blank", rel: "noopener noreferrer", class: "flex items-center gap-2 border shadow-xs backdrop-blur border-black/10 rounded-xl bg-white px-2 py-1.5 hover:bg-gray-50 transition-colors" do %>
+    <div class="mb-9 inline-flex items-center backdrop-blur-sm rounded-3xl gap-3">
+      <%= link_to "https://github.com/we-promise/sure", target: "_blank", rel: "noopener noreferrer", class: "flex items-center gap-2 border shadow-xs backdrop-blur-sm border-black/10 rounded-xl bg-white px-2 py-1.5 hover:bg-gray-50 transition-colors" do %>
         <%= image_tag "badge-github.svg", alt: "github", class: "h-5 w-5 inline" %>
       <% end %>
-      <%= link_to discord_url, target: "_blank", rel: "noopener noreferrer", class: "flex items-center gap-2 border shadow-xs backdrop-blur border-black/10 rounded-xl bg-white px-2 py-1.5 hover:bg-gray-50 transition-colors" do %>
+      <%= link_to discord_url, target: "_blank", rel: "noopener noreferrer", class: "flex items-center gap-2 border shadow-xs backdrop-blur-sm border-black/10 rounded-xl bg-white px-2 py-1.5 hover:bg-gray-50 transition-colors" do %>
         <%= image_tag "badge-discord.svg", alt: "discord", class: "h-5 w-5 inline" %>
       <% end %>
     </div>
     <%= image_tag "maybe-home-hero.png", alt: "Sure Open Source", class: "max-w-[1140px] mx-auto w-full px-4 header-effects" %>
   </section>
 </article>
-<article class="bg-gradient-to-b from-white/0 via-white via-[8%] to-white rounded-b-xl mb-20">
-  <section class="bg-contain bg-[top] bg-no-repeat" style="background-image: url(<%= asset_path('home-content-bg.svg') %>)">
+<article class="bg-linear-to-b from-white/0 via-white via-8% to-white rounded-b-xl mb-20">
+  <section class="bg-contain bg-top bg-no-repeat" style="background-image: url(<%= asset_path('home-content-bg.svg') %>)">
     <div class="mx-auto px-4">
-      <h2 class="text-center font-medium text-[3.5rem] leading-[3.75rem] tracking-[-0.05em] -mb-[0.25em]">Add anything,<br/>
+      <h2 class="text-center font-medium text-[3.5rem] leading-15 tracking-tighter mb-[-0.25em]">Add anything,<br/>
         <span class="text-gray-400">yes anything</span></h2>
       <%= image_tag "home-add-anything.png", alt: "Sure Add Anything", class: "w-full max-w-[580px] mx-auto mb-[56px] header-effects" %>
       <h3 class="mb-[72px] max-w-[710px] text-[2rem] leading-[calc(2.5rem+4px)] tracking-[-0.03em] text-gray-400 text-center mx-auto">
@@ -61,10 +61,10 @@
     </div>
   </section>
   <section class="max-w-[1140px] mx-auto px-4">
-    <h2 class="text-[3.5rem] text-center font-medium leading-[3.75rem] tracking-[-0.05em] -mb-[0.25em]">Transactions <br/>
+    <h2 class="text-[3.5rem] text-center font-medium leading-15 tracking-tighter mb-[-0.25em]">Transactions <br/>
       <span class="text-gray-400">handled your way</span></h2>
     <%= image_tag "home-transactions.png", alt: "Sure Transactions", class: "w-full max-w-[915px] mx-auto mb-[56px] header-effects" %>
-    <div class="flex flex-col text-center max-w-[762px] mx-auto mb-[4.5rem] text-[2rem] tracking-[-0.03em] leading-[28px] text-gray-400">
+    <div class="flex flex-col text-center max-w-[762px] mx-auto mb-18 text-[2rem] tracking-[-0.03em] leading-[28px] text-gray-400">
       <h3 class="mb-8 max-w-[672px] mx-auto">Create a new <span class="text-gray-900">income</span> <%= image_tag("filled-add.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %> <span class="text-gray-900">expense</span> <%= image_tag("filled-subtract.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %> <span class="text-gray-900">or transfer</span> <%= image_tag("filled-flow.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %> transaction</h3>
       <h3 class="mb-8 max-w-[560px] mx-auto"><span class="text-gray-900">Edit</span> it <%= image_tag("filled-pencil.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %> add custom <span class="text-gray-900">categories</span> <%= image_tag("filled-customize.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %> <span class="text-gray-900">merchants</span> <%= image_tag("filled-shop.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %> and <span class="text-gray-900">tags</span> <%= image_tag("filled-tags.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %></h3>
       <h3 class="max-w-[560px] mx-auto">Create <span class="text-gray-900">filters</span> <%= image_tag("filled-filter.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %> <span class="text-gray-900">Import</span> via CSV <%= image_tag("filled-import.svg", alt: "Sure Logo", class: "inline w-8 md:w-auto") %></h3>
@@ -96,7 +96,7 @@
   </section>
   <section>
     <div class="mx-auto px-4">
-      <h2 class="text-center font-medium text-[3.5rem] leading-[3.75rem] tracking-[-0.05em] -mb-[0.25em]">Budgeting,<br/>
+      <h2 class="text-center font-medium text-[3.5rem] leading-15 tracking-tighter mb-[-0.25em]">Budgeting,<br/>
         <span class="text-gray-400">made simple</span></h2>
       <%= image_tag "home-budgeting-header.png", alt: "Sure Budgeting", class: "max-w-[572px] w-full mx-auto mb-[56px] header-effects" %>
       <h3 class="mb-[72px] max-w-[550px] text-[2rem] leading-[calc(2.5rem+4px)] tracking-[-0.03em] text-gray-400 text-center mx-auto">
@@ -132,8 +132,8 @@
     </div>
   </section>
 </article>
-<section class="mb-[5.5rem] px-4">
-  <h2 class="text-center font-medium text-[3rem] md:text-[3.5rem] leading-[3.75rem] tracking-[-0.05em] mb-[3.5rem]">Uncompromising Security <br/>
+<section class="mb-22 px-4">
+  <h2 class="text-center font-medium text-[3rem] md:text-[3.5rem] leading-15 tracking-tighter mb-14">Uncompromising Security <br/>
     <span class="text-gray-400">Radical Transparency</span></h2>
   <div class="max-w-[1140px] mx-auto grid grid-cols-1 md:grid-cols-3 text-base leading-[1.4] gap-10 md:gap-6 mb-[120px]">
     <div class="flex flex-col gap-4">

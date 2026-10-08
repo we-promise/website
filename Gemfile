@@ -3,7 +3,7 @@ source "https://rubygems.org"
 ruby "3.4.9"
 
 # Rails
-gem "rails", "~> 8.1.0"
+gem "rails", "~> 8.1.4"
 
 # Drivers
 gem "pg", "~> 1.6"

@@ -5,7 +5,7 @@ projects:
 
         services:
           - type: web
-            name: sure-website
+            name: website-web
             runtime: docker
             plan: starter
             region: oregon
@@ -35,7 +35,7 @@ projects:
               - fromGroup: sure-website-secrets
 
           - type: worker
-            name: sure-worker
+            name: website-worker
             runtime: docker
             plan: starter
             region: oregon
@@ -62,21 +62,21 @@ projects:
               - fromGroup: sure-website-secrets
 
           - type: keyvalue
-            name: sure-cache
+            name: website-cache
             plan: starter
             region: oregon
             maxmemoryPolicy: allkeys-lru
             ipAllowList: []
 
           - type: keyvalue
-            name: sure-queue
+            name: website-queue
             plan: starter
             region: oregon
             maxmemoryPolicy: noeviction
             ipAllowList: []
 
         databases:
-          - name: sure-db
+          - name: website-postgres
             plan: basic-256mb
             region: oregon
             postgresMajorVersion: "18"

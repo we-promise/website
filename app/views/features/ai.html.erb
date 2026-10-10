@@ -1,0 +1,120 @@
+<%
+  title "Your money. Your data. Your choice."
+  description "Sure's open-source AI is optional, user-controlled, and grounded in your own financial data. Turn it on when it helps and off whenever you want."
+%>
+
+<article class="overflow-hidden rounded-xl bg-contain bg-top bg-no-repeat" style="background-image: url(<%= asset_path('main-bg.svg') %>)">
+  <section class="px-4 py-12 text-center sm:py-16 lg:py-20">
+    <p class="mb-7 text-lg text-gray-500">
+      Features / AI
+    </p>
+    <div class="mx-auto max-w-3xl">
+      <h1 class="mx-auto max-w-3xl text-[3.5rem] font-medium leading-[.98] tracking-[-0.06em] text-gray-700 sm:text-[5.5rem]"><strong>Your money.</strong> <em class="not-italic text-gray-500">Your data.</em> <span class="text-gray-400">Your choice.</span></h1>
+      <p class="mx-auto mt-7 max-w-2xl text-xl leading-[1.45] text-gray-500 sm:text-2xl">AI in Sure is optional and off by default. Turn it on when you want it, turn it off whenever you want, and keep using Sure without it.</p>
+      <div class="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
+        <%= link_to "Explore the code", "https://github.com/we-promise/sure", target: "_blank", rel: "noopener noreferrer", class: "inline-flex h-12 items-center justify-center rounded-lg bg-gray-800 px-6 font-medium text-white transition hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-800" %>
+        <a href="#control" class="inline-flex h-12 items-center justify-center rounded-lg px-6 font-medium text-gray-600 transition hover:bg-gray-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-500">See your controls <%= lucide_icon "arrow-down", class: "ml-2 h-4 w-4" %></a>
+      </div>
+    </div>
+
+  </section>
+
+  <section id="control" class="border-y border-gray-200 bg-white px-4 py-16 sm:py-24">
+    <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[.8fr_1.2fr] lg:items-start">
+      <div class="max-w-md">
+        <p class="mb-4 text-sm font-medium uppercase tracking-[.16em] text-gray-400">The Sure principle</p>
+        <h2 class="text-[2.75rem] font-medium leading-[1.02] tracking-[-0.05em] text-gray-800 sm:text-5xl">Personal finance is personal.</h2>
+        <p class="mt-6 text-lg leading-[1.5] text-gray-500">Automation should be assistive, reversible, and accountable. You decide whether AI has access to your Sure experience. It never becomes a requirement for using any of the app.</p>
+      </div>
+      <div class="grid gap-4 sm:grid-cols-2">
+        <div class="rounded-xl bg-gray-50 p-6 ring-1 ring-gray-200">
+          <%= lucide_icon "power", class: "mb-8 h-5 w-5 text-gray-500" %>
+          <h3 class="text-lg font-medium text-gray-800">Off by default</h3>
+          <p class="mt-2 leading-6 text-gray-500">AI starts off. Enable it explicitly when you want to use it.</p>
+        </div>
+        <div class="rounded-xl bg-gray-50 p-6 ring-1 ring-gray-200">
+          <%= lucide_icon "rotate-ccw", class: "mb-8 h-5 w-5 text-gray-500" %>
+          <h3 class="text-lg font-medium text-gray-800">Easy to change</h3>
+          <p class="mt-2 leading-6 text-gray-500">Change your mind? Disable AI from your settings whenever you like.</p>
+        </div>
+        <div class="rounded-xl bg-gray-50 p-6 ring-1 ring-gray-200 sm:col-span-2">
+          <%= lucide_icon "database", class: "mb-8 h-5 w-5 text-gray-500" %>
+          <h3 class="text-lg font-medium text-gray-800">Grounded in your data</h3>
+          <p class="mt-2 max-w-xl leading-6 text-gray-500">When enabled, Sure's assistant can help you make sense of your accounts, transactions, budgets, holdings, income, expenses, and net worth. It should be clear when the available data is not enough to answer well.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gradient-to-b from-white to-gray-50 px-4 py-16 sm:py-24">
+    <div class="mx-auto max-w-6xl">
+      <div class="mx-auto max-w-2xl text-center">
+        <p class="mb-4 text-sm font-medium uppercase tracking-[.16em] text-gray-400">What ships in Sure</p>
+        <h2 class="text-[2.75rem] font-medium leading-[1.02] tracking-[-0.05em] text-gray-800 sm:text-5xl">Specific jobs. Clear limits.</h2>
+        <p class="mt-5 text-lg leading-[1.5] text-gray-500">Some features are conversational, some run in the background, and some are preview-gated. They do different jobs.</p>
+      </div>
+      <div class="mt-12 grid gap-5 md:grid-cols-2">
+        <div class="rounded-xl bg-white p-6 ring-1 ring-gray-200 md:col-span-2 md:p-8">
+          <div class="flex flex-col gap-6 sm:flex-row sm:justify-between">
+            <div class="sm:max-w-[18rem]">
+              <span class="text-xs font-medium uppercase tracking-[.14em] text-emerald-700">Opt-in · conversational</span>
+              <%= lucide_icon "message-circle", class: "my-6 h-5 w-5 text-gray-500" %>
+              <h3 class="text-xl font-medium text-gray-800">Assistant</h3>
+            </div>
+            <div class="max-w-2xl text-sm leading-6 text-gray-500">
+              <p>Ask about your accounts, transactions, income, expenses, budgets, holdings, net worth, or forecasts. The Assistant can use registered tools to look up the relevant data instead of guessing.</p>
+              <p class="mt-4">Where enabled, it can also update transactions, categories, and tags; create goals, categories, and tags; and import bank statements. Those actions are bounded by the tools available to your user.</p>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-xl bg-white p-6 ring-1 ring-gray-200">
+          <span class="text-xs font-medium uppercase tracking-[.14em] text-gray-400">Background processing</span>
+          <%= lucide_icon "tags", class: "my-8 h-5 w-5 text-gray-500" %>
+          <h3 class="font-medium text-gray-800">Auto-categorize transactions</h3>
+          <p class="mt-2 text-sm leading-6 text-gray-500">An LLM matches transactions to the categories you already created. If the description is too generic or uncertain, Sure leaves the transaction unassigned instead of making a guess.</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 ring-1 ring-gray-200">
+          <span class="text-xs font-medium uppercase tracking-[.14em] text-gray-400">Background processing</span>
+          <%= lucide_icon "store", class: "my-8 h-5 w-5 text-gray-500" %>
+          <h3 class="font-medium text-gray-800">Merchant detection</h3>
+          <p class="mt-2 text-sm leading-6 text-gray-500">Sure can identify a business name and website from a transaction description. It favors leaving a merchant blank over creating a false positive.</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 ring-1 ring-gray-200">
+          <span class="text-xs font-medium uppercase tracking-[.14em] text-amber-700">Scheduled · preview-gated</span>
+          <%= lucide_icon "lightbulb", class: "my-8 h-5 w-5 text-gray-500" %>
+          <h3 class="font-medium text-gray-800">Generated Insights</h3>
+          <p class="mt-2 text-sm leading-6 text-gray-500">Sure computes financial facts first, then can add optional LLM narration. If narration is unavailable or not enabled, a deterministic template still writes the insight.</p>
+        </div>
+        <div class="rounded-xl bg-white p-6 ring-1 ring-gray-200">
+          <span class="text-xs font-medium uppercase tracking-[.14em] text-amber-700">Import · preview tools</span>
+          <%= lucide_icon "file-text", class: "my-8 h-5 w-5 text-gray-500" %>
+          <h3 class="font-medium text-gray-800">PDFs and documents</h3>
+          <p class="mt-2 text-sm leading-6 text-gray-500">AI can process bank and credit-card statement PDFs, extract transactions into reviewable import rows, and—when configured—upload documents to the family vector store.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-gray-800 px-4 py-16 text-white sm:py-24">
+    <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-2 lg:items-center">
+      <div>
+        <p class="mb-4 text-sm font-medium uppercase tracking-[.16em] text-gray-400">Implementation and providers</p>
+        <h2 class="text-[2.75rem] font-medium leading-[1.02] tracking-[-0.05em] sm:text-5xl">Configured in the app.</h2>
+        <p class="mt-6 max-w-xl text-lg leading-[1.5] text-gray-300">The app supports a built-in assistant or an external implementation. Its provider code supports OpenAI, Anthropic, and a custom OpenAI-compatible endpoint. In a self-hosted Docker deployment, optional Ollama and Open WebUI can provide local LLM inference, with conservative context and response-token defaults for small-context models such as llama, mistral, and gpt-oss through compatible endpoints. This is an available deployment path, not a claim that managed Sure runs local weights by default.</p>
+        <%= link_to "View the source", "https://github.com/we-promise/sure", target: "_blank", rel: "noopener noreferrer", class: "mt-8 inline-flex h-12 items-center justify-center rounded-lg bg-white px-6 font-medium text-gray-800 transition hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white" %>
+      </div>
+      <div class="rounded-2xl bg-gray-700 p-6 ring-1 ring-white/10 sm:p-8" role="img" aria-label="Illustration of configurable AI architecture">
+        <div class="flex items-center justify-between border-b border-gray-600 pb-5">
+          <span class="font-medium">AI configuration</span>
+          <span class="rounded-full bg-emerald-400/10 px-3 py-1 text-xs text-emerald-300">Configurable</span>
+        </div>
+        <div class="space-y-3 py-6 text-sm">
+          <div class="flex items-center justify-between rounded-lg bg-gray-800 px-4 py-3"><span class="text-gray-300">Assistant</span><span class="text-emerald-300">Built-in or external</span></div>
+          <div class="flex items-center justify-between rounded-lg bg-gray-800 px-4 py-3"><span class="text-gray-300">Provider</span><span class="text-gray-400">OpenAI / Anthropic / compatible</span></div>
+          <div class="flex items-center justify-between rounded-lg bg-gray-800 px-4 py-3"><span class="text-gray-300">Local path</span><span class="text-emerald-300">Ollama + Open WebUI</span></div>
+        </div>
+        <p class="border-t border-gray-600 pt-5 text-sm leading-6 text-gray-400">Assistant type, provider, and preview tools are configuration-dependent.</p>
+      </div>
+    </div>
+  </section>
+</article>

@@ -6,7 +6,7 @@ ruby "3.4.9"
 gem "rails", "~> 8.1.0"
 
 # Drivers
-gem "pg", "~> 1.6"
+gem "pg", "~> 1.7"
 gem "redis", ">= 4.0.1"
 
 # Pin connection_pool to 2.x - connection_pool 3.x has a breaking change

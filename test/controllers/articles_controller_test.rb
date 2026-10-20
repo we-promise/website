@@ -19,4 +19,9 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
     get article_url(articles(:one))
     assert_response :success
   end
+
+  test "returns not found for an unknown article" do
+    get article_url("non-existent-article")
+    assert_response :not_found
+  end
 end

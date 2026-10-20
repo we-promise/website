@@ -30,6 +30,6 @@ class ArticlesController < ApplicationController
   #   GET /articles/my-first-article
   def show
     @article = Article.includes(authorship: :author).find_by(slug: params[:id])
-    redirect_to articles_path unless @article
+    not_found unless @article
   end
 end

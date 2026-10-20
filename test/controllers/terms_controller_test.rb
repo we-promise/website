@@ -25,9 +25,8 @@ class TermsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should redirect to terms index when term not found" do
+  test "returns not found for an unknown term" do
     get term_url("non-existent-term")
-    assert_redirected_to terms_path
-    assert_equal "The financial term you're looking for could not be found.", flash[:alert]
+    assert_response :not_found
   end
 end

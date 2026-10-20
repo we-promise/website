@@ -20,13 +20,12 @@
 <article class="bg-gradient-to-b from-white/0 via-white via-[8%] to-white rounded-b-xl mb-20">
   <section class="bg-contain bg-[top] bg-no-repeat" style="background-image: url(<%= asset_path('home-content-bg.svg') %>)">
     <div class="mx-auto px-4">
-      <h2 class="text-center font-medium text-[3.5rem] leading-[3.75rem] tracking-[-0.05em] -mb-[0.25em]">Add anything,<br/>
+      <h2 class="text-center font-medium text-[3.5rem] leading-[3.75rem] tracking-[-0.05em] mb-2">Add anything,<br/>
         <span class="text-gray-400">yes anything</span></h2>
       <%= image_tag "home-add-anything.png", alt: "Sure Add Anything", class: "w-full max-w-[580px] mx-auto mb-[56px] header-effects" %>
       <h3 class="mb-[72px] max-w-[710px] text-[2rem] leading-[calc(2.5rem+4px)] tracking-[-0.03em] text-gray-400 text-center mx-auto">
         Track your <span class="text-gray-900">bank accounts </span>
-        <%= image_tag("home-add-anything-bank-accounts.svg", alt: "bank logos", class: "inline") %>
-        , check how your <span class="text-gray-900">stocks</span>
+        <%= image_tag("home-add-anything-bank-accounts.svg", alt: "bank logos", class: "inline") %>, check how your <span class="text-gray-900">stocks</span>
         <%= image_tag("home-add-anything-stocks.svg", alt: "stock logos", class: "inline md:w-auto") %>
         and  <span class="text-gray-900">crypto </span>
         <%= image_tag("home-add-anything-crypto.svg", alt: "crypto logos", class: "inline md:w-auto") %>
@@ -61,7 +60,7 @@
     </div>
   </section>
   <section class="max-w-[1140px] mx-auto px-4">
-    <h2 class="text-[3.5rem] text-center font-medium leading-[3.75rem] tracking-[-0.05em] -mb-[0.25em]">Transactions <br/>
+    <h2 class="text-[3.5rem] text-center font-medium leading-[3.75rem] tracking-[-0.05em] mb-2">Transactions <br/>
       <span class="text-gray-400">handled your way</span></h2>
     <%= image_tag "home-transactions.png", alt: "Sure Transactions", class: "w-full max-w-[915px] mx-auto mb-[56px] header-effects" %>
     <div class="flex flex-col text-center max-w-[762px] mx-auto mb-[4.5rem] text-[2rem] tracking-[-0.03em] leading-[28px] text-gray-400">
@@ -96,13 +95,12 @@
   </section>
   <section>
     <div class="mx-auto px-4">
-      <h2 class="text-center font-medium text-[3.5rem] leading-[3.75rem] tracking-[-0.05em] -mb-[0.25em]">Budgeting,<br/>
+      <h2 class="text-center font-medium text-[3.5rem] leading-[3.75rem] tracking-[-0.05em] mb-2">Budgeting,<br/>
         <span class="text-gray-400">made simple</span></h2>
       <%= image_tag "home-budgeting-header.png", alt: "Sure Budgeting", class: "max-w-[572px] w-full mx-auto mb-[56px] header-effects" %>
       <h3 class="mb-[72px] max-w-[550px] text-[2rem] leading-[calc(2.5rem+4px)] tracking-[-0.03em] text-gray-400 text-center mx-auto">
         Customize <span class="text-gray-900">category budgets</span>
-        <%= image_tag("home-budgeting-customize.svg", alt: "bank logos", class: "inline") %>
-        , set <span class="text-gray-900">smart allocations</span>
+        <%= image_tag("home-budgeting-customize.svg", alt: "bank logos", class: "inline") %>, set <span class="text-gray-900">smart allocations</span>
         <%= image_tag("home-budgeting-smart-alloc.svg", alt: "stock logos", class: "inline md:w-auto") %>
         and stay on top of <span class="text-gray-900">category</span>
         <%= image_tag("home-budgeting-categories.svg", alt: "credit card logos", class: "inline md:w-auto") %></h3>
@@ -137,7 +135,7 @@
     <span class="text-gray-400">Radical Transparency</span></h2>
   <div class="max-w-[1140px] mx-auto grid grid-cols-1 md:grid-cols-3 text-base leading-[1.4] gap-10 md:gap-6 mb-[120px]">
     <div class="flex flex-col gap-4">
-      <%= image_tag "home-transparency-secure.png", alt: "Sure: Secure by design", class: "w-full" %>
+      <%= image_tag "home-transparency-secure.png", alt: "Sure: Secure by design", class: "w-full aspect-[1.06] object-contain" %>
       <div class="bg-white border-gray-200 border-2 md:mb-4 w-10 h-10 grid place-items-center rounded-full">
         <%= lucide_icon 'lock', class: "w-5 h-5" %>
       </div>
@@ -153,7 +151,7 @@
       <% end %>
     </div>
     <div class="flex flex-col gap-4">
-      <%= image_tag "home-transparency-open-source.png", alt: "Sure: Open source", class: "w-full" %>
+      <%= image_tag "home-transparency-open-source.png", alt: "Sure: Open source", class: "w-full aspect-[1.06] object-contain" %>
       <div class="bg-white border-gray-200 border-2 md:mb-4 w-10 h-10 grid place-items-center rounded-full">
         <%= lucide_icon 'code-xml', class: "w-5 h-5" %>
       </div>
@@ -169,7 +167,7 @@
       <% end %>
     </div>
     <div class="flex flex-col gap-4">
-      <%= image_tag "home-transparency-built-in-public.png", alt: "Sure: Built in public", class: "w-full" %>
+      <%= image_tag "home-transparency-built-in-public.png", alt: "Sure: Built in public", class: "w-full aspect-[1.06] object-contain" %>
       <div class="bg-white border-gray-200 border-2 md:mb-4 w-10 h-10 grid place-items-center rounded-full">
         <%= lucide_icon 'heart-handshake', class: "w-5 h-5" %>
       </div>

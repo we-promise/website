@@ -24,6 +24,21 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "pricing permanently redirects to the free pricing page" do
+    get "/pricing"
+
+    assert_response :moved_permanently
+    assert_redirected_to "/pricing_free"
+  end
+
+  test "sitemap lists the free pricing page instead of the retired one" do
+    get "/sitemap.xml"
+
+    assert_response :success
+    assert_includes response.body, "<loc>https://sure.am/pricing_free</loc>"
+    assert_not_includes response.body, "<loc>https://sure.am/pricing</loc>"
+  end
+
   test "star count request uses short network timeouts" do
     response = mock
     response.expects(:is_a?).with(Net::HTTPSuccess).returns(true)

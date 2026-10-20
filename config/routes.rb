@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   # Redirect for removed inside trading tracker
   get "/tools/inside-trading-tracker(/*path)", to: redirect("/", status: 301)
 
-  get "pricing", to: "pages#pricing"
+  get "pricing", to: redirect("/pricing_free", status: 301)
   get "pricing_free", to: "pages#pricing_free"
   get "about", to: "pages#about"
   get "still-shipping", to: "pages#still_shipping", as: :still_shipping

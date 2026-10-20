@@ -42,6 +42,32 @@ class ToolsControllerTest < ActionDispatch::IntegrationTest
     end
   end
 
+  test "a tool ignores params that belong to other tools" do
+    presenters = LIVE_TOOLS.index_with { |slug| Tool.presenter_class_for(slug) }
+    every_param = (presenters.values + [ Tool::Presenter::ExchangeRateCalculator ]).flat_map(&:attribute_names).uniq
+
+    presenters.each do |slug, presenter|
+      get tool_url(slug), params: (every_param - presenter.attribute_names).index_with("1")
+      assert_response :success, slug
+    end
+  end
+
+  test "currency and symbol paths no longer route to tools" do
+    get "/tools/loan-calculator/USD/EUR"
+    assert_response :not_found
+
+    get "/tools/roi-calculator/AAPL"
+    assert_response :not_found
+  end
+
+  test "inflation calculator reads the rate its form sends" do
+    get tool_url("inflation-calculator", inflation_percentage: 10)
+    assert_select "p", text: /at 10.0% inflation annually/
+
+    get tool_url("inflation-calculator", inflation_rate: 10)
+    assert_response :success
+  end
+
   test "financial freedom growth rate slider starts at the percentage" do
     get tool_url("financial-freedom-calculator")
 

@@ -37,21 +37,7 @@ Rails.application.routes.draw do
   resources :terms, only: [ :index, :show ], path: "financial-terms"
   resources :faqs, only: [ :index, :show ], path: "financial-faqs"
   resources :authors, only: [ :index, :show ], param: :slug
-  resources :tools, only: [ :index, :show ], param: :slug do
-    member do
-      # Exchange rate calculator routes
-      get ":from_currency/:to_currency(/:amount)",
-        constraints: {
-          from_currency: /[A-Z]{3}/,
-          to_currency: /[A-Z]{3}/,
-          amount: /\d+(\.\d+)?/
-        },
-        action: :show
-
-      # Stock symbol route
-      get ":symbol", action: :show, constraints: { symbol: /[A-Z]+/ }
-    end
-  end
+  resources :tools, only: [ :index, :show ], param: :slug
 
   resources :features, only: [] do
     collection do

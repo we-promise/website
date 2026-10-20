@@ -79,6 +79,12 @@ class ToolsControllerTest < ActionDispatch::IntegrationTest
     assert_select "[data-mortgage-rate-select-rate30-value='6.27'][data-mortgage-rate-select-rate15-value='5.41']"
   end
 
+  test "roi calculator explains a missing annualized roi" do
+    get tool_url("roi-calculator", investment_length: 30, investment_period: "days")
+
+    assert_select "p", text: "Not shown for periods under a year."
+  end
+
   test "financial freedom growth rate slider starts at the percentage" do
     get tool_url("financial-freedom-calculator")
 

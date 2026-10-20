@@ -1,7 +1,7 @@
 class FeaturesController < ApplicationController
   include Features::AssistantHelper
   # Define valid categories as a constant
-  VALID_CATEGORIES = %w[tracking transactions budgeting assistant spending].freeze
+  VALID_CATEGORIES = %w[spending investment analysis planning].freeze
 
   # Use a before_action to load data for relevant actions
   before_action :load_assistant_content_for_category, only: [ :assistant, :assistant_content ]

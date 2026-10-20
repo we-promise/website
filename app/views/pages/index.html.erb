@@ -1,12 +1,12 @@
 <article class="bg-contain bg-top bg-no-repeat" style="background-image: url(<%= asset_path('main-bg.svg') %>)">
-  <section class="max-w-[1140px] mx-auto text-center pb-[80px] bg-contain bg-[top_300px_center] bg-no-repeat" style="background-image: url(<%= asset_path('home-header-bg.svg') %>)">
+  <section class="max-w-[1280px] mx-auto text-center pb-[80px] bg-contain bg-[top_300px_center] bg-no-repeat" style="background-image: url(<%= asset_path('home-header-bg.svg') %>)">
     <div class="flex flex-row gap-3 mb-4 items-center w-fit mx-auto">
-      <%= image_tag 'icon-maybe-color.svg', alt: "Sure Logo", class: "inline w-32" %>
+      <%= image_tag 'icon-maybe-color.svg', alt: "Sure Logo", class: "inline w-24 md:w-32" %>
     </div>
-    <h1 class="text-[3.5rem] md:text-[4.5rem] text-gray-700 max-w-[650px] mx-auto leading-[calc(1em+4px)] tracking-[-0.04em] font-medium mb-4">The personal finance app for everyone <br/> <span class="text-gray-400">(by everyone)</span></h1>
-    <p class="text-xl font-normal leading-[1.4] text-gray-400 mb-4 w-full max-w-[600px] mx-auto">Sure is an all-in-one personal finance platform. Track, optimize, grow, and manage your money through every stage of life.</p>
-    <div class="mb-6"><%= render "shared/cta_header" %></div>
-    <div class="mb-9 inline-flex items-center backdrop-blur rounded-3xl gap-3">
+    <h1 class="text-[3.5rem] md:text-[4.5rem] text-gray-700 max-w-[840px] mx-auto leading-[calc(1em+4px)] tracking-[-0.04em] font-medium mb-4 text-balance">The personal finance app for everyone <span class="text-gray-400">(by everyone)</span></h1>
+    <p class="text-xl font-normal leading-[1.4] text-gray-400 mb-6 w-full max-w-[600px] mx-auto">Sure is an all-in-one personal finance platform. Track, optimize, grow, and manage your money through every stage of life.</p>
+    <div class="mb-12 flex flex-wrap items-center justify-center gap-3">
+      <%= render "shared/cta_header" %>
       <%= link_to "https://github.com/we-promise/sure", target: "_blank", rel: "noopener noreferrer", class: "flex items-center gap-2 border shadow-xs backdrop-blur border-black/10 rounded-xl bg-white px-2 py-1.5 hover:bg-gray-50 transition-colors" do %>
         <%= image_tag "badge-github.svg", alt: "github", class: "h-5 w-5 inline" %>
       <% end %>
@@ -14,7 +14,7 @@
         <%= image_tag "badge-discord.svg", alt: "discord", class: "h-5 w-5 inline" %>
       <% end %>
     </div>
-    <%= image_tag "maybe-home-hero.png", alt: "Sure Open Source", class: "max-w-[1140px] mx-auto w-full px-4 header-effects" %>
+    <%= image_tag "home-hero.webp", alt: "The Sure dashboard showing cashflow, net worth, spending and outflows, with the AI assistant answering a question about savings", width: 2560, height: 1440, fetchpriority: "high", class: "w-full h-auto rounded-xl shadow-2xl ring-1 ring-alpha-black-100" %>
   </section>
 </article>
 <article class="bg-gradient-to-b from-white/0 via-white via-[8%] to-white rounded-b-xl mb-20">

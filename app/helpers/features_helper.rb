@@ -4,22 +4,22 @@ module FeaturesHelper
       {
         icon: "messages-square",
         title: "Natural language chat",
-        description: "Ask complex questions and get responses that factor in real-time financial data"
+        description: "Ask questions in plain language and get answers drawn from your accounts, transactions, budgets and holdings."
       },
       {
         icon: "chart-column-increasing",
         title: "Context-aware",
-        description: "Sure AI understands behaviour & patterns to give personalized, accurate answers."
+        description: "Answers use your own categories, merchants and history rather than generic advice."
       },
       {
-        icon: "zap",
-        title: "Answered in milliseconds",
-        description: "Sure AI is blazing fast by default, so you can answer hard money questions at speed."
+        icon: "cpu",
+        title: "Your model, your choice",
+        description: "Use a hosted model like OpenAI or Anthropic, or run one locally so your data never leaves your server."
       },
       {
         icon: "eye-off",
         title: "Private by default",
-        description: "AI is off unless you turn it on, and only the minimum necessary data is shared."
+        description: "AI stays off until you turn it on, and you decide which model sees your data."
       },
       {
         icon: "link-2",
@@ -27,9 +27,9 @@ module FeaturesHelper
         description: "Sure AI can access insights from everything you link."
       },
       {
-        icon: "wifi",
-        title: "More signal, less noise",
-        description: "The assistant stays focused—no filler, no fluff. Every answer is grounded in your data."
+        icon: "wand-sparkles",
+        title: "It can act, too",
+        description: "Ask it to create a rule, fix a category or move money between budget categories."
       }
     ]
   end

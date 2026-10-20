@@ -17,8 +17,8 @@
     <div class="mx-auto text-center max-w-[30rem] px-4 mb-8">
       <%= image_tag "assistant-avatar.png", alt: "Sure Screenshot", class: "w-[90px]  mx-auto"%>
       <h2 class="font-medium text-[3.5rem] leading-[3.75rem] tracking-[-0.05em] mb-4">Real answers<br/>
-        <span class="text-gray-400">really fast</span></h2>
-      <p class="text-xl font-normal leading-[1.4] text-gray-500 tracking-normal mb-4 ">Sure Assistant gives you real answers in seconds &mdash;no noise, no lag. It's fast, focused, and grounded in your actual financial data.</p>
+        <span class="text-gray-400">from your own data</span></h2>
+      <p class="text-xl font-normal leading-[1.4] text-gray-500 tracking-normal mb-4 ">Sure Assistant answers from your accounts, transactions, budgets and holdings, and can tidy things up for you along the way.</p>
     </div>
     <div class="container max-w-[1232px] mx-auto px-4">
       <%= render "assistant_tabs", categories: @categories, active: @active_category, class: "mb-8" %>
@@ -49,7 +49,7 @@
         <div class="mx-auto text-center max-w-[30rem]">
           <h2 class="font-medium text-[2.5rem] leading-[1.1em] tracking-[-0.05em] mb-4">This is only<br/>
             <span class="text-gray-400">just the start</span></h2>
-          <p class="text-xl font-normal leading-[1.4] text-gray-500 tracking-normal">AI is everywhere. At Sure, we're focused on what matters: real financial insight, not noise. Chat is just the start—more powerful tools are on the way.</p>
+          <p class="text-xl font-normal leading-[1.4] text-gray-500 tracking-normal">The assistant already sets up rules, fixes categories and updates budgets, and your own agents can connect through Sure&rsquo;s MCP server.</p>
         </div>
         <div class="flex flex-row justify-center items-center gap-5">
           <%= image_tag "features/assistant-forecast.svg", alt: "Sure Screenshot" %>

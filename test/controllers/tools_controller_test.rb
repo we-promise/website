@@ -92,6 +92,13 @@ class ToolsControllerTest < ActionDispatch::IntegrationTest
     assert_select "p", text: /capped at the 2026 IRS limit/
   end
 
+  test "early mortgage payoff asks only for what it amortizes" do
+    get tool_url("early-mortgage-payoff-calculator", original_term: 15)
+
+    assert_select "label[for=loan_amount]", text: "Remaining balance"
+    assert_select "input[name=original_term]", count: 0
+  end
+
   test "financial freedom growth rate slider starts at the percentage" do
     get tool_url("financial-freedom-calculator")
 

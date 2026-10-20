@@ -1,10 +1,7 @@
 <%= form_with method: :get, data: { turbo_frame: frame_id, controller: "auto-submit-form", auto_submit_form_submit_on_connect_value: true } do |form| %>
   <label class="text-xl leading-[30px] tracking-normal font-medium text-gray-900 mb-4">Input your details</label>
   <div class="flex flex-col gap-2">
-    <%= form.unit_field :loan_amount, label: "Loan amount", value: tool.loan_amount, unit_symbol: "$", data: { controller: "autonumeric", auto_submit_form_target: "auto" } %>
-  </div>
-  <div class="flex flex-col gap-2">
-    <%= form.unit_field :original_term, label: "Original loan term", value: tool.original_term, label_right: "years", data: { controller: "autonumeric", autonumeric_options_value: { decimalPlaces: 0 }, auto_submit_form_target: "auto" } %>
+    <%= form.unit_field :loan_amount, label: "Remaining balance", value: tool.loan_amount, unit_symbol: "$", data: { controller: "autonumeric", auto_submit_form_target: "auto" } %>
   </div>
   <div class="flex flex-col gap-2">
     <%= form.unit_field :years_left, label: "Years left on loan", value: tool.years_left, label_right: "years", data: { controller: "autonumeric", autonumeric_options_value: { decimalPlaces: 0 }, auto_submit_form_target: "auto" } %>

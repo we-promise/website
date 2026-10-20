@@ -5,7 +5,6 @@ class Tool::Presenter::EarlyMortgagePayoffCalculator < Tool::Presenter
   attribute :interest_rate, :tool_percentage, default: 6.5
   attribute :savings_rate, :tool_percentage, default: 4.0
 
-  attribute :original_term, :tool_integer, default: 30
   attribute :years_left, :tool_integer, default: 30, max: 100
 
   def blank?

@@ -7,7 +7,6 @@ class Tool::Presenter::EarlyMortgagePayoffCalculatorTest < ActiveSupport::TestCa
       extra_payment: "$500.00",
       interest_rate: "6.09",
       savings_rate: "4.00",
-      original_term: "30",
       years_left: "30"
   end
 

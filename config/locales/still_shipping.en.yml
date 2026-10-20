@@ -11,7 +11,7 @@ en:
       title_lead: "The last image"
       title_tail: "wasn’t the last chapter."
       intro: "On July 24, 2025, Maybe Finance published its final image. The company’s chapter closed, but the code was open—and a community was ready to carry it forward."
-      present: "Almost one year later, Sure is still shipping."
+      present: "One year later, Sure was still shipping."
       orb:
         label: "%{days} of 365 days carried forward"
         day: "day"
@@ -24,8 +24,8 @@ en:
         today: "One year today"
       image_transition:
         label: "The image kept moving"
-        from: "maybe-finance/maybe:v0.6.0"
-        to: "we-promise/sure:v0.7.3-alpha.3"
+        from: "ghcr.io/maybe-finance/maybe:0.6.0"
+        to: "ghcr.io/we-promise/sure:0.7.3-alpha.3"
       scroll_prompt: "Scroll to follow the handoff"
       thesis:
         kicker: "What open source makes possible"
@@ -42,7 +42,7 @@ en:
           value: "55"
           label: "web releases tagged"
         languages:
-          value: "15"
+          value: "17"
           label: "supported languages"
         providers:
           value: "16"
@@ -61,7 +61,7 @@ en:
           tab: "Aug ’25"
           date: "August 5, 2025"
           title: "A new name, the same history"
-          body: "The first Sure rebrand landed with v0.6.1. The community fork took on its own identity while preserving the project history, attribution, and AGPL spirit."
+          body: "The first Sure rebrand landed with v0.6.2. The community fork took on its own identity while preserving the project history, attribution, and AGPL spirit."
           note: "Not a rewrite—a promise to steward what already worked."
         new_surfaces:
           tab: "Feb ’26"
@@ -87,7 +87,7 @@ en:
         intro: "The community did more than keep the lights on. It widened what the product can do and who can make it their own."
         mobile:
           title: "A real mobile companion"
-          body: "Android, iOS, and web builds bring accounts, transactions, budgets, and AI chat beyond the desktop."
+          body: "Android, iOS, and web builds bring accounts, transactions, and AI chat beyond the desktop."
         connections:
           title: "A broader financial world"
           body: "Banks, brokerages, crypto exchanges, open banking, and flexible price providers make self-hosting useful in more places."

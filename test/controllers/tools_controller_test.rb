@@ -68,6 +68,17 @@ class ToolsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "home affordability shows a default rate unless FRED has one" do
+    get tool_url("home-affordability-calculator")
+    assert_select "input[name=loan_interest_rate][value='6.5']"
+    assert_select "[data-mortgage-rate-select-rate30-value], [data-mortgage-rate-select-rate15-value]", count: 0
+
+    MortgageRate::Cache.any_instance.stubs(:rate_30).returns("6.27")
+    MortgageRate::Cache.any_instance.stubs(:rate_15).returns("5.41")
+    get tool_url("home-affordability-calculator")
+    assert_select "[data-mortgage-rate-select-rate30-value='6.27'][data-mortgage-rate-select-rate15-value='5.41']"
+  end
+
   test "financial freedom growth rate slider starts at the percentage" do
     get tool_url("financial-freedom-calculator")
 

@@ -40,7 +40,7 @@
           <%= image_tag "home-add-anything-link-assets.png", alt: "Sure: Link Everything", class: "w-full" %>
           <div class="flex flex-col gap-1">
             <h4 class="font-medium text-gray-900">Link everything automagically</h4>
-            <p class="text-gray-400">Over 10,000+ institutions to choose from when linking all your accounts.</p>
+            <p class="text-gray-400">Sync banks, brokers and crypto exchanges through 25+ integrations like Plaid, SimpleFIN and Enable Banking.</p>
           </div>
         </div>
         <div class="flex flex-col gap-6">
@@ -102,9 +102,9 @@
       <h3 class="mb-[72px] max-w-[550px] text-[2rem] leading-[calc(2.5rem+4px)] tracking-[-0.03em] text-gray-400 text-center mx-auto">
         Customize <span class="text-gray-900">category budgets</span>
         <%= image_tag("home-budgeting-customize.svg", alt: "bank logos", class: "inline") %>
-        , set <span class="text-gray-900">smart allocations</span>
+        , start from <span class="text-gray-900">suggested amounts</span>
         <%= image_tag("home-budgeting-smart-alloc.svg", alt: "stock logos", class: "inline md:w-auto") %>
-        and stay on top of <span class="text-gray-900">category</span>
+        and stay on top of every <span class="text-gray-900">category</span>
         <%= image_tag("home-budgeting-categories.svg", alt: "credit card logos", class: "inline md:w-auto") %></h3>
       <div class="max-w-[1140px] mx-auto grid grid-cols-1 md:grid-cols-3 text-base leading-[1.4] gap-6 pb-20">
         <div class="flex flex-col gap-6">
@@ -125,7 +125,7 @@
           <%= image_tag "home-budgeting-optimize.png", alt: "Sure: Optimize your budget", class: "w-full" %>
           <div class="flex flex-col gap-1">
             <h4 class="font-medium text-gray-900">Optimize your budget</h4>
-            <p class="text-gray-400">Setup smart allocations and make smarter financial decisions.</p>
+            <p class="text-gray-400">Start from amounts suggested by your spending history, then adjust as you go.</p>
           </div>
         </div>
       </div>
@@ -143,9 +143,9 @@
       </div>
       <div>
         <h2 class="font-medium">Secure by design</h2>
-        <p class="text-gray-600 md:mb-6">We treat your financial data like we'd want ours to be treated, by using strong encryption and secure authentication.</p>
+        <p class="text-gray-600 md:mb-6">Sign in with passkeys, two-factor codes or SSO. Provider credentials and personal details are encrypted at rest, with keys you set when you self-host.</p>
       </div>
-      <%= link_to "https://github.com/we-promise/sure", class: "text-gray-800 font-medium flex items-center gap-2" do %>
+      <%= link_to "https://github.com/we-promise/sure/security/policy", class: "text-gray-800 font-medium flex items-center gap-2" do %>
         Ask about security
         <span class="bg-gray-200 w-6 h-6 grid place-items-center rounded-full">
           <%= lucide_icon 'arrow-up-right', class: "w-4 h-4" %>
@@ -159,7 +159,7 @@
       </div>
       <div>
         <h2 class="font-medium">Open source</h2>
-        <p class="text-gray-600 md:mb-6">We believe financial tools should be transparent. Sure is open-source - you can review the code, contribute, or self-host for full control.</p>
+        <p class="text-gray-600 md:mb-6">We believe financial tools should be transparent. Sure is open source, so you can review the code, contribute, or self-host it for full control.</p>
       </div>
       <%= link_to "https://github.com/we-promise/sure", class: "text-gray-800 font-medium flex items-center gap-2" do %>
         Start contributing
@@ -175,9 +175,9 @@
       </div>
       <div>
         <h2 class="font-medium">Built in public</h2>
-        <p class="text-gray-600 md:mb-6">No hidden agendas, no gatekeeping-just a transparent, community-driven approach to creating the best financial tool possible.</p>
+        <p class="text-gray-600 md:mb-6">No hidden agendas, no gatekeeping, just a transparent, community-driven approach to creating the best financial tool possible.</p>
       </div>
-      <%= link_to "https://github.com/we-promise/sure", class: "text-gray-800 font-medium flex items-center gap-2" do %>
+      <%= link_to discord_url, class: "text-gray-800 font-medium flex items-center gap-2" do %>
         Join community
         <span class="bg-gray-200 w-6 h-6 grid place-items-center rounded-full">
           <%= lucide_icon 'arrow-up-right', class: "w-4 h-4" %>

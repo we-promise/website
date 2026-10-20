@@ -19,11 +19,6 @@ module Features
           icon: "chart-candlestick"
         },
         {
-          text: "Forecasts & What-ifs",
-          data: "forecasts",
-          icon: "calendar-fold"
-        },
-        {
           text: "Asset & Debt analysis",
           data: "analysis",
           icon: "chart-pie"

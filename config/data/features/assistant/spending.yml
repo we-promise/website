@@ -23,7 +23,7 @@ cards:
       - id: 1
         question: "What's my average discretionary spend per month?"
         answer:
-          - "You've spend around $1,320 across Dining, Shopping, and Travel."
+          - "You've spent around $1,320 across Dining, Shopping, and Travel."
       - id: 2
         question: "Is that trending up?"
         answer:

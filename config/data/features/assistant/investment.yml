@@ -1,70 +1,41 @@
-title: "Your Spending Insights"
+title: "Investment Evaluation"
 cards:
-  investment_allocation:
-    title: "Investment allocation"
+  portfolio_overview:
+    title: "What's in my portfolio"
     questions:
       - id: 1
-        question: "What's my current investment allocation?"
+        question: "What's in my portfolio right now?"
         answer:
-          - "52% ETFs, 26% crypto, 14% individual stocks, 8% cash."
-          - "This mix leans moderately aggressive and could benefit from a slight rebalance."
-
-  investment_performance:
-    title: "Investment performance"
+          - "You hold 9 positions worth $186,420 across your brokerage account and IRA."
+          - "VTI is the largest at 41%, then your target-date fund at 22% and VXUS at 18%."
+          - "About 4% is sitting in cash."
+  holdings_performance:
+    title: "How my holdings did"
     questions:
       - id: 1
-        question: "How has my investment strategy performed over the past 12 months?"
+        question: "How have my holdings done this year?"
         answer:
-          - "Your portfolio surged by 17.6%, outpacing the S&P 500's 13.4% rise."
+          - "They're up $14,210 (+8.3%) since January."
+          - "VTI gained the most (+$7,890). BND is the only one down, by $310."
       - id: 2
-        question: "What's driving that?"
+        question: "Which account is doing best?"
         answer:
-          - "Your strong Ethereum (ETH) position and early Vanguard Total Stock Market ETF (VTI) investment have given you a market edge."
-      - id: 3
-        question: "What underperformed?"
-        answer:
-          - "Unfortunately, your investments in ARK Innovation ETF (ARKK) and small-cap stocks have not fared well, collectively yielding less than 3%."
-      - id: 4
-        question: "Is my risk level appropriate for long-term goals?"
-        answer:
-          - "With 26% of your portfolio allocated to cryptocurrencies and 14% to technology stocks, you are well-positioned for potential growth. However, this strategy also exposes you to significant market volatility."
-
-  investment_fees:
-    title: "Investment fees"
+          - "Your IRA is up 11.2% this year. The brokerage account is up 6.9%."
+  dividends:
+    title: "Dividends"
     questions:
       - id: 1
-        question: "What's the impact of fees on my investments?"
+        question: "How much did I get in dividends last quarter?"
         answer:
-          - "Shopping totaled $1,215 last quarter — ~40% of it was discretionary."
+          - "$612 across 5 holdings, most of it from VTI ($287) and SCHD ($166)."
+  contributions:
+    title: "Money going in"
+    questions:
+      - id: 1
+        question: "How much have I invested this year?"
+        answer:
+          - "You moved $14,500 into your brokerage account and IRA since January, about $1,450 a month."
       - id: 2
-        question: 'What''s "discretionary" here?'
+        question: "And in crypto?"
         answer:
-          - "Apparel, home decor, and gifts made up 86% of that total."
-      - id: 3
-        question: "Potential monthly savings?"
-        answer:
-          - "Cutting discretionary shopping by 30% could save you ~$100/month."
-
-  eth_earnings:
-    title: "ETH earnings"
-    questions:
-      - id: 1
-        question: "How much have I earned from ETH this year?"
-        answer:
-          - "Your ETH position grew by $2,110 (+41%) in Q1, making it your best-performing asset so far."
-
-  portfolio_diversification:
-    title: "Portfolio diversification"
-    questions:
-      - id: 1
-        question: "How diversified is my portfolio?"
-        answer:
-          - "You hold 12 assets across 4 sectors, but 68% is concentrated in tech and crypto. Consider adding bonds or dividend ETFs to balance."
-
-  rebalancing_frequency:
-    title: "Rebalancing frequency"
-    questions:
-      - id: 1
-        question: "How often am I rebalancing my portfolio?"
-        answer:
-          - "You've manually rebalanced twice in the past year, most recently in January. Your current asset drift is 9.6% from your last target allocation."
+          - "$9,240 sits in crypto, about 2% of your net worth, split between your Coinbase account and a Bitcoin wallet."

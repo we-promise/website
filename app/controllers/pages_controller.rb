@@ -58,7 +58,6 @@ class PagesController < ApplicationController
   # @return [XML] Sitemap index file
   def sitemap_index
     @terms = Term.all
-    @articles = Article.all.order(publish_at: :desc).where("publish_at <= ?", Time.now)
     @faqs = Faq.all.order(:question)
     @tools = Tool.all
     @authors = Author.all

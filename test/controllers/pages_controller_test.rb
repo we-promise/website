@@ -39,6 +39,30 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_not_includes response.body, "<loc>https://sure.am/pricing</loc>"
   end
 
+  test "sitemap lists the roadmap and leaves out articles and empty sections" do
+    assert Article.exists?
+
+    get "/sitemap.xml"
+
+    assert_response :success
+    assert_includes response.body, "<loc>https://sure.am/roadmap</loc>"
+    assert_not_includes response.body, "https://sure.am/articles"
+    assert_not_includes response.body, "https://sure.am/authors"
+    assert_not_includes response.body, "https://sure.am/financial-faqs"
+  end
+
+  test "sitemap lists authors and FAQs once there are some" do
+    author = Author.create!(name: "Ada Lovelace")
+    faq = Faq.create!(question: "What is an index fund?", answer: "A fund that tracks a market index.", slug: "what-is-an-index-fund")
+
+    get "/sitemap.xml"
+
+    assert_includes response.body, "<loc>https://sure.am/authors</loc>"
+    assert_includes response.body, "<loc>https://sure.am/authors/#{author.slug}</loc>"
+    assert_includes response.body, "<loc>https://sure.am/financial-faqs</loc>"
+    assert_includes response.body, "<loc>https://sure.am/financial-faqs/#{faq.slug}</loc>"
+  end
+
   test "star count request uses short network timeouts" do
     response = mock
     response.expects(:is_a?).with(Net::HTTPSuccess).returns(true)

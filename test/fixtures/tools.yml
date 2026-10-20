@@ -64,3 +64,9 @@ retirement_calculator:
   slug: 401k-retirement-calculator
   category_slug: retirement
   icon: bar-chart-4
+
+exchange_rate_calculator:
+  name: Exchange Rate Calculator
+  slug: exchange-rate-calculator
+  category_slug: other
+  icon: currency

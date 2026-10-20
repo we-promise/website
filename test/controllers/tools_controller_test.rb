@@ -26,6 +26,23 @@ class ToolsControllerTest < ActionDispatch::IntegrationTest
     assert_response :not_found
   end
 
+  test "hidden tools are not listed or shown" do
+    get tools_url
+    assert_select "a[href=?]", tool_path("exchange-rate-calculator"), count: 0
+
+    get tool_url("exchange-rate-calculator")
+    assert_response :not_found
+  end
+
+  test "footer tool links all lead to a tool" do
+    get tools_url
+
+    css_select("footer a[href^='/tools']").pluck("href").each do |path|
+      get path
+      assert_response :success, path
+    end
+  end
+
   test "calculating with the untouched form reproduces the first result" do
     travel_to Date.new(2026, 10, 20) do
       LIVE_TOOLS.each do |slug|

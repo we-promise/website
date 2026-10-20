@@ -60,10 +60,9 @@ class PagesController < ApplicationController
     @terms = Term.all
     @articles = Article.all.order(publish_at: :desc).where("publish_at <= ?", Time.now)
     @faqs = Faq.all.order(:question)
-    @tools = Tool.all
+    @tools = Tool.visible
     @authors = Author.all
 
-    @exchange_rate_currencies = Tool::Presenter::ExchangeRateCalculator.new.currency_options
     respond_to do |format|
       format.xml
     end

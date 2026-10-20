@@ -51,6 +51,11 @@ class Tool < ApplicationRecord
     }
   }
 
+  # Hide tools that require real market data APIs
+  HIDDEN_SLUGS = %w[exchange-rate-calculator stock-portfolio-backtest bogleheads-growth-calculator].freeze
+
+  scope :visible, -> { where.not(slug: HIDDEN_SLUGS) }
+
   class << self
     def presenter_class_for(slug)
       name = find_by!(slug: slug).slug.delete_prefix("401k-").tr("-", "_").classify
@@ -59,12 +64,9 @@ class Tool < ApplicationRecord
   end
 
   def self.random_sample(count, exclude:)
-    # Hide tools that require real market data APIs
-    hidden_tools = %w[exchange-rate-calculator stock-portfolio-backtest bogleheads-growth-calculator]
-    where.not(slug: exclude.slug)
-         .where.not(slug: hidden_tools)
-         .order(Arel.sql("RANDOM()"))
-         .limit(count)
+    visible.where.not(slug: exclude.slug)
+           .order(Arel.sql("RANDOM()"))
+           .limit(count)
   end
 
 

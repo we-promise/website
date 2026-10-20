@@ -1,10 +1,6 @@
 class ToolsController < ApplicationController
   def index
-    @tools = Tool.all
-
-    # Hide tools that require real market data APIs
-    hidden_tools = %w[exchange-rate-calculator stock-portfolio-backtest bogleheads-growth-calculator]
-    @tools = @tools.where.not(slug: hidden_tools)
+    @tools = Tool.visible
 
     if params[:category].present?
       # Ensure category_slug is valid by checking against existing values
@@ -20,9 +16,7 @@ class ToolsController < ApplicationController
   end
 
   def show
-    # Check if the requested tool is in the hidden list
-    hidden_tools = %w[exchange-rate-calculator stock-portfolio-backtest bogleheads-growth-calculator]
-    if hidden_tools.include?(params[:slug])
+    if Tool::HIDDEN_SLUGS.include?(params[:slug])
       render_404
       return
     end

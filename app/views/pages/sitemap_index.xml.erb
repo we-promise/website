@@ -91,13 +91,4 @@
       <lastmod><%= tool.updated_at.iso8601 %></lastmod>
     </url>
   <% end %>
-  <% @exchange_rate_currencies.each do |from_currency| %>
-    <% @exchange_rate_currencies.each do |to_currency| %>
-      <% next if from_currency.last == to_currency.last # Skip same currency pairs %>
-      <url>
-        <loc>https://sure.am/tools/exchange-rate-calculator/<%= from_currency.last %>/<%= to_currency.last %></loc>
-        <lastmod><%= Date.today.iso8601 %></lastmod>
-      </url>
-    <% end %>
-  <% end %>
 </urlset>

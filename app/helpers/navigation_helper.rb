@@ -102,8 +102,8 @@ module NavigationHelper
         path: tool_path("financial-freedom-calculator")
       },
       {
-        text: "Exchange Rate Calculator",
-        path: tool_path("exchange-rate-calculator")
+        text: "Loan Calculator",
+        path: tool_path("loan-calculator")
       },
       {
         text: "All Tools",

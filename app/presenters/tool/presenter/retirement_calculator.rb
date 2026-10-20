@@ -31,12 +31,12 @@ class Tool::Presenter::RetirementCalculator < Tool::Presenter
   def legend_data
     {
       contributed: {
-        name: "Without employer match",
+        name: "Employee contributions",
         fillClass: "fill-violet-600",
         strokeClass: "stroke-violet-600"
       },
       interest: {
-        name: "With employer match",
+        name: "Total contributions",
         fillClass: "fill-pink-500",
         strokeClass: "stroke-pink-500"
       }
@@ -50,12 +50,27 @@ class Tool::Presenter::RetirementCalculator < Tool::Presenter
   private
     COMPOUNDS_PER_YEAR = 12
 
+    # 2026 IRS limits on employee contributions, also quoted in the results copy
+    CONTRIBUTION_LIMIT = 24_500
+    CATCH_UP_LIMIT = 8_000 # from age 50
+    AGE_60_TO_63_CATCH_UP_LIMIT = 11_250 # replaces the regular catch-up at 60 to 63
+
     def active_record
       @active_record ||= Tool.find_by! slug: "401k-retirement-calculator"
     end
 
     def years_to_retirement
       retirement_age - current_age
+    end
+
+    def contribution_limit(age)
+      if (60..63).cover?(age)
+        CONTRIBUTION_LIMIT + AGE_60_TO_63_CATCH_UP_LIMIT
+      elsif age >= 50
+        CONTRIBUTION_LIMIT + CATCH_UP_LIMIT
+      else
+        CONTRIBUTION_LIMIT
+      end
     end
 
     def monthly_rate_of_return
@@ -71,7 +86,7 @@ class Tool::Presenter::RetirementCalculator < Tool::Presenter
 
         (0...years_to_retirement).each do |year|
           effective_salary = annual_salary * (1 + annual_salary_increase)**year
-          employee_contribution = effective_salary * monthly_contribution
+          employee_contribution = [ effective_salary * monthly_contribution, contribution_limit(current_age + year) ].min
           employer_contribution = [ employee_contribution, effective_salary * salary_limit_match ].min * employer_match
           annual_contribution = employee_contribution + employer_contribution
 

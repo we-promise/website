@@ -38,6 +38,14 @@ class PagesControllerTest < ActionDispatch::IntegrationTest
     assert_equal 321, PagesController.new.send(:fetch_stars_count)
   end
 
+  test "sitemap leaves out hidden tools" do
+    get "/sitemap.xml"
+
+    locs = Nokogiri::XML(response.body).remove_namespaces!.xpath("//loc").map(&:text)
+    assert_includes locs, "https://sure.am/tools/roi-calculator"
+    assert_empty locs.grep(Regexp.union(Tool::HIDDEN_SLUGS))
+  end
+
   test "star count request ignores unsuccessful responses" do
     response = mock
     response.expects(:is_a?).with(Net::HTTPSuccess).returns(false)

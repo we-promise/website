@@ -46,7 +46,7 @@
       </fieldset>
     </div>
     <div class="w-1/2">
-      <%= form.unit_field :loan_interest_rate, label: "Loan interest rate", label_right: "%", data: { mortgage_rate_select_target: "interestRateInput" } %>
+      <%= form.unit_field :loan_interest_rate, label: "Loan interest rate", value: (tool.loan_interest_rate * 100).round(2), label_right: "%", data: { mortgage_rate_select_target: "interestRateInput" } %>
     </div>
   <% end %>
   <div class="flex flex-col gap-2">

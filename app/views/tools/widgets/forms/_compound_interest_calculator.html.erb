@@ -10,7 +10,7 @@
     <%= form.unit_field :years_to_grow, label: "Years to grow", value: tool.years_to_grow, label_right: "years", data: { controller: "autonumeric", autonumeric_options_value: { decimalPlaces: 0 } } %>
   </div>
   <div class="relative flex flex-col gap-2">
-    <%= form.unit_field :annual_interest_rate, label: "Annual interest rate", value: tool.annual_interest_rate, label_right: "%", data: { controller: "autonumeric", autonumeric_options_value: { decimalPlaces: 1 } } %>
+    <%= form.unit_field :annual_interest_rate, label: "Annual interest rate", value: tool.annual_interest_rate * 100, label_right: "%", data: { controller: "autonumeric", autonumeric_options_value: { decimalPlaces: 1 } } %>
   </div>
   <div class="mt-auto">
     <%= form.submit "Calculate" %>

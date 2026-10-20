@@ -22,3 +22,51 @@ roi_calculator:
   description: See how to calculate the return on your investments and evaluate the gain or loss.
   category_slug: investing
   icon: line-chart
+
+compound_interest_calculator:
+  name: Compound Interest Calculator
+  slug: compound-interest-calculator
+  category_slug: savings
+  icon: line-chart
+
+early_mortgage_payoff_calculator:
+  name: Early Mortgage Payoff Calculator
+  slug: early-mortgage-payoff-calculator
+  category_slug: debt
+  icon: home
+
+financial_freedom_calculator:
+  name: Financial Freedom Calculator
+  slug: financial-freedom-calculator
+  category_slug: retirement
+  icon: bar-chart-4
+
+home_affordability_calculator:
+  name: Home Affordability Calculator
+  slug: home-affordability-calculator
+  category_slug: investing
+  icon: home
+
+inflation_calculator:
+  name: Inflation Calculator
+  slug: inflation-calculator
+  category_slug: other
+  icon: infinity
+
+loan_calculator:
+  name: Loan Calculator
+  slug: loan-calculator
+  category_slug: debt
+  icon: scale
+
+retirement_calculator:
+  name: 401k Retirement Calculator
+  slug: 401k-retirement-calculator
+  category_slug: retirement
+  icon: bar-chart-4
+
+exchange_rate_calculator:
+  name: Exchange Rate Calculator
+  slug: exchange-rate-calculator
+  category_slug: other
+  icon: currency

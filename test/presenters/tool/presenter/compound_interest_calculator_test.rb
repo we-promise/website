@@ -18,13 +18,13 @@ class Tool::Presenter::CompoundInterestCalculatorTest < ActiveSupport::TestCase
       year: 0,
       date: Date.today,
       contributed: 100_000.00,
-      interest: 100_000.00,
+      interest: 0.00,
       currentTotalValue: 100_000.00 }
     last_plot_point = {
       year: 10,
       date: Date.today + 10.years,
       contributed: 220_000.00,
-      interest: 404_910.0586361822,
+      interest: 404_910.0586361822 - 220_000.00,
       currentTotalValue: 404_910.0586361822 }
 
     assert_equal first_plot_point, @tool.plot_data.first

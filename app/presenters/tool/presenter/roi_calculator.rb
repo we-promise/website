@@ -17,8 +17,13 @@ class Tool::Presenter::RoiCalculator < Tool::Presenter
     (investment_gain * 100 / amount_invested).round(2)
   end
 
+  # Compound annual growth rate. Periods under a year aren't annualized:
+  # compounding a short-term return up to a year overstates it.
   def annualized_roi
-    (roi / investment_length_in_years).round(2)
+    growth = amount_returned / amount_invested
+    return unless investment_length_in_years >= 1 && growth >= 0
+
+    ((growth**(1 / investment_length_in_years) - 1) * 100).round(2)
   end
 
   def roi_sign

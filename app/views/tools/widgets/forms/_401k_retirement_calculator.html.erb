@@ -5,10 +5,10 @@
   </div>
   <div class="flex gap-4">
     <div class="relative flex flex-col gap-2">
-      <%= form.unit_field :monthly_contribution, label: "Monthly contribution", value: tool.monthly_contribution, label_right: "%", data: { controller: "autonumeric", autonumeric_options_value: { decimalPlaces: 0 } } %>
+      <%= form.unit_field :monthly_contribution, label: "Monthly contribution", value: tool.monthly_contribution * 100, label_right: "%", data: { controller: "autonumeric", autonumeric_options_value: { decimalPlaces: 0 } } %>
     </div>
     <div class="relative flex flex-col gap-2">
-      <%= form.unit_field :annual_salary_increase, label: "Annual salary increase", value: tool.annual_salary_increase, label_right: "%", data: { controller: "autonumeric", autonumeric_options_value: { decimalPlaces: 0 } } %>
+      <%= form.unit_field :annual_salary_increase, label: "Annual salary increase", value: tool.annual_salary_increase * 100, label_right: "%", data: { controller: "autonumeric", autonumeric_options_value: { decimalPlaces: 0 } } %>
     </div>
   </div>
   <div class="flex gap-4">
@@ -27,10 +27,10 @@
   </div>
   <div class="flex gap-4">
     <div class="relative flex flex-col gap-2">
-      <%= form.unit_field :employer_match, label: "Employer match", value: tool.employer_match, label_right: "%", data: { controller: "autonumeric", autonumeric_options_value: { decimalPlaces: 0 } } %>
+      <%= form.unit_field :employer_match, label: "Employer match", value: tool.employer_match * 100, label_right: "%", data: { controller: "autonumeric", autonumeric_options_value: { decimalPlaces: 0 } } %>
     </div>
     <div class="relative flex flex-col gap-2">
-      <%= form.unit_field :salary_limit_match, label: "Salary limit match", value: tool.salary_limit_match, label_right: "%", data: { controller: "autonumeric", autonumeric_options_value: { decimalPlaces: 0 } } %>
+      <%= form.unit_field :salary_limit_match, label: "Salary limit match", value: tool.salary_limit_match * 100, label_right: "%", data: { controller: "autonumeric", autonumeric_options_value: { decimalPlaces: 0 } } %>
     </div>
   </div>
   <div class="mt-auto">

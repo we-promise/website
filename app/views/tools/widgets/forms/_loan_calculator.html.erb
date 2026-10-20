@@ -8,7 +8,7 @@
     <%= render partial: "shared/period_select_loan" , locals: { value: "years" } %>
   </div>
   <div class="flex flex-col gap-2">
-    <%= form.unit_field :interest_rate, label: "Interest rate", value: tool.interest_rate, unit_symbol: "%", step: "any" %>
+    <%= form.unit_field :interest_rate, label: "Interest rate", value: (tool.interest_rate * 100).round(2), unit_symbol: "%", step: "any" %>
   </div>
   <div class="flex flex-col gap-2">
     <%= form.date_field :date, label: "Start date", value: tool.date, required: true %>

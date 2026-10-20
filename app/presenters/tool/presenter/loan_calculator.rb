@@ -9,6 +9,10 @@ class Tool::Presenter::LoanCalculator < Tool::Presenter
     [ loan_amount, interest_rate, loan_term ].all?(&:zero?)
   end
 
+  def date
+    super || Date.today # unparseable input, such as 10/20/2026, casts to nil
+  end
+
   def monthly_payments
     pv = loan_amount
     r = monthly_interest_rate

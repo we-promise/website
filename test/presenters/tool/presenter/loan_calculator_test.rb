@@ -33,4 +33,16 @@ class Tool::Presenter::LoanCalculatorTest < ActiveSupport::TestCase
   test "estimated payoff date" do
     assert_equal Date.new(2045, 1, 24), @tool.estimated_payoff_date
   end
+
+  test "future start date" do
+    tool = Tool::Presenter::LoanCalculator.new(date: "2030-01-15", loan_term: "1")
+
+    assert_equal Date.new(2031, 1, 15), tool.estimated_payoff_date
+  end
+
+  test "unparseable start date falls back to today" do
+    travel_to Date.new(2026, 10, 20) do
+      assert_equal Date.new(2026, 10, 20), Tool::Presenter::LoanCalculator.new(date: "10/20/2026").date
+    end
+  end
 end

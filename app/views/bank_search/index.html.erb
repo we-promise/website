@@ -1,13 +1,14 @@
 <%
-  content_for(:title) { "Sure Finances Bank Support" }
-  description "Search for your bank to see if it's supported by Sure integrations"
+  content_for(:title) { "Plaid Bank Search" }
+  description "Search Plaid's institution list to see if your bank can connect to Sure through Plaid."
+  content_for :head, tag.meta(name: "robots", content: "noindex")
 %>
 <div class="max-w-6xl mx-auto">
   <!-- Header Section -->
   <div class="w-full mx-auto max-w-[40rem] mb-10 text-center">
     <div class="gap-x-2 mb-6">
-      <h1 class="text-6xl text-gray-800 leading-[calc(4rem+8px)] font-medium mb-2 tracking-[-0.02em]">Sure Bank Support</h1>
-      <p class="text-xl leading-[1.4] text-gray-400 mb-4">Search for your bank to see if it's supported by Sure Finances integrations</p>
+      <h1 class="text-6xl text-gray-800 leading-[calc(4rem+8px)] font-medium mb-2 tracking-[-0.02em]">Bank search</h1>
+      <p class="text-xl leading-[1.4] text-gray-400 mb-4">Search Plaid's institution list to see if your bank can connect to Sure through Plaid.</p>
       <p class="text-sm text-gray-500">
         <%= pluralize(number_with_delimiter(@total_institutions), 'institution') %> available across <%= @countries.length %> countries
       </p>
@@ -140,12 +141,11 @@
     </div>
   </div>
 
-  <!-- Status Footer -->
+  <!-- Other connections -->
   <div class="text-center">
     <p class="text-sm text-gray-500">
-      Bank data can be synced from supported institutions via Plaid, SimpleFIN, Lunch Flow, or your own custom integration.
-      <br>
-      Status: <span class="font-semibold text-green-600">✅ Search Ready</span>
+      This search only covers Plaid. Sure also connects through bank aggregators such as SimpleFIN, Enable Banking and Lunch Flow, direct bank and brokerage APIs, crypto exchanges and wallets, and file imports.
+      <%= link_to "See every integration in the docs", "https://docs.sure.am/providers/overview", class: "text-gray-900 underline" %>.
     </p>
   </div>
 </div> 

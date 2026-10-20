@@ -17,6 +17,12 @@ module ApplicationHelper
     content_for(:meta_image) { meta_image }
   end
 
+  # For images exported at 2x: the width descriptor pins the pixel density to 2 on every screen,
+  # so the image's natural size is its 1x size (width:), not its pixel size.
+  def image_tag_2x(source, width:, **options)
+    image_tag(source, srcset: { source => "#{width * 2}w" }, sizes: "#{width}px", width: width, **options)
+  end
+
   def pagy_nav(pagy)
     html = %(<div class="flex items-center gap-2" aria-label="Pages">)
 

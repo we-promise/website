@@ -13,7 +13,11 @@
     <lastmod><%= Date.today.iso8601 %></lastmod>
   </url>
   <url>
-    <loc>https://sure.am/pricing</loc>
+    <loc>https://sure.am/pricing_free</loc>
+    <lastmod><%= Date.today.iso8601 %></lastmod>
+  </url>
+  <url>
+    <loc>https://sure.am/roadmap</loc>
     <lastmod><%= Date.today.iso8601 %></lastmod>
   </url>
   <url>
@@ -51,30 +55,25 @@
       <lastmod><%= term.updated_at.iso8601 %></lastmod>
     </url>
   <% end %>
-  <url>
-    <loc>https://sure.am/articles</loc>
-    <lastmod><%= Date.today.iso8601 %></lastmod>
-  </url>
-  <% @articles.each do |article| %>
+  <%# Articles stay out until there are real ones to list. %>
+  <% if @authors.any? %>
     <url>
-      <loc>https://sure.am/articles/<%= article.slug %></loc>
-      <lastmod><%= article.updated_at.iso8601 %></lastmod>
+      <loc>https://sure.am/authors</loc>
+      <lastmod><%= Date.today.iso8601 %></lastmod>
     </url>
   <% end %>
-  <url>
-    <loc>https://sure.am/authors</loc>
-    <lastmod><%= Date.today.iso8601 %></lastmod>
-  </url>
   <% @authors.each do |author| %>
     <url>
       <loc>https://sure.am/authors/<%= author.slug %></loc>
       <lastmod><%= author.updated_at.iso8601 %></lastmod>
     </url>
   <% end %>
-  <url>
-    <loc>https://sure.am/financial-faqs</loc>
-    <lastmod><%= Date.today.iso8601 %></lastmod>
-  </url>
+  <% if @faqs.any? %>
+    <url>
+      <loc>https://sure.am/financial-faqs</loc>
+      <lastmod><%= Date.today.iso8601 %></lastmod>
+    </url>
+  <% end %>
   <% @faqs.each do |faq| %>
     <url>
       <loc>https://sure.am/financial-faqs/<%= faq.slug %></loc>

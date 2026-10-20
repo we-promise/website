@@ -1,12 +1,12 @@
 <%
   title "Financial Terms"
-  description "The A-Z of every personal finance, crypto or money related term you can think of."
+  description "Plain-language definitions of key personal finance terms."
 %>
 <div class="max-w-6xl mx-auto" data-controller="section-links" data-section-links-active-class="max-w-6xl text-gray-900 bg-white !border-gray-200 shadow-xs">
   <div class="w-full mx-auto max-w-[450px] mb-10">
     <div class="gap-x-2 mb-6 text-center">
       <h1 class="text-6xl text-gray-800 leading-[calc(4rem+8px)] font-medium mb-2 tracking-[-0.02em]">Financial terms</h1>
-      <p class="text-xl leading-[1.4] text-gray-400">The A-Z of every personal finance, crypto or money related term you can think of.</p>
+      <p class="text-xl leading-[1.4] text-gray-400">Plain-language definitions of key personal finance terms.</p>
     </div>
     <%= form_with method: :get, html: {class: "relative mb-4 max-w-[450px] mx-auto"}, data: { controller: "auto-submit-form", turbo_frame: "terms_list" } do |f| %>
       <%= f.text_field:q, value: @query,
@@ -17,7 +17,7 @@
     <% end %>
     <div class="flex flex-wrap gap-x-2 gap-y-2 justify-center mx-auto">
       <% @terms.sample(4).each do |term| %>
-        <%= link_to "#", class: "inline-block p-[4px_10px_4px_8px] rounded-full border hover:border-gray-400 transition-colors" do %>
+        <%= link_to term_path(term), class: "inline-block p-[4px_10px_4px_8px] rounded-full border hover:border-gray-400 transition-colors" do %>
           <%= lucide_icon "search", class: "inline w-5 h-5 text-gray-500 pointer-events-none" %>
           <span class="text-sm text-gray-500 font-medium"><%= term.title %></span>
         <% end %>

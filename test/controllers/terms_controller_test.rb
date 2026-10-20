@@ -15,6 +15,12 @@ class TermsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "suggested terms link to term pages" do
+    get terms_url
+    assert_select "a.rounded-full[href^='/financial-terms/']"
+    assert_select "a[href='#']", count: 0
+  end
+
   test "should get index with search query" do
     get terms_url, params: { q: "test" }
     assert_response :success
@@ -25,9 +31,8 @@ class TermsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should redirect to terms index when term not found" do
+  test "returns not found for an unknown term" do
     get term_url("non-existent-term")
-    assert_redirected_to terms_path
-    assert_equal "The financial term you're looking for could not be found.", flash[:alert]
+    assert_response :not_found
   end
 end

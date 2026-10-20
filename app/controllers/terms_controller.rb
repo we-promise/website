@@ -27,9 +27,6 @@ class TermsController < ApplicationController
   #   GET /terms/ruby-on-rails
   def show
     @term = Term.includes(authorship: :author).find_by(slug: params[:id])
-
-    if @term.nil?
-      redirect_to terms_path, alert: "The financial term you're looking for could not be found."
-    end
+    not_found unless @term
   end
 end

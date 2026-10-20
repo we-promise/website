@@ -42,11 +42,7 @@ class FaqsController < ApplicationController
   #   GET /faqs/what-is-compound-interest
   def show
     @faq = Faq.includes(authorship: :author).find_by(slug: params[:id])
-
-    unless @faq
-      redirect_to faqs_path, alert: "FAQ not found"
-      return
-    end
+    return not_found unless @faq
 
     # Get related FAQs from the same category
     @related_faqs = if @faq.category.present?

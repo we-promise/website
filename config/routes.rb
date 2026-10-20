@@ -24,7 +24,7 @@ Rails.application.routes.draw do
   # Redirect for removed inside trading tracker
   get "/tools/inside-trading-tracker(/*path)", to: redirect("/", status: 301)
 
-  get "pricing", to: "pages#pricing"
+  get "pricing", to: redirect("/pricing_free", status: 301)
   get "pricing_free", to: "pages#pricing_free"
   get "about", to: "pages#about"
   get "still-shipping", to: "pages#still_shipping", as: :still_shipping
@@ -85,7 +85,6 @@ Rails.application.routes.draw do
 
   # Render dynamic PWA files from app/views/pwa/*
   get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
-  get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
 
   # Defines the root path route ("/")
   root "pages#index"

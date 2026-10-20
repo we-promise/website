@@ -15,6 +15,12 @@ class TermsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "suggested terms link to term pages" do
+    get terms_url
+    assert_select "a.rounded-full[href^='/financial-terms/']"
+    assert_select "a[href='#']", count: 0
+  end
+
   test "should get index with search query" do
     get terms_url, params: { q: "test" }
     assert_response :success

@@ -15,7 +15,7 @@
       <div>
         <h2 class="text-[3rem] text-gray-700 leading-[calc(1em+4px)] tracking-[-0.04em] font-medium mb-4">Open-source at our core</h2>
         <p class="text-lg text-gray-600 mb-6">With over <%= @stars ? number_with_delimiter(@stars) : "10,000" %> GitHub stars and contributions from developers worldwide, Sure represents a new approach to personal finance software. Our code is transparent, auditable, and community-driven.</p>
-        <div class="flex items-center gap-6">
+        <div class="flex flex-wrap items-center gap-x-6 gap-y-4">
           <div class="text-center">
             <p class="text-[2.5rem] font-semibold text-gray-800 leading-none mb-1"><%= @stars ? number_with_delimiter(@stars) : "10,000+" %></p>
             <p class="text-sm text-gray-500">GitHub Stars</p>

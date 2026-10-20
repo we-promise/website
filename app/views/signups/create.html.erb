@@ -1,3 +1,7 @@
 <turbo-frame id="signup_form">
-  <p class="text-sm text-emerald-500">Success! You're on the waitlist.</p>
+  <% if @subscribed %>
+    <p class="text-sm text-emerald-500">Thanks! We'll email you when a new release of Sure ships.</p>
+  <% else %>
+    <p class="text-sm text-red-500">Sorry, we couldn't sign you up right now. Please try again later.</p>
+  <% end %>
 </turbo-frame>

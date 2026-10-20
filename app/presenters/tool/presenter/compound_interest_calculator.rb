@@ -57,7 +57,7 @@ class Tool::Presenter::CompoundInterestCalculator < Tool::Presenter
             h[:year] = year
             h[:date] = Date.today + year.years
             h[:contributed] = total_contributed
-            h[:interest] = total_value
+            h[:interest] = total_value - total_contributed
             h[:currentTotalValue] = total_value
           end
         end
@@ -71,7 +71,7 @@ class Tool::Presenter::CompoundInterestCalculator < Tool::Presenter
         year: 0,
         date: Date.today,
         contributed: initial_investment,
-        interest: initial_investment,
+        interest: 0.0,
         currentTotalValue: initial_investment
       }
     end

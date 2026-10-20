@@ -49,4 +49,9 @@ class Tool::Presenter::RetirementCalculatorTest < ActiveSupport::TestCase
       assert_equal last_plot_point, @tool.plot_data.last
     end
   end
+
+  test "legend names the contribution totals it plots" do
+    assert_equal({ contributed: "Employee contributions", interest: "Total contributions" },
+      @tool.legend_data.transform_values { it[:name] })
+  end
 end

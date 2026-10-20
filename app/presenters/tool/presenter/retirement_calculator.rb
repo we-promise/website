@@ -31,12 +31,12 @@ class Tool::Presenter::RetirementCalculator < Tool::Presenter
   def legend_data
     {
       contributed: {
-        name: "Without employer match",
+        name: "Employee contributions",
         fillClass: "fill-violet-600",
         strokeClass: "stroke-violet-600"
       },
       interest: {
-        name: "With employer match",
+        name: "Total contributions",
         fillClass: "fill-pink-500",
         strokeClass: "stroke-pink-500"
       }

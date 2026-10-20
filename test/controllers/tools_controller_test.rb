@@ -85,6 +85,13 @@ class ToolsControllerTest < ActionDispatch::IntegrationTest
     assert_select "p", text: "Not shown for periods under a year."
   end
 
+  test "401k calculator asks for a share of salary and names the limit year" do
+    get tool_url("401k-retirement-calculator")
+
+    assert_select "label[for=monthly_contribution]", text: "Contribution (% of salary)"
+    assert_select "p", text: /capped at the 2026 IRS limit/
+  end
+
   test "financial freedom growth rate slider starts at the percentage" do
     get tool_url("financial-freedom-calculator")
 

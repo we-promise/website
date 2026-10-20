@@ -42,8 +42,8 @@ tools = [
   {
     name: "401k Retirement Calculator",
     slug: "401k-retirement-calculator",
-    intro: "Calculate how much you need to save for retirement and how much you can expect to have saved by the time you retire.",
-    description: "See how much your 401k balance and payout amount in retirement will work for you.",
+    intro: "Estimate how much your 401k could be worth when you retire, based on your salary, contributions, employer match and investment returns.",
+    description: "See how your 401k could grow by retirement, and how much of it comes from you and from your employer's match.",
     category_slug: "retirement",
     icon: "bar-chart-4"
   },

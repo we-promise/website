@@ -33,6 +33,7 @@
     </div>
     <%# Featured (most recent) article %>
     <div class="mb-12">
+      <% if @featured_article %>
       <%= link_to @featured_article, class: "flex flex-row gap-10 mb-[3.75rem]" do %>
         <%= tag.div class: "min-h-[220px] md:min-h-[320px] lg:min-h-[420px] w-1/2 rounded-lg p-1 shadow-xs bg-gradient-to-b #{article_gradient(@featured_article)}" %>
         <div class="flex flex-col justify-end px-4 py-5 text-left w-1/2">
@@ -58,6 +59,7 @@
             </div>
           <% end %>
         </div>
+      <% end %>
       <% end %>
       <%# Grid of subsequent articles %>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">

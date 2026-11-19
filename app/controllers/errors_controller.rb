@@ -6,13 +6,16 @@ class ErrorsController < ApplicationController
     status_code = ActionDispatch::ExceptionWrapper.new(request.env, exception).status_code
 
     # Force HTML format for error pages unless explicitly requesting another format.
-    # Rescue ParseError: if the original exception was raised by malformed (non-UTF-8)
-    # request parameters, calling request.format re-parses those parameters and raises
-    # the same ParseError again, causing a "Error during failsafe response" log.
+    # Both request.format (getter) and request.format= (setter) call parameters[:format],
+    # which re-parses the query string. When the original exception was raised by malformed
+    # (non-UTF-8) request parameters, that re-parse raises the same ParseError again inside
+    # the exceptions app, triggering a "Error during failsafe response" log. Rescue and fall
+    # back to writing the env key directly, which is what the setter does after the params
+    # write, bypassing parameter parsing entirely.
     begin
       request.format = :html if request.format.symbol == :text || request.format.symbol == :all
     rescue ActionDispatch::Http::Parameters::ParseError
-      request.format = :html
+      request.env["action_dispatch.request.formats"] = [ Mime[:html] ]
     end
 
     respond_to do |format|
